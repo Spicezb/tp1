@@ -1,9 +1,5 @@
-#Hola cabrones
-# pene de negro que rico
-# playo, pero se puede hacer todo en este mismo archivo? o like en 2 diferentes, como el del lab digamos
-
 def pMenu():
-    return("1. Crear BD dinámica\n" \
+    return print("1. Crear BD dinámica\n" \
         "2. Registrar un estudiante\n" \
         "3. Generar reporte HTML y .csv \n" \
         "4. Respaldar en XML \n" \
@@ -14,5 +10,3 @@ def pMenu():
         "9. Estadística por generación \n" \
         "10. Reporte por sede con buen rendimiento. \n11. Salir")
 print(pMenu)
-
-#negro
