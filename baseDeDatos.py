@@ -1,5 +1,5 @@
 def pMenu():
-    return print("1. Crear BD dinámica\n" \
+    print("1. Crear BD dinámica\n" \
         "2. Registrar un estudiante\n" \
         "3. Generar reporte HTML y .csv \n" \
         "4. Respaldar en XML \n" \
@@ -9,4 +9,11 @@ def pMenu():
         "8. Aplazados en al menos 2 exámenes (.pdf) \n" \
         "9. Estadística por generación \n" \
         "10. Reporte por sede con buen rendimiento. \n11. Salir")
-print(pMenu)
+    opcion = int(input("Opción: "))
+    return opcion
+def elegirOpcion():
+    x=0
+    while x != 11:
+        x= pMenu()
+    return "Hasta Luego. . ."
+print(elegirOpcion())
