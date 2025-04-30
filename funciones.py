@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
+# <<<<<<< HEAD
+# # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
 
 
 def agregarEstudianteES():
@@ -11,7 +11,7 @@ def agregarEstudianteES():
     return correo
 
 print(agregarEstudianteES())
-=======
+#
 # Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
@@ -45,7 +45,6 @@ def crearNombres():
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
     return(infoPerso)
->>>>>>> a68c56962bf856aa433512dd2187017576e31535
 
 def crearBD(archivo,lista):
     lol=open(archivo,"wb")
