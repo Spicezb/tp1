@@ -11,15 +11,21 @@ import names
 import random
 import pickle
 # funciones
-def crearCarne():
-    return
+def crearCorreo(nombre,carne):
+    c =nombre[0][:1]+nombre[1]+carne[5:]+"@estudiantec.cr"
+    return c.lower()
+
+def crearCarne(ini, fin):
+    print(ini)
+    carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+str(random.randint(000,999))
+    return carnet
 def crearCarneAux(ini,fin):
-    return crearCarne()
+    return crearCarne(ini, fin)
 def crearCarneES(x):
     if x == True:
         print("Dijite el rango de años para generar los carnets")
-        rango=input("Año inicial: ")
-        rango2=input("Año final: ")
+        rango=int(input("Año inicial: "))
+        rango2=int(input("Año final: "))
         return crearCarneAux(rango, rango2)
     else:
         return
@@ -45,15 +51,19 @@ def crearNombres():
     else:
         genero= False
     nombrePersona = (persona, pA, sA)
-    carne= crearCarne()
-    correo= crearCorreo(True)
-    notas= agregarNotas()
+    carne= crearCarneES(True)
+    correo = crearCorreo(nombrePersona,carne)
+    print(correo)
+    #notas= agregarNotas()
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
+    infoPerso.append(carne)
+    infoPerso.append(correo)
     return(infoPerso)
 
 def crearBD(archivo,lista):
     lol=open(archivo,"wb")
+    x=int(input(""))
     lista.append(crearNombres())
     pickle.dump(lista,lol)
     lol.close()
@@ -64,7 +74,7 @@ def agregarEstudianteES():
     carnet="4321"
     # sede=
     # genero=
-    correo=f"{nombre[0]}{nombre[nombre.find(" ")+1:nombre.find(" ",nombre.find(" ")+1)]}{carnet[-4:]}@estudiantec.cr"
+    correo=crearCorreo
     return correo
 
 print(agregarEstudianteES())
