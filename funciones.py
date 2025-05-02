@@ -37,19 +37,7 @@ def crearCarne(ini, fin):
 def crearCarneAux(ini,fin):
     return crearCarne(ini,fin)
 
-"""def crearCarneES(x):
-    if x == True:
-        print("Dijite el rango de años para generar los carnets")
-        rango=int(input("Año inicial: "))
-        rango2=int(input("Año final: "))
-        if crearCarneAux(rango, rango2) == True:
-            pass
-        else:
-            return "No"
-    else:
-        return"""
-
-def crearNombres(r,r2,x1,x2,x3):
+def crearNombres():
     """
     Funcionamiento:
     Se crean nombres de manera aleatoria, gracias a la libreia names y random, donde se le asigna un genero al nombre,
@@ -59,8 +47,7 @@ def crearNombres(r,r2,x1,x2,x3):
     Salidas:
     Se retorna una lista con una tupla que contiene el nombre y los apellidos, y el genero por aparte, este de manera Booleana
     """
-    infoPerso=[]
-    nombrePersona=()    
+    nombrePersona=""
     genero=random.choice(("male","female"))
     persona=names.get_first_name(gender=genero)
     pA=names.get_last_name()
@@ -69,8 +56,11 @@ def crearNombres(r,r2,x1,x2,x3):
         genero = True
     else:
         genero= False
-    nombrePersona = (persona, pA, sA)
-    print(nombrePersona)
+    nombrePersona = f"{persona},{pA},{sA},{genero}\n"
+    return nombrePersona
+
+def llenarBD(r,r2,x1,x2,x3):
+    infoPerso=[]
     carne= crearCarneAux(r,r2)
     correo = crearCorreo(nombrePersona,str(carne))
     notas= crearNotas(x1,x2,x3)
@@ -82,17 +72,31 @@ def crearNombres(r,r2,x1,x2,x3):
     return(infoPerso)
 
 def crearBD(archivo,lista):
+    jamal=[]
     lol=open(archivo,"wb")
     cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
     porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
-    print("Dijite el rango de años para generar los carnets")
+    """    print("Dijite el rango de años para generar los carnets")
     rango=int(input("Año inicial: "))
     rango2=int(input("Año final: "))
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
-    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
+    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))"""
+
+    txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantidadCrear):
-        lista.append(crearNombres(rango,rango2,x1,x2,x3))
+        txtNombresGenerados.write(crearNombres())
+    txtNombresGenerados.close
+
+    txtNombresGenerados=open("Nombres.txt","r")
+    for i in range(cantidadCrear):
+        linea=(txtNombresGenerados.readline())
+        alput=tuple(linea.strip().split(","))
+        jamal.append(alput)
+    print(jamal)
+    print(random.sample(jamal,porcentaje))
+    txtNombresGenerados.close
+
     pickle.dump(lista,lol)
     lol.close()
     return
