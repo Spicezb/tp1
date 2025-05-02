@@ -97,9 +97,29 @@ def crearBD(archivo,lista):
     print(random.sample(jamal,porcentaje))
     txtNombresGenerados.close
 
+    print(abrir())
     pickle.dump(lista,lol)
     lol.close()
     return
+
+def abrir2():
+    ansuu=[]
+    estudi=open("estudiantes.txt","r")
+    for i in range(4):
+        linea=(estudi.readline())
+        tupla=tuple(linea.strip().split(","))
+        ansuu.append(tupla)
+    print(ansuu)
+    return
+
+def abrir():
+    asnu=[]
+    estu=open("Nombres.txt","r")
+    for i in range(4):
+        linea=(estu.readline())
+        tupla=tuple(linea.strip().split(","))
+        asnu.append(tupla)
+    print(asnu)
 
 def agregarEstudianteES():
     nombre="juan perez rojas"
