@@ -24,8 +24,8 @@ def crearNotas(x1,x2,x3):
     return tupla
 
 def crearCorreo(nombre,carne):
-    c =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
-    return c.lower()
+    correo =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
+    return correo.lower()
 
 def crearCarne(ini, fin):
     rand=str(random.randint(0000,9999))
@@ -62,7 +62,7 @@ def crearNombres():
 def llenarBD(r,r2,x1,x2,x3):
     infoPerso=[]
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombrePersona,str(carne))
+    correo = crearCorreo(nombrePersona,str(carne))         # nombrePersona no est{a definido, ni genero
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
