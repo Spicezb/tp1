@@ -121,12 +121,25 @@ def abrir():
         asnu.append(tupla)
     print(asnu)
 
-def agregarEstudianteES():
-    nombre="juan perez rojas"
-    carnet="4321"
-    # sede=
-    # genero=
-    correo=crearCorreo
-    return correo
-
-print(agregarEstudianteES())
+def agregarEstudiante(x1,x2,x3):
+    """
+    Funcionamiento:
+    - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
+    Entradas:
+    - x1,x2,x3(int): Son los porcentajes que vale cada rubro para asignar las notas. 
+    """
+    nombre = tuple(input("Ingrese el nombre del estudiante:\n").split(" "))
+    genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino")
+    gen = int(input("Indique la generación del estudiante:\n"))
+    carne = crearCarne(gen,gen)
+    correo = crearCorreo(nombre,carne)
+    notas = crearNotas(x1,x2,x3)
+    if genero == "1":
+        genero = False
+    else:
+        genero = True
+    estudiante = [nombre,genero,carne,correo,notas]
+    base = open()
+    pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
+    base.close()
+    return "El estudiante ha sido agregado."
