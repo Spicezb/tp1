@@ -24,8 +24,8 @@ def crearNotas(x1,x2,x3):
     return tupla
 
 def crearCorreo(nombre,carne):
-    c =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
-    return c.lower()
+    correo =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
+    return correo.lower()
 
 def crearCarne(ini, fin):
     rand=str(random.randint(0000,9999))
@@ -62,7 +62,7 @@ def crearNombres():
 def llenarBD(r,r2,x1,x2,x3):
     infoPerso=[]
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombrePersona,str(carne))
+    correo = crearCorreo(nombrePersona,str(carne))         # nombrePersona no est{a definido, ni genero
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
@@ -101,12 +101,25 @@ def crearBD(archivo,lista):
     lol.close()
     return
 
-def agregarEstudianteES():
-    nombre="juan perez rojas"
-    carnet="4321"
-    # sede=
-    # genero=
-    correo=crearCorreo
-    return correo
-
-print(agregarEstudianteES())
+def agregarEstudiante(x1,x2,x3):
+    """
+    Funcionamiento:
+    - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
+    Entradas:
+    - x1,x2,x3(int): Son los porcentajes que vale cada rubro para asignar las notas. 
+    """
+    nombre = tuple(input("Ingrese el nombre del estudiante:\n").split(" "))
+    genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino")
+    gen = int(input("Indique la generación del estudiante:\n"))
+    carne = crearCarne(gen,gen)
+    correo = crearCorreo(nombre,carne)
+    notas = crearNotas(x1,x2,x3)
+    if genero == "1":
+        genero = False
+    else:
+        genero = True
+    estudiante = [nombre,genero,carne,correo,notas]
+    base = open()
+    pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
+    base.close()
+    return "El estudiante ha sido agregado."
