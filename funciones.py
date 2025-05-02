@@ -8,29 +8,48 @@
 
 # Importación de librerias
 import names
+import re
 import random
 import pickle
 # funciones
+def crearNotas(x1,x2,x3):
+    if x1+x2+x3 !=100:
+        print("no se puede")
+    x=random.randint(1, 100)
+    d=random.randint(1, 100)
+    l=random.randint(1, 100)
+    w=(round(x*x1/100,2)+round(d*x1/100,2)+round(l*x1/100,2))
+    y=w
+    tupla=(x,d,l,w,w)
+    return tupla
+
 def crearCorreo(nombre,carne):
-    c =nombre[0][:1]+nombre[1]+carne[5:]+"@estudiantec.cr"
+    c =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
     return c.lower()
 
 def crearCarne(ini, fin):
-    print(ini)
-    carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+str(random.randint(000,999))
+    rand=str(random.randint(0000,9999))
+    while not re.match(r"\d{4}",rand):
+        rand="0"+rand
+    carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+rand
     return carnet
+
 def crearCarneAux(ini,fin):
-    return crearCarne(ini, fin)
-def crearCarneES(x):
+    return crearCarne(ini,fin)
+
+"""def crearCarneES(x):
     if x == True:
         print("Dijite el rango de años para generar los carnets")
         rango=int(input("Año inicial: "))
         rango2=int(input("Año final: "))
-        return crearCarneAux(rango, rango2)
+        if crearCarneAux(rango, rango2) == True:
+            pass
+        else:
+            return "No"
     else:
-        return
+        return"""
 
-def crearNombres():
+def crearNombres(r,r2,x1,x2,x3):
     """
     Funcionamiento:
     Se crean nombres de manera aleatoria, gracias a la libreia names y random, donde se le asigna un genero al nombre,
@@ -40,8 +59,8 @@ def crearNombres():
     Salidas:
     Se retorna una lista con una tupla que contiene el nombre y los apellidos, y el genero por aparte, este de manera Booleana
     """
-    nombrePersona=()
     infoPerso=[]
+    nombrePersona=()    
     genero=random.choice(("male","female"))
     persona=names.get_first_name(gender=genero)
     pA=names.get_last_name()
@@ -51,20 +70,29 @@ def crearNombres():
     else:
         genero= False
     nombrePersona = (persona, pA, sA)
-    carne= crearCarneES(True)
-    correo = crearCorreo(nombrePersona,carne)
-    print(correo)
-    #notas= agregarNotas()
+    print(nombrePersona)
+    carne= crearCarneAux(r,r2)
+    correo = crearCorreo(nombrePersona,str(carne))
+    notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
     infoPerso.append(carne)
     infoPerso.append(correo)
+    infoPerso.append(notas)
     return(infoPerso)
 
 def crearBD(archivo,lista):
     lol=open(archivo,"wb")
-    x=int(input(""))
-    lista.append(crearNombres())
+    cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
+    porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
+    print("Dijite el rango de años para generar los carnets")
+    rango=int(input("Año inicial: "))
+    rango2=int(input("Año final: "))
+    x1=int(input("Indique el porcentaje de la primer evaluacion:"))
+    x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
+    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
+    for i in range(cantidadCrear):
+        lista.append(crearNombres(rango,rango2,x1,x2,x3))
     pickle.dump(lista,lol)
     lol.close()
     return

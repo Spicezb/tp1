@@ -35,4 +35,5 @@ def elegirOpcion(archivo,lista):
 nomArchivo="baseDeDatos"
 lstBD=[]
 print(elegirOpcion(nomArchivo,lstBD))
+print(lstBD)
 
