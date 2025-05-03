@@ -66,7 +66,7 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     else:
         genero=False
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombrePersona,str(carne))         # nombrePersona no est{a definido, ni genero
+    correo = crearCorreo(nombre,str(carne))         # nombrePersona no está definido
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombre)
     infoPerso.append(genero)
@@ -88,7 +88,6 @@ def crearBD(archivo,lista):
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
     x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
 
-    
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantidadCrear):
@@ -102,7 +101,7 @@ def crearBD(archivo,lista):
 
     #Extrae los nombres de los archivos
     nombresArchivo=abrir(int(redondeado),lstnombsconv)
-    nombresArchivo=abrir2(porcentaje,lstnombsconv)
+    nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también???          Pene
     
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))
@@ -140,7 +139,7 @@ def abrir(porcentaje,lis):
     estu.close()
     return lis
 
-def agregarEstudiante(archivo, lista,x1,x2,x3):
+def agregarEstudiante(archivo,lista,x1,x2,x3):
     """
     Funcionamiento:
     - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
@@ -185,8 +184,19 @@ def generarReporte(archivo,x1,x2,x3):
             contadorHombres+=1
             hombres.write(f"{i[1]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
     mujeres.write(f"\n\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}")
-    hombres.write(f"\n\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}")
+    hombres.write(f"\n\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de hombres es {contadorHombres}")
     base.close()
     hombres.close()
     mujeres.close()
     return ""
+
+def enviarCorreos(archivo,x,y):                #En el caso de que sea simulado nada más hace un print en la consola, hay que preguntar a lcoto
+    base=open(archivo,"rb")
+    lista = base.read()
+    personas = eval(lista)
+    for i in personas:
+        if 60<i[4][4]<70:
+            print(f"{i[0][0]} {i[0][1]} {i[0][2]} se le informa que usted se encuentra en el estado de reposición y deberá hacer un examen el día {x} a las {y} horas.\n")
+    return ""
+
+enviarCorreos()
