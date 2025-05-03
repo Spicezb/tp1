@@ -24,12 +24,15 @@ def pMenu():
 
 def elegirOpcion(archivo,lista):
     x=0
+    x1=1
+    x2=1
+    x3=1
     while x != 11:
         x= pMenu()
         if x==1:
             crearBD(archivo,lista)
         elif x==2:
-            meterenBD(archivo,lista)
+            agregarEstudiante(archivo,lista,x1,x2,x3)
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
