@@ -35,8 +35,11 @@ def reporteHTML(archivo,lista):
 
     for i in lista:
         codigo+="        <tr>\n"
-        for x in i:
-            codigo+="            <td><font face=""Arial"">"+str(x)+"</td>\n"
+        print(i)
+        codigo+="            <td><font face=""Arial"">"+str(i[0][0])+"</td>\n"
+        codigo+="            <td><font face=""Arial"">"+str(i[0][1])+str(i[0][2])+"</td>\n"
+        for x in range(1,len(i)):
+            codigo+="            <td><font face=""Arial"">"+str(i[x])+"</td>\n"
         codigo+="        </tr>\n"
     codigo+="	</center></table>"
 

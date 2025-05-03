@@ -19,7 +19,6 @@ def crearNotas(x1,x2,x3):
     d=random.randint(1, 100)
     l=random.randint(1, 100)
     w=(round(x*x1/100,2)+round(d*x1/100,2)+round(l*x1/100,2))
-    y=w   #Creo que esto sobra
     tupla=(x,d,l,w,w)
     return tupla
 # Crea el correo
@@ -63,9 +62,9 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     nombre=(nomb[0],nomb[1],nomb[2])
     genero=nomb[3]
     if genero == "Femenino":
-        genero=True
-    else:
         genero=False
+    else:
+        genero=True
     carne= crearCarneAux(r,r2)
     correo = crearCorreo(nombre,str(carne))         
     notas= crearNotas(x1,x2,x3)
@@ -103,7 +102,7 @@ def crearBD(archivo,lista):
 
     #Extrae los nombres de los archivos
     nombresArchivo=abrir(int(redondeado),lstnombsconv)
-    nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también???          Pene
+    nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
     
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))

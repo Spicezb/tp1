@@ -4,6 +4,7 @@
 # Versión de python: 3.13.2
 # Importación de librerias
 from funciones import *
+from reporte import *
 def pMenu():
     """
     Funcion: es un print con el menu
@@ -34,7 +35,7 @@ def elegirOpcion(archivo,lista):
         elif x==2:
             agregarEstudiante(archivo,lista,x1,x2,x3)
         elif x==3:
-            generarReporteHTML(archivo,lista)
+            reporteHTML(archivo,lista)
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
