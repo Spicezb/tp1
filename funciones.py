@@ -2,8 +2,6 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
-# # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
-
 
 # Importación de librerias
 import names
@@ -13,12 +11,12 @@ import pickle
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
-        print("no se puede")
+        print("Los tres rubros a evaluar deben sumar 100.")
     x=random.randint(1, 100)
     d=random.randint(1, 100)
     l=random.randint(1, 100)
     w=(round(x*x1/100,2)+round(d*x1/100,2)+round(l*x1/100,2))
-    y=w
+    y=w   #Creo que esto sobra
     tupla=(x,d,l,w,w)
     return tupla
 # Crea el correo
@@ -66,7 +64,7 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     else:
         genero=False
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombre,str(carne))         # nombrePersona no está definido
+    correo = crearCorreo(nombre,str(carne))         
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombre)
     infoPerso.append(genero)
