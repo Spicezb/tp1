@@ -62,7 +62,7 @@ def crearNombres():
 def llenarBD(r,r2,x1,x2,x3):
     infoPerso=[]
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombrePersona,str(carne))         # nombrePersona no est{a definido, ni genero
+    correo = crearCorreo(nombrePersona,str(carne))         
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombrePersona)
     infoPerso.append(genero)
@@ -143,3 +143,31 @@ def agregarEstudiante(x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
+
+def obtenerNota(persona):
+    return persona[1]
+
+def generarReporte(archivo,x1,x2,x3):
+    contadorHombres=0
+    contadorMujeres=0
+    mujeres=open("mujeres.docx", "w")
+    mujeres.write("Reporte de notas mujeres\n\n")
+    hombres = open("hombres.docx", "w")
+    hombres.write("Reporte de notas hombres\n\n")
+    base = open(archivo,"rb")
+    lista=base.read()
+    personas=eval(lista)
+    personas.sort(key=obtenerNota,reverse=True)
+    for i in personas:
+        if i[1]==False:
+            contadorMujeres+=1
+            mujeres.write(f"{i[1]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
+        else:
+            contadorHombres+=1
+            hombres.write(f"{i[1]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
+    mujeres.write(f"\n\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}")
+    hombres.write(f"\n\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}")
+    base.close()
+    hombres.close()
+    mujeres.close()
+    return ""
