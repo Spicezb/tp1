@@ -2,6 +2,9 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
+# # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
+
+
 # Importación de librerias
 import names
 import re
@@ -11,12 +14,12 @@ from reporte import *
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
-        print("no se puede")
+        print("Los tres rubros a evaluar deben sumar 100.")
     x=random.randint(1, 100)
     d=random.randint(1, 100)
     l=random.randint(1, 100)
     w=(round(x*x1/100,2)+round(d*x1/100,2)+round(l*x1/100,2))
-    y=w
+    y=w   #Creo que esto sobra
     tupla=(x,d,l,w,w)
     return tupla
 # Crea el correo
@@ -64,7 +67,7 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     else:
         genero=False
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombre,carne)         
+    correo = crearCorreo(nombre,str(carne))         
     notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombre)
     infoPerso.append(genero)
@@ -85,6 +88,7 @@ def crearBD(archivo,lista):
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
     x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
+
     
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
@@ -99,7 +103,7 @@ def crearBD(archivo,lista):
 
     #Extrae los nombres de los archivos
     nombresArchivo=abrir(int(redondeado),lstnombsconv)
-    nombresArchivo=abrir2(porcentaje,lstnombsconv)
+    nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también???          Pene
     
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))
@@ -136,7 +140,7 @@ def abrir(porcentaje,lis):
     estu.close()
     return lis
 
-def agregarEstudiante(archivo, lista,x1,x2,x3):
+def agregarEstudiante(archivo,lista,x1,x2,x3):
     """
     Funcionamiento:
     - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
@@ -158,6 +162,3 @@ def agregarEstudiante(archivo, lista,x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
-
-def generarReporteHTML(archivo,lista):
-    return reporteHTML(archivo, lista)
