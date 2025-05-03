@@ -2,14 +2,12 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
-# # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
-
-
 # Importación de librerias
 import names
 import re
 import random
 import pickle
+from reporte import *
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
@@ -87,7 +85,6 @@ def crearBD(archivo,lista):
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
     x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
-
     
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
@@ -106,7 +103,6 @@ def crearBD(archivo,lista):
     
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))
-    print(lista)
     pickle.dump(lista,lol)
     lol.close()
     return "Base de datos creada y llenada . . ."
@@ -162,3 +158,6 @@ def agregarEstudiante(archivo, lista,x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
+
+def generarReporteHTML(archivo,lista):
+    return reporteHTML(archivo, lista)

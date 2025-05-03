@@ -33,10 +33,11 @@ def elegirOpcion(archivo,lista):
             crearBD(archivo,lista)
         elif x==2:
             agregarEstudiante(archivo,lista,x1,x2,x3)
+        elif x==3:
+            generarReporteHTML(archivo,lista)
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
 lstBD=[]
 print(elegirOpcion(nomArchivo,lstBD))
-print(lstBD)
 
