@@ -2,7 +2,6 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
-# <<<<<<< HEAD
 # # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
 
 
@@ -22,18 +21,17 @@ def crearNotas(x1,x2,x3):
     y=w
     tupla=(x,d,l,w,w)
     return tupla
-
+# Crea el correo
 def crearCorreo(nombre,carne):
     correo =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
     return correo.lower()
-
+# Crea el Carnet
 def crearCarne(ini, fin):
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
     carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+rand
-    return carnet
-
+    return str(carnet)
 def crearCarneAux(ini,fin):
     return crearCarne(ini,fin)
 
@@ -58,70 +56,91 @@ def crearNombres():
         genero= False
     nombrePersona = f"{persona},{pA},{sA},{genero}\n"
     return nombrePersona
-
-def llenarBD(r,r2,x1,x2,x3):
+# Crea las personas y las envia para meterlas a la base de datos
+def llenarBD(nomb,r,r2,x1,x2,x3):
     infoPerso=[]
+    nombre=(nomb[0],nomb[1],nomb[2])
+    genero=nomb[3]
+    if genero == "Femenino":
+        genero=True
+    else:
+        genero=False
     carne= crearCarneAux(r,r2)
-    correo = crearCorreo(nombrePersona,str(carne))         
+    correo = crearCorreo(nombrePersona,str(carne))         # nombrePersona no est{a definido, ni genero
     notas= crearNotas(x1,x2,x3)
-    infoPerso.append(nombrePersona)
+    infoPerso.append(nombre)
     infoPerso.append(genero)
     infoPerso.append(carne)
     infoPerso.append(correo)
     infoPerso.append(notas)
     return(infoPerso)
-
+# Crea la base de datos
 def crearBD(archivo,lista):
-    jamal=[]
+    lstnombsconv=[]
     lol=open(archivo,"wb")
     cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
     porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
-    """    print("Dijite el rango de años para generar los carnets")
+    print("Dijite el rango de años para generar los carnets")
     rango=int(input("Año inicial: "))
     rango2=int(input("Año final: "))
+
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
-    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))"""
+    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
 
+    
+    #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantidadCrear):
         txtNombresGenerados.write(crearNombres())
-    txtNombresGenerados.close
+    txtNombresGenerados.close()
 
-    txtNombresGenerados=open("Nombres.txt","r")
-    for i in range(cantidadCrear):
-        linea=(txtNombresGenerados.readline())
-        alput=tuple(linea.strip().split(","))
-        jamal.append(alput)
-    print(jamal)
-    print(random.sample(jamal,porcentaje))
-    txtNombresGenerados.close
+    if ((porcentaje/100)*cantidadCrear)%1 >= 0.5:
+        redondeado=((porcentaje/100)*cantidadCrear)+(((porcentaje/100)*cantidadCrear)%1)-1
+    else:
+        redondeado=((porcentaje/100)*cantidadCrear)-((porcentaje/100)*cantidadCrear)%1
 
-    print(abrir())
+    #Extrae los nombres de los archivos
+    nombresArchivo=abrir(int(redondeado),lstnombsconv)
+    nombresArchivo=abrir2(porcentaje,lstnombsconv)
+    
+    for i in range(len(nombresArchivo)):
+        lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))
+    print(lista)
     pickle.dump(lista,lol)
     lol.close()
-    return
+    return "Base de datos creada y llenada . . ."
 
-def abrir2():
-    ansuu=[]
+def abrir2(porcentaje,list):
+    conta=0
     estudi=open("estudiantes.txt","r")
-    for i in range(4):
+    for i in estudi:
+        conta+=1
+    if ((porcentaje/100)*conta)%1 >= 0.5:
+        conta=((porcentaje/100)*conta)+(((porcentaje/100)*conta)%1)-1
+    else:
+        conta=((porcentaje/100)*conta)-((porcentaje/100)*conta)%1
+    print(conta)
+    estudi.close()
+    estudi=open("estudiantes.txt","r")
+    for i in range(int(conta)):
         linea=(estudi.readline())
         tupla=tuple(linea.strip().split(","))
-        ansuu.append(tupla)
-    print(ansuu)
-    return
+        list.append(tupla)
+    estudi.close()
+    return list
 
-def abrir():
+def abrir(porcentaje,lis):
     asnu=[]
     estu=open("Nombres.txt","r")
-    for i in range(4):
+    for i in range(int(porcentaje)):
         linea=(estu.readline())
         tupla=tuple(linea.strip().split(","))
-        asnu.append(tupla)
-    print(asnu)
+        lis.append(tupla)
+    estu.close()
+    return lis
 
-def agregarEstudiante(x1,x2,x3):
+def agregarEstudiante(archivo, lista,x1,x2,x3):
     """
     Funcionamiento:
     - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
@@ -139,7 +158,7 @@ def agregarEstudiante(x1,x2,x3):
     else:
         genero = True
     estudiante = [nombre,genero,carne,correo,notas]
-    base = open()
+    base = open(archivo,"ab")
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
