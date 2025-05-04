@@ -2,15 +2,14 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
-# # def agregarEstudiante(nombre,carnet,sede,genero,correo,apellidos):
-
 
 # Importación de librerias
 import names
 import re
 import random
 import pickle
-from reporte import *
+from reporteHTML import *
+from respaldarEnXML import *
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
@@ -61,10 +60,10 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     infoPerso=[]
     nombre=(nomb[0],nomb[1],nomb[2])
     genero=nomb[3]
-    if genero == "Femenino":
-        genero=False
-    else:
+    if genero == "Masculino" or genero == "True":
         genero=True
+    else:
+        genero=False
     carne= crearCarneAux(r,r2)
     correo = crearCorreo(nombre,str(carne))         
     notas= crearNotas(x1,x2,x3)
@@ -74,6 +73,11 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     infoPerso.append(correo)
     infoPerso.append(notas)
     return(infoPerso)
+
+def generaciones():
+    rango=int(input("Año inicial: "))
+    rango2=int(input("Año final: "))
+    return (rango,rango2)
 # Crea la base de datos
 def crearBD(archivo,lista):
     lstnombsconv=[]
@@ -81,8 +85,8 @@ def crearBD(archivo,lista):
     cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
     porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
     print("Dijite el rango de años para generar los carnets")
-    rango=int(input("Año inicial: "))
-    rango2=int(input("Año final: "))
+
+    rangos=generaciones()
 
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
@@ -99,29 +103,28 @@ def crearBD(archivo,lista):
         redondeado=((porcentaje/100)*cantidadCrear)+(((porcentaje/100)*cantidadCrear)%1)-1
     else:
         redondeado=((porcentaje/100)*cantidadCrear)-((porcentaje/100)*cantidadCrear)%1
+    print(redondeado)
 
     #Extrae los nombres de los archivos
     nombresArchivo=abrir(int(redondeado),lstnombsconv)
     nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
-    
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rango,rango2, x1,x2,x3))
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], x1,x2,x3))
     pickle.dump(lista,lol)
     lol.close()
     return "Base de datos creada y llenada . . ."
 
 def abrir2(porcentaje,list):
     conta=0
-    estudi=open("estudiantes.txt","r")
+    estudi=open("estudiantes.txt","r",encoding="utf-8")
     for i in estudi:
         conta+=1
     if ((porcentaje/100)*conta)%1 >= 0.5:
         conta=((porcentaje/100)*conta)+(((porcentaje/100)*conta)%1)-1
     else:
         conta=((porcentaje/100)*conta)-((porcentaje/100)*conta)%1
-    print(conta)
     estudi.close()
-    estudi=open("estudiantes.txt","r")
+    estudi=open("estudiantes.txt","r",encoding="utf-8")
     for i in range(int(conta)):
         linea=(estudi.readline())
         tupla=tuple(linea.strip().split(","))
@@ -135,6 +138,7 @@ def abrir(porcentaje,lis):
     for i in range(int(porcentaje)):
         linea=(estu.readline())
         tupla=tuple(linea.strip().split(","))
+        print(tupla)
         lis.append(tupla)
     estu.close()
     return lis
@@ -161,3 +165,9 @@ def agregarEstudiante(archivo,lista,x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
+def html(archivo,lista):
+    estilosCss()
+    reporteHTML(archivo,lista)
+
+def respaldar(archivo,lista):
+    return respaldoXML(archivo,lista)

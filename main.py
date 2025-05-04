@@ -4,11 +4,11 @@
 # Versión de python: 3.13.2
 # Importación de librerias
 from funciones import *
-from reporte import *
+from reporteHTML import *
+from respaldarEnXML import *
 def pMenu():
     """
     Funcion: es un print con el menu
-    
     """
     print("1. Crear BD dinámica\n" \
         "2. Registrar un estudiante\n" \
@@ -35,7 +35,9 @@ def elegirOpcion(archivo,lista):
         elif x==2:
             agregarEstudiante(archivo,lista,x1,x2,x3)
         elif x==3:
-            reporteHTML(archivo,lista)
+            html(archivo,lista)
+        elif x==4:
+            respaldoXML(archivo,lista)
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
