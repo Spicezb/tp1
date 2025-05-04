@@ -104,18 +104,17 @@ def crearBD(archivo,lista):
         redondeado=((porcentaje/100)*cantidadCrear)+(((porcentaje/100)*cantidadCrear)%1)-1
     else:
         redondeado=((porcentaje/100)*cantidadCrear)-((porcentaje/100)*cantidadCrear)%1
-    print(redondeado)
 
     #Extrae los nombres de los archivos
-    nombresArchivo=abrir(int(redondeado),lstnombsconv)
-    nombresArchivo=abrir2(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
+    nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
+    nombresArchivo=escogerDeArchiEstu(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], x1,x2,x3))
     pickle.dump(lista,lol)
     lol.close()
     return "Base de datos creada y llenada . . ."
 
-def abrir2(porcentaje,list):
+def escogerDeArchiEstu(porcentaje,list):
     conta=0
     estudi=open("estudiantes.txt","r",encoding="utf-8")
     for i in estudi:
@@ -126,15 +125,18 @@ def abrir2(porcentaje,list):
         conta=((porcentaje/100)*conta)-((porcentaje/100)*conta)%1
     estudi.close()
     estudi=open("estudiantes.txt","r",encoding="utf-8")
+    lineas=estudi.readlines()
     for i in range(int(conta)):
-        linea=(estudi.readline())
+        x=random.sample(lineas,1)
+        print(x)
+        linea=(x[0])
         tupla=tuple(linea.strip().split(","))
         list.append(tupla)
+        print(tupla)
     estudi.close()
     return list
 
-def abrir(porcentaje,lis):
-    asnu=[]
+def escogerDeArchiNom(porcentaje,lis):
     estu=open("Nombres.txt","r")
     for i in range(int(porcentaje)):
         linea=(estu.readline())
