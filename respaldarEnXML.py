@@ -1,19 +1,37 @@
+# Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
+# Fecha de inicio: 29/04/2025 a las 12:00
+# 
+# Versión de python: 3.13.2
+# Importación de librerias
 import pickle
+# funciones
 def respaldoXML(archivo,lista):
-    primerAnne=0
-    ultimo=0
-    f=open(archivo,"rb")
-    lista = pickle.load(f)
+    """
+    Funcionamiento:
+    - Crea un archivo en formato .xml, donde va a tener un respaldo de toda la información.
+    Entradas:
+    - archivo(str): contiene la información toda la información de la Base de Datos.
+    - lista(lst): es la lista que se usa para almacenar la información de la Base de Datos.
+    Salidas:
+    - Retorna un print al usuario, indicándole que el respaldo se creó exitosamente y indicando dónde lo puede encontrar
+    para poder acceder a él.
+    """
+    # Creación de variables.
+    anoInicial=0                                    # Contiene el rango inicial de los años.
+    anoFinal=0                                      # Contiene el rango final de los años.
+    archivoXML="respaldoXML.xml"                    # Nombre del archivo xml
+    abrirBD=open(archivo,"rb")                      # Se utiliza para abrir la información de la Base de Datos.
+    lista = pickle.load(abrirBD)
+    # Define los rangos de años de las generaciones.
     for i in lista:
-            if int(i[2][:4])>=ultimo:
-                ultimo=int(i[2][:4])
-            elif primerAnne==0:
-                primerAnne=int(i[2][:4])
-            elif int(i[2][:4])<primerAnne:
-                primerAnne=int(i[2][:4])
-    abrir="respaldoXML.xml"
-    codigo='<?xml version="1.0" encoding="UTF-8"?>\n<Estudiantes>\n'
-    for i in range(primerAnne, ultimo+1):
+            if int(i[2][:4])>=anoFinal:
+                anoFinal=int(i[2][:4])
+            elif anoInicial==0:
+                anoInicial=int(i[2][:4])
+            elif int(i[2][:4])<anoInicial:
+                anoInicial=int(i[2][:4])
+    codigo='<?xml version="1.0" encoding="UTF-8"?>\n<Estudiantes>\n' # Se va escribiendo todo el codifo, dentro de esta variable código.
+    for i in range(anoInicial, anoFinal+1):
         codigo+="        <Generacion anno='"+str(i)+"'>\n"
         for t in lista:
             if int(t[2][:4]) == i:
@@ -25,7 +43,9 @@ def respaldoXML(archivo,lista):
                 codigo+="                </Estudiante>\n"
         codigo+="        </Generacion>\n"
     codigo+="</Estudiantes>"
-
-    ol=open(abrir,"w", encoding="UTF-8")
+    # Se guarda el codigo xml dentro del documento.
+    ol=open(archivoXML,"w", encoding="UTF-8")
     ol.write(codigo)
     ol.close()
+    return print("El respaldo de la información fue creado exitosamente...\n" \
+                "Puede ingresar a el mediante el archivo respaldoXML, ubicado en esta misma carpeta.")

@@ -2,6 +2,7 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
+# SE DEBE DE INSTALAR LA LIBRÍA NAMES!!!!
 
 # Importación de librerias
 import names

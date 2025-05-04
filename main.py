@@ -4,7 +4,6 @@
 # Versión de python: 3.13.2
 # Importación de librerias
 from funciones import *
-from reporteHTML import *
 from respaldarEnXML import *
 def pMenu():
     """

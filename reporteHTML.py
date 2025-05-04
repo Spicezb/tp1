@@ -1,8 +1,22 @@
+# Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
+# Fecha de inicio: 29/04/2025 a las 12:00
+#
+# Versión de python: 3.13.2
+# Importación de librerias
 import pickle
-
+# funciones
 def estilosCss():
-    ol="decorarHTML.css"
-    codigo="""
+    """
+    Funcionamiento:
+    - Crea un archivo en formato .css, donde se le va a guardar las configuraciones del diseño del HTML.
+    Entradas:
+    N/A.
+    Salidas:
+    - Retorna True al crearse existosamente, pero este no se va a necesitar en ninguna parte.
+    """
+    # Creación de variables
+    archivoCss="decorarHTML.css"    # Nombre del archivo .css.
+    codigoCss="""                   
         body{
         background: #FFC90E;
         }
@@ -12,33 +26,53 @@ def estilosCss():
             font-family: Arial;
             color: #FFFFFF;
             text-align: center;
-            vertical-align: middle;
             }
         caption{
             background: #0080B8;
             border: solid 2px black;
             }
+        .subTitulos{
+        font-weight: bold;
+        font-style: italic;  
+        text-align: center;  
+        margin: 0;           
+        color: white;
+        }
         td {
             border: solid 2px black;
             padding: 7px 40px;
             }
         .tr1 {
             background: #0080B8;
+            border: solid 2px black;
             }
         tr {
             background: #00425E;
+            border: solid 2px black;
             }
             """
-    guardar=open(ol,"w")
-    guardar.write(codigo)
+    # Se guarda el codigo css dentro del documento.
+    guardar=open(archivoCss,"w")
+    guardar.write(codigoCss)
     guardar.close()
-    return
+    return True
 
 def reporteHTML(archivo,lista):
-    cambio=0
-    f=open(archivo,"rb")
-    lista = pickle.load(f)
-    abrir="reporteHTML.html"
+    """
+    Funcionamiento:
+    - Crea un archivo en formato .html, donde se le va a tener el codigo del reporte de las Notas.
+    Entradas:
+    - archivo(str): contiene la información toda la información de la Base de Datos.
+    - lista(lst): es la lista que se usa para almacenar la información de la Base de Datos.
+    Salidas:
+    - Retorna un print al usuario, indicándole que el reporte se creó exitosamente y indicando dónde lo puede encontrar
+    para poder acceder a él.
+    """
+    # creación de variables.
+    cambio=0                                            # Se utiliza para el cambio de color de la tabla.
+    abrirBD=open(archivo,"rb")                          # Se utiliza para abrir la información de la Base de Datos.
+    lista = pickle.load(abrirBD)                        
+    archivoHtml="reporteHTML.html"                      # Nombre del archivo .html.
     codigo="""
     <html lang="es">
     <head>
@@ -50,14 +84,15 @@ def reporteHTML(archivo,lista):
 	<center><table>
 	<caption><h2>Detalle de notas</h2></caption>
         <tr>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Genero</td>
-            <td>Carne</td>
-            <td>Correo</td>
-            <td>Notas</td>
-            <td>Estado</td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Nombre</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Apellido</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Genero</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Carne</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Correo</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Notas</h3></td>
+            <td class="subTitulos"><h3 style="margin: 0; padding: 0;">Estado</h3></td>
 		</tr>\n"""
+    # Se le ingresa la información al reporte.
     for i in lista:
         if cambio==0:
             codigo+="        <tr class='tr1'>\n"
@@ -78,8 +113,10 @@ def reporteHTML(archivo,lista):
                     codigo+="            <td>Aprobado</td>\n"
                 break
             codigo+="            <td>"+str(i[x])+"</td>\n"
-    codigo+="        </tr>\n"
-    codigo+="	</center></table>"
-    ol=open(abrir,"w",encoding="UTF-8")
-    ol.write(codigo)
-    ol.close()
+    codigo+="        </tr>\n	</center></table>"
+    # Se guarda el codigo html dentro del documento.
+    guardarHtml=open(archivoHtml,"w",encoding="UTF-8")
+    guardarHtml.write(codigo)
+    guardarHtml.close()
+    return print("El reporte de las notas fue creado exitosamente.\n" \
+                "Puede acceder a él mediante el archivo ""reporteHTML"", ubicado en esta misma carpeta.")
