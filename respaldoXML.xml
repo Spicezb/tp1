@@ -1,1691 +1,383 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Estudiantes>
-        <Generacion anno='2020'>
-                <Estudiante carne='2020011351'>
-                        <nombre>CarlosTaylorSmith</nombre>
+        <Generacion anno='2022'>
+                <Estudiante carne='2022049174'>
+                        <nombre>PaulHernandezFisher</nombre>
                         <genero>True</genero>
-                        <correo>ctaylor1351@estudiantec.cr</correo>
-                        <notas>(18, 75, 100, 67.55)</notas>
+                        <correo>phernandez9174@estudiantec.cr</correo>
+                        <notas>(14, 23, 75, 39.2)</notas>
                 </Estudiante>
-                <Estudiante carne='2020031313'>
-                        <nombre>JamesJaraFrazier</nombre>
+                <Estudiante carne='2022016395'>
+                        <nombre>JavierFletcherHilson</nombre>
                         <genero>True</genero>
-                        <correo>jjara1313@estudiantec.cr</correo>
-                        <notas>(44, 48, 83, 61.25)</notas>
+                        <correo>jfletcher6395@estudiantec.cr</correo>
+                        <notas>(61, 79, 38, 62.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2020040424'>
-                        <nombre>LouiseLeeKleven</nombre>
+                <Estudiante carne='2022058453'>
+                        <nombre>JerryHowardBonner</nombre>
+                        <genero>True</genero>
+                        <correo>jhoward8453@estudiantec.cr</correo>
+                        <notas>(52, 41, 61, 53.9)</notas>
+                </Estudiante>
+                <Estudiante carne='2022014013'>
+                        <nombre>JonathanWickliffLuckenbach</nombre>
+                        <genero>True</genero>
+                        <correo>jwickliff4013@estudiantec.cr</correo>
+                        <notas>(56, 40, 42, 48.3)</notas>
+                </Estudiante>
+                <Estudiante carne='2022061772'>
+                        <nombre>GabrielaSánchezDíaz</nombre>
+                        <genero>True</genero>
+                        <correo>gsánchez1772@estudiantec.cr</correo>
+                        <notas>(35, 86, 73, 67.9)</notas>
+                </Estudiante>
+                <Estudiante carne='2022039031'>
+                        <nombre>ElenaRamírezSolano</nombre>
                         <genero>False</genero>
-                        <correo>llee0424@estudiantec.cr</correo>
-                        <notas>(3, 23, 27, 18.55)</notas>
+                        <correo>eramírez9031@estudiantec.cr</correo>
+                        <notas>(21, 64, 60, 50.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2020017147'>
-                        <nombre>JamesSansoneCardenas</nombre>
-                        <genero>True</genero>
-                        <correo>jsansone7147@estudiantec.cr</correo>
-                        <notas>(19, 23, 69, 38.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2020064486'>
-                        <nombre>LauraAcostaGonzÃ¡lez</nombre>
-                        <genero>True</genero>
-                        <correo>lacosta4486@estudiantec.cr</correo>
-                        <notas>(4, 13, 42, 20.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2020020221'>
-                        <nombre>LuisMoraAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>lmora0221@estudiantec.cr</correo>
-                        <notas>(67, 47, 76, 66.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2020064273'>
-                        <nombre>ElenaRamÃ­rezSolano</nombre>
+                <Estudiante carne='2022065368'>
+                        <nombre>AndrésChavesRojas</nombre>
                         <genero>False</genero>
-                        <correo>eramã­rez4273@estudiantec.cr</correo>
-                        <notas>(23, 22, 51, 33.6)</notas>
+                        <correo>achaves5368@estudiantec.cr</correo>
+                        <notas>(46, 75, 54, 61.25)</notas>
                 </Estudiante>
-                <Estudiante carne='2020035793'>
-                        <nombre>AnaRojasAcosta</nombre>
+                <Estudiante carne='2022013004'>
+                        <nombre>PaulaSolanoGonzález</nombre>
                         <genero>True</genero>
-                        <correo>arojas5793@estudiantec.cr</correo>
-                        <notas>(59, 21, 89, 59.15)</notas>
+                        <correo>psolano3004@estudiantec.cr</correo>
+                        <notas>(38, 85, 62, 64.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2020053825'>
-                        <nombre>JorgeChavesNavarro</nombre>
+                <Estudiante carne='2022023992'>
+                        <nombre>SofíaTorresVargas</nombre>
                         <genero>False</genero>
-                        <correo>jchaves3825@estudiantec.cr</correo>
-                        <notas>(87, 2, 31, 42.0)</notas>
+                        <correo>storres3992@estudiantec.cr</correo>
+                        <notas>(5, 16, 63, 29.4)</notas>
                 </Estudiante>
-                <Estudiante carne='2020028377'>
-                        <nombre>JorgeDÃ­azPÃ©rez</nombre>
-                        <genero>True</genero>
-                        <correo>jdã­az8377@estudiantec.cr</correo>
-                        <notas>(35, 94, 95, 78.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2020043945'>
-                        <nombre>SofÃ­aGÃ³mezCastro</nombre>
-                        <genero>True</genero>
-                        <correo>sgã³mez3945@estudiantec.cr</correo>
-                        <notas>(8, 62, 42, 39.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2020044672'>
-                        <nombre>AndrÃ©sChavesRojas</nombre>
+                <Estudiante carne='2022046459'>
+                        <nombre>JoséSolanoRivera</nombre>
                         <genero>False</genero>
-                        <correo>achaves4672@estudiantec.cr</correo>
-                        <notas>(95, 25, 29, 52.15)</notas>
+                        <correo>jsolano6459@estudiantec.cr</correo>
+                        <notas>(15, 38, 68, 42.35)</notas>
                 </Estudiante>
-                <Estudiante carne='2020042526'>
-                        <nombre>CamilaSÃ¡nchezMartÃ­nez</nombre>
+                <Estudiante carne='2022049684'>
+                        <nombre>MaríaTorresRamírez</nombre>
                         <genero>False</genero>
-                        <correo>csã¡nchez2526@estudiantec.cr</correo>
-                        <notas>(33, 50, 33, 40.6)</notas>
+                        <correo>mtorres9684@estudiantec.cr</correo>
+                        <notas>(78, 89, 6, 60.550000000000004)</notas>
                 </Estudiante>
-                <Estudiante carne='2020025923'>
-                        <nombre>MarÃ­aSolanoDÃ­az</nombre>
-                        <genero>True</genero>
-                        <correo>msolano5923@estudiantec.cr</correo>
-                        <notas>(84, 71, 42, 68.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2020027894'>
-                        <nombre>JosÃ©NavarroMora</nombre>
-                        <genero>True</genero>
-                        <correo>jnavarro7894@estudiantec.cr</correo>
-                        <notas>(67, 34, 8, 38.15)</notas>
-                </Estudiante>
-                <Estudiante carne='2020034234'>
-                        <nombre>CarlosAcostaVargas</nombre>
-                        <genero>True</genero>
-                        <correo>cacosta4234@estudiantec.cr</correo>
-                        <notas>(7, 73, 11, 31.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2020040988'>
-                        <nombre>GabrielaSolanoPÃ©rez</nombre>
-                        <genero>True</genero>
-                        <correo>gsolano0988@estudiantec.cr</correo>
-                        <notas>(10, 28, 18, 19.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2020052039'>
-                        <nombre>ElenaFloresVargas</nombre>
+                <Estudiante carne='2022054888'>
+                        <nombre>DanielGómezChaves</nombre>
                         <genero>False</genero>
-                        <correo>eflores2039@estudiantec.cr</correo>
-                        <notas>(74, 52, 25, 52.849999999999994)</notas>
+                        <correo>dgómez4888@estudiantec.cr</correo>
+                        <notas>(23, 98, 5, 44.099999999999994)</notas>
                 </Estudiante>
-                <Estudiante carne='2020010362'>
-                        <nombre>ValeriaNavarroChaves</nombre>
+                <Estudiante carne='2022047363'>
+                        <nombre>MiguelMoraMora</nombre>
+                        <genero>True</genero>
+                        <correo>mmora7363@estudiantec.cr</correo>
+                        <notas>(89, 32, 83, 71.39999999999999)</notas>
+                </Estudiante>
+                <Estudiante carne='2022031109'>
+                        <nombre>LauraGonzálezTorres</nombre>
+                        <genero>True</genero>
+                        <correo>lgonzález1109@estudiantec.cr</correo>
+                        <notas>(34, 58, 1, 32.550000000000004)</notas>
+                </Estudiante>
+                <Estudiante carne='2022062629'>
+                        <nombre>PedroMoralesRojas</nombre>
+                        <genero>True</genero>
+                        <correo>pmorales2629@estudiantec.cr</correo>
+                        <notas>(40, 16, 37, 32.55)</notas>
+                </Estudiante>
+                <Estudiante carne='2022026116'>
+                        <nombre>LauraCastroPérez</nombre>
                         <genero>False</genero>
-                        <correo>vnavarro0362@estudiantec.cr</correo>
-                        <notas>(68, 74, 37, 62.650000000000006)</notas>
+                        <correo>lcastro6116@estudiantec.cr</correo>
+                        <notas>(100, 10, 8, 41.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2020044664'>
-                        <nombre>DanielRodrÃ­guezDÃ­az</nombre>
+                <Estudiante carne='2022062001'>
+                        <nombre>FernandoRojasRivera</nombre>
                         <genero>False</genero>
-                        <correo>drodrã­guez4664@estudiantec.cr</correo>
-                        <notas>(73, 2, 16, 31.85)</notas>
+                        <correo>frojas2001@estudiantec.cr</correo>
+                        <notas>(31, 74, 59, 57.4)</notas>
                 </Estudiante>
-                <Estudiante carne='2020014454'>
-                        <nombre>LauraRamÃ­rezDÃ­az</nombre>
-                        <genero>True</genero>
-                        <correo>lramã­rez4454@estudiantec.cr</correo>
-                        <notas>(85, 40, 24, 52.15)</notas>
-                </Estudiante>
-                <Estudiante carne='2020023778'>
-                        <nombre>JosÃ©RamÃ­rezAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>jramã­rez3778@estudiantec.cr</correo>
-                        <notas>(39, 39, 59, 47.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2020061045'>
-                        <nombre>ValeriaDÃ­azRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>vdã­az1045@estudiantec.cr</correo>
-                        <notas>(33, 26, 41, 35.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2020044518'>
-                        <nombre>PaulaChavesAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>pchaves4518@estudiantec.cr</correo>
-                        <notas>(26, 56, 55, 47.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2020063736'>
-                        <nombre>MarÃ­aAcostaMorales</nombre>
-                        <genero>True</genero>
-                        <correo>macosta3736@estudiantec.cr</correo>
-                        <notas>(68, 44, 57, 59.150000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2020012515'>
-                        <nombre>LuisPÃ©rezMorales</nombre>
-                        <genero>False</genero>
-                        <correo>lpã©rez2515@estudiantec.cr</correo>
-                        <notas>(69, 25, 97, 66.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2020030922'>
-                        <nombre>SofÃ­aRojasMora</nombre>
-                        <genero>True</genero>
-                        <correo>srojas0922@estudiantec.cr</correo>
-                        <notas>(77, 41, 21, 48.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2020058798'>
-                        <nombre>FernandoFloresSÃ¡nchez</nombre>
-                        <genero>True</genero>
-                        <correo>fflores8798@estudiantec.cr</correo>
-                        <notas>(95, 33, 78, 72.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2020042207'>
-                        <nombre>AnaRamÃ­rezMora</nombre>
-                        <genero>False</genero>
-                        <correo>aramã­rez2207@estudiantec.cr</correo>
-                        <notas>(7, 97, 22, 44.10000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2020020430'>
-                        <nombre>PedroRiveraDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>privera0430@estudiantec.cr</correo>
-                        <notas>(93, 75, 64, 81.19999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2020059740'>
-                        <nombre>LauraNavarroRojas</nombre>
-                        <genero>True</genero>
-                        <correo>lnavarro9740@estudiantec.cr</correo>
-                        <notas>(91, 63, 81, 82.25)</notas>
-                </Estudiante>
-        </Generacion>
-        <Generacion anno='2021'>
-                <Estudiante carne='2021049446'>
-                        <nombre>MariaNealyReid</nombre>
-                        <genero>False</genero>
-                        <correo>mnealy9446@estudiantec.cr</correo>
-                        <notas>(92, 81, 68, 84.35000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2021051270'>
-                        <nombre>SimonMcfallMetcalf</nombre>
-                        <genero>True</genero>
-                        <correo>smcfall1270@estudiantec.cr</correo>
-                        <notas>(50, 19, 77, 51.099999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2021027460'>
-                        <nombre>LarryWhiteBillups</nombre>
-                        <genero>True</genero>
-                        <correo>lwhite7460@estudiantec.cr</correo>
-                        <notas>(35, 94, 25, 53.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2021037990'>
-                        <nombre>MelvinFitzgibbonSands</nombre>
-                        <genero>True</genero>
-                        <correo>mfitzgibbon7990@estudiantec.cr</correo>
-                        <notas>(38, 56, 11, 36.75000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2021061812'>
-                        <nombre>RobertDrewniakMartinez</nombre>
-                        <genero>True</genero>
-                        <correo>rdrewniak1812@estudiantec.cr</correo>
-                        <notas>(54, 8, 91, 53.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2021022490'>
-                        <nombre>JuanitaWachsmanStelk</nombre>
-                        <genero>False</genero>
-                        <correo>jwachsman2490@estudiantec.cr</correo>
-                        <notas>(86, 78, 72, 82.60000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2021065462'>
-                        <nombre>HarryMartinBrice</nombre>
-                        <genero>True</genero>
-                        <correo>hmartin5462@estudiantec.cr</correo>
-                        <notas>(10, 75, 30, 40.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2021053845'>
-                        <nombre>PatriciaPatelJones</nombre>
-                        <genero>False</genero>
-                        <correo>ppatel3845@estudiantec.cr</correo>
-                        <notas>(93, 36, 70, 69.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2021060620'>
+                <Estudiante carne='2022026048'>
                         <nombre>MiguelRiveraMorales</nombre>
                         <genero>True</genero>
-                        <correo>mrivera0620@estudiantec.cr</correo>
-                        <notas>(37, 26, 15, 27.299999999999997)</notas>
+                        <correo>mrivera6048@estudiantec.cr</correo>
+                        <notas>(86, 56, 32, 60.900000000000006)</notas>
                 </Estudiante>
-                <Estudiante carne='2021025716'>
-                        <nombre>ManuelRiveraAcosta</nombre>
-                        <genero>False</genero>
-                        <correo>mrivera5716@estudiantec.cr</correo>
-                        <notas>(50, 82, 78, 73.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2021037165'>
-                        <nombre>ManuelFloresNavarro</nombre>
+                <Estudiante carne='2022041935'>
+                        <nombre>MiguelMoralesVargas</nombre>
                         <genero>True</genero>
-                        <correo>mflores7165@estudiantec.cr</correo>
-                        <notas>(62, 60, 72, 67.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2021039774'>
-                        <nombre>LucÃ­aNavarroGÃ³mez</nombre>
-                        <genero>True</genero>
-                        <correo>lnavarro9774@estudiantec.cr</correo>
-                        <notas>(15, 6, 22, 15.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2021039906'>
-                        <nombre>PedroVargasMartÃ­nez</nombre>
-                        <genero>False</genero>
-                        <correo>pvargas9906@estudiantec.cr</correo>
-                        <notas>(87, 79, 90, 89.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2021064360'>
-                        <nombre>ManuelRiveraMorales</nombre>
-                        <genero>False</genero>
-                        <correo>mrivera4360@estudiantec.cr</correo>
-                        <notas>(28, 35, 62, 43.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2021035347'>
-                        <nombre>GabrielaVargasMora</nombre>
-                        <genero>False</genero>
-                        <correo>gvargas5347@estudiantec.cr</correo>
-                        <notas>(35, 24, 85, 50.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2021063292'>
-                        <nombre>LuisCastroRivera</nombre>
-                        <genero>True</genero>
-                        <correo>lcastro3292@estudiantec.cr</correo>
-                        <notas>(23, 76, 73, 60.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2021021717'>
-                        <nombre>PaulaChavesRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>pchaves1717@estudiantec.cr</correo>
-                        <notas>(97, 57, 15, 59.150000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2021043524'>
-                        <nombre>JosÃ©ChavesDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>jchaves3524@estudiantec.cr</correo>
-                        <notas>(39, 81, 17, 47.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2021027990'>
-                        <nombre>LauraNavarroMorales</nombre>
-                        <genero>True</genero>
-                        <correo>lnavarro7990@estudiantec.cr</correo>
-                        <notas>(38, 94, 42, 60.900000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2021023906'>
-                        <nombre>AndrÃ©sVargasCastro</nombre>
-                        <genero>False</genero>
-                        <correo>avargas3906@estudiantec.cr</correo>
-                        <notas>(14, 78, 7, 34.650000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2021045524'>
-                        <nombre>JosÃ©ChavesVargas</nombre>
-                        <genero>False</genero>
-                        <correo>jchaves5524@estudiantec.cr</correo>
-                        <notas>(90, 14, 97, 70.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2021029153'>
-                        <nombre>LauraTorresMorales</nombre>
-                        <genero>True</genero>
-                        <correo>ltorres9153@estudiantec.cr</correo>
-                        <notas>(36, 100, 86, 77.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2021047270'>
-                        <nombre>LucÃ­aRojasTorres</nombre>
-                        <genero>True</genero>
-                        <correo>lrojas7270@estudiantec.cr</correo>
-                        <notas>(62, 59, 69, 66.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2021039234'>
-                        <nombre>MarÃ­aMoraPÃ©rez</nombre>
-                        <genero>True</genero>
-                        <correo>mmora9234@estudiantec.cr</correo>
-                        <notas>(52, 65, 48, 57.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2021049074'>
-                        <nombre>LucÃ­aVargasRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>lvargas9074@estudiantec.cr</correo>
-                        <notas>(83, 76, 59, 76.30000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2021019158'>
-                        <nombre>FernandoGÃ³mezRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>fgã³mez9158@estudiantec.cr</correo>
-                        <notas>(6, 100, 32, 48.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2021027533'>
-                        <nombre>CarlosMartÃ­nezGonzÃ¡lez</nombre>
-                        <genero>False</genero>
-                        <correo>cmartã­nez7533@estudiantec.cr</correo>
-                        <notas>(65, 41, 34, 49.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2021028581'>
-                        <nombre>JorgeMartÃ­nezRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>jmartã­nez8581@estudiantec.cr</correo>
-                        <notas>(60, 46, 7, 39.550000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2021014947'>
-                        <nombre>DanielNavarroRojas</nombre>
-                        <genero>False</genero>
-                        <correo>dnavarro4947@estudiantec.cr</correo>
-                        <notas>(45, 5, 20, 24.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2021013784'>
-                        <nombre>ManuelSolanoRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>msolano3784@estudiantec.cr</correo>
-                        <notas>(35, 86, 39, 56.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2021026250'>
-                        <nombre>SofÃ­aGonzÃ¡lezRivera</nombre>
-                        <genero>True</genero>
-                        <correo>sgonzã¡lez6250@estudiantec.cr</correo>
-                        <notas>(45, 31, 68, 50.400000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2021059135'>
-                        <nombre>JosÃ©RojasMorales</nombre>
-                        <genero>False</genero>
-                        <correo>jrojas9135@estudiantec.cr</correo>
-                        <notas>(47, 55, 95, 68.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2021035901'>
-                        <nombre>AnaPÃ©rezRivera</nombre>
-                        <genero>False</genero>
-                        <correo>apã©rez5901@estudiantec.cr</correo>
-                        <notas>(68, 33, 15, 40.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2021045352'>
-                        <nombre>LauraRamÃ­rezTorres</nombre>
-                        <genero>True</genero>
-                        <correo>lramã­rez5352@estudiantec.cr</correo>
-                        <notas>(33, 18, 58, 38.150000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2021056966'>
-                        <nombre>GabrielaMoralesMora</nombre>
-                        <genero>False</genero>
-                        <correo>gmorales6966@estudiantec.cr</correo>
-                        <notas>(3, 12, 11, 9.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2021047707'>
-                        <nombre>CarlosRodrÃ­guezSÃ¡nchez</nombre>
-                        <genero>True</genero>
-                        <correo>crodrã­guez7707@estudiantec.cr</correo>
-                        <notas>(75, 58, 99, 81.19999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2021041198'>
-                        <nombre>AndrÃ©sRodrÃ­guezPÃ©rez</nombre>
-                        <genero>False</genero>
-                        <correo>arodrã­guez1198@estudiantec.cr</correo>
-                        <notas>(32, 30, 29, 31.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2021038451'>
-                        <nombre>ManuelRodrÃ­guezMorales</nombre>
-                        <genero>True</genero>
-                        <correo>mrodrã­guez8451@estudiantec.cr</correo>
-                        <notas>(99, 79, 13, 66.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2021025182'>
-                        <nombre>CarlosTorresRojas</nombre>
-                        <genero>False</genero>
-                        <correo>ctorres5182@estudiantec.cr</correo>
-                        <notas>(96, 33, 3, 46.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2021037581'>
-                        <nombre>CamilaFloresDÃ­az</nombre>
-                        <genero>True</genero>
-                        <correo>cflores7581@estudiantec.cr</correo>
-                        <notas>(69, 85, 31, 64.75)</notas>
-                </Estudiante>
-        </Generacion>
-        <Generacion anno='2022'>
-                <Estudiante carne='2022018039'>
-                        <nombre>TysonEllenderScott</nombre>
-                        <genero>True</genero>
-                        <correo>tellender8039@estudiantec.cr</correo>
-                        <notas>(54, 59, 86, 69.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2022044004'>
-                        <nombre>MarthaToelkeSato</nombre>
-                        <genero>False</genero>
-                        <correo>mtoelke4004@estudiantec.cr</correo>
-                        <notas>(71, 58, 73, 70.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027800'>
-                        <nombre>NeilHerringMckemie</nombre>
-                        <genero>True</genero>
-                        <correo>nherring7800@estudiantec.cr</correo>
-                        <notas>(68, 49, 16, 46.550000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2022053674'>
-                        <nombre>GladysSandersJones</nombre>
-                        <genero>False</genero>
-                        <correo>gsanders3674@estudiantec.cr</correo>
-                        <notas>(56, 50, 17, 43.050000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2022042401'>
-                        <nombre>ErnestGreerJenkins</nombre>
-                        <genero>True</genero>
-                        <correo>egreer2401@estudiantec.cr</correo>
-                        <notas>(10, 72, 23, 36.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2022066718'>
-                        <nombre>BradleyHolmesKlarich</nombre>
-                        <genero>True</genero>
-                        <correo>bholmes6718@estudiantec.cr</correo>
-                        <notas>(96, 10, 17, 43.050000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2022017154'>
-                        <nombre>JaniceMurphyHazel</nombre>
-                        <genero>False</genero>
-                        <correo>jmurphy7154@estudiantec.cr</correo>
-                        <notas>(8, 50, 48, 37.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027416'>
-                        <nombre>WayneJamesLindsay</nombre>
-                        <genero>True</genero>
-                        <correo>wjames7416@estudiantec.cr</correo>
-                        <notas>(85, 10, 84, 62.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2022060813'>
-                        <nombre>HugoTorresArredondo</nombre>
-                        <genero>True</genero>
-                        <correo>htorres0813@estudiantec.cr</correo>
-                        <notas>(59, 93, 25, 61.949999999999996)</notas>
-                </Estudiante>
-                <Estudiante carne='2022051176'>
-                        <nombre>CecileMcswainFord</nombre>
-                        <genero>False</genero>
-                        <correo>cmcswain1176@estudiantec.cr</correo>
-                        <notas>(45, 11, 69, 43.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027806'>
-                        <nombre>ArmidaBarlageWalker</nombre>
-                        <genero>False</genero>
-                        <correo>abarlage7806@estudiantec.cr</correo>
-                        <notas>(47, 48, 85, 63.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2022067595'>
-                        <nombre>MatthewMageeSibley</nombre>
-                        <genero>True</genero>
-                        <correo>mmagee7595@estudiantec.cr</correo>
-                        <notas>(66, 63, 90, 76.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2022063842'>
-                        <nombre>DeborahMccuneKepner</nombre>
-                        <genero>False</genero>
-                        <correo>dmccune3842@estudiantec.cr</correo>
-                        <notas>(76, 4, 23, 36.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2022053959'>
-                        <nombre>JiModzelewskiCastle</nombre>
-                        <genero>False</genero>
-                        <correo>jmodzelewski3959@estudiantec.cr</correo>
-                        <notas>(76, 18, 70, 57.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2022040401'>
-                        <nombre>GabrielaSolanoRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>gsolano0401@estudiantec.cr</correo>
-                        <notas>(57, 71, 93, 77.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2022067062'>
-                        <nombre>PedroGonzÃ¡lezRivera</nombre>
-                        <genero>False</genero>
-                        <correo>pgonzã¡lez7062@estudiantec.cr</correo>
-                        <notas>(80, 33, 72, 64.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2022020531'>
-                        <nombre>PaulaCastroChaves</nombre>
-                        <genero>False</genero>
-                        <correo>pcastro0531@estudiantec.cr</correo>
-                        <notas>(68, 39, 85, 67.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2022018301'>
-                        <nombre>ElenaMartÃ­nezDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>emartã­nez8301@estudiantec.cr</correo>
-                        <notas>(34, 70, 86, 66.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027949'>
-                        <nombre>AndrÃ©sSÃ¡nchezNavarro</nombre>
-                        <genero>True</genero>
-                        <correo>asã¡nchez7949@estudiantec.cr</correo>
-                        <notas>(71, 18, 71, 56.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2022011882'>
-                        <nombre>SofÃ­aSÃ¡nchezSÃ¡nchez</nombre>
-                        <genero>True</genero>
-                        <correo>ssã¡nchez1882@estudiantec.cr</correo>
-                        <notas>(20, 40, 5, 22.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2022019890'>
-                        <nombre>ManuelChavesSolano</nombre>
-                        <genero>True</genero>
-                        <correo>mchaves9890@estudiantec.cr</correo>
-                        <notas>(66, 32, 10, 37.8)</notas>
-                </Estudiante>
-                <Estudiante carne='2022048913'>
-                        <nombre>LauraGonzÃ¡lezTorres</nombre>
-                        <genero>True</genero>
-                        <correo>lgonzã¡lez8913@estudiantec.cr</correo>
-                        <notas>(79, 58, 3, 49.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2022056794'>
-                        <nombre>AndrÃ©sMartÃ­nezRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>amartã­nez6794@estudiantec.cr</correo>
-                        <notas>(68, 72, 65, 71.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2022014217'>
-                        <nombre>FernandoVargasRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>fvargas4217@estudiantec.cr</correo>
-                        <notas>(6, 48, 23, 26.950000000000003)</notas>
-                </Estudiante>
-                <Estudiante carne='2022043299'>
-                        <nombre>GabrielaAcostaTorres</nombre>
-                        <genero>True</genero>
-                        <correo>gacosta3299@estudiantec.cr</correo>
-                        <notas>(82, 28, 7, 40.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2022042273'>
-                        <nombre>PedroNavarroFlores</nombre>
-                        <genero>False</genero>
-                        <correo>pnavarro2273@estudiantec.cr</correo>
-                        <notas>(61, 68, 45, 60.900000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2022023466'>
-                        <nombre>SofÃ­aNavarroMorales</nombre>
-                        <genero>True</genero>
-                        <correo>snavarro3466@estudiantec.cr</correo>
-                        <notas>(31, 38, 83, 53.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027369'>
-                        <nombre>LauraCastroPÃ©rez</nombre>
-                        <genero>False</genero>
-                        <correo>lcastro7369@estudiantec.cr</correo>
-                        <notas>(37, 12, 41, 31.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2022027307'>
-                        <nombre>LuisRamÃ­rezAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>lramã­rez7307@estudiantec.cr</correo>
-                        <notas>(39, 30, 57, 44.099999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2022041575'>
-                        <nombre>DanielChavesFlores</nombre>
-                        <genero>True</genero>
-                        <correo>dchaves1575@estudiantec.cr</correo>
-                        <notas>(27, 22, 91, 49.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2022014085'>
-                        <nombre>DanielMoralesRivera</nombre>
-                        <genero>True</genero>
-                        <correo>dmorales4085@estudiantec.cr</correo>
-                        <notas>(17, 82, 45, 50.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2022017121'>
-                        <nombre>MarÃ­aSolanoRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>msolano7121@estudiantec.cr</correo>
-                        <notas>(98, 64, 28, 66.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2022052944'>
-                        <nombre>FernandoPÃ©rezMartÃ­nez</nombre>
-                        <genero>True</genero>
-                        <correo>fpã©rez2944@estudiantec.cr</correo>
-                        <notas>(72, 61, 60, 67.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2022042377'>
-                        <nombre>CarlosAcostaCastro</nombre>
-                        <genero>True</genero>
-                        <correo>cacosta2377@estudiantec.cr</correo>
-                        <notas>(54, 26, 13, 32.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2022022735'>
-                        <nombre>ElenaGÃ³mezDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>egã³mez2735@estudiantec.cr</correo>
-                        <notas>(79, 90, 34, 71.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2022039778'>
-                        <nombre>ManuelSÃ¡nchezAcosta</nombre>
-                        <genero>False</genero>
-                        <correo>msã¡nchez9778@estudiantec.cr</correo>
-                        <notas>(64, 52, 71, 65.44999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2022011251'>
-                        <nombre>CarlosVargasRivera</nombre>
-                        <genero>True</genero>
-                        <correo>cvargas1251@estudiantec.cr</correo>
-                        <notas>(38, 90, 36, 57.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2022059486'>
-                        <nombre>FernandoFloresMartÃ­nez</nombre>
-                        <genero>True</genero>
-                        <correo>fflores9486@estudiantec.cr</correo>
-                        <notas>(6, 26, 3, 12.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2022026593'>
-                        <nombre>LuisRodrÃ­guezPÃ©rez</nombre>
-                        <genero>False</genero>
-                        <correo>lrodrã­guez6593@estudiantec.cr</correo>
-                        <notas>(94, 51, 7, 53.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2022032051'>
-                        <nombre>JosÃ©TorresMartÃ­nez</nombre>
-                        <genero>False</genero>
-                        <correo>jtorres2051@estudiantec.cr</correo>
-                        <notas>(88, 18, 65, 59.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2022049209'>
-                        <nombre>LuisNavarroChaves</nombre>
-                        <genero>False</genero>
-                        <correo>lnavarro9209@estudiantec.cr</correo>
-                        <notas>(9, 94, 94, 68.94999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2022051311'>
-                        <nombre>AnaMoraNavarro</nombre>
-                        <genero>False</genero>
-                        <correo>amora1311@estudiantec.cr</correo>
-                        <notas>(4, 63, 41, 37.8)</notas>
+                        <correo>mmorales1935@estudiantec.cr</correo>
+                        <notas>(5, 74, 63, 49.7)</notas>
                 </Estudiante>
         </Generacion>
         <Generacion anno='2023'>
-                <Estudiante carne='2023059321'>
-                        <nombre>AliceWillardMartinez</nombre>
-                        <genero>False</genero>
-                        <correo>awillard9321@estudiantec.cr</correo>
-                        <notas>(15, 83, 73, 59.849999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2023045529'>
-                        <nombre>LeonardLopezMartin</nombre>
+                <Estudiante carne='2023050047'>
+                        <nombre>ShelbyAvilaMeyer</nombre>
                         <genero>True</genero>
-                        <correo>llopez5529@estudiantec.cr</correo>
-                        <notas>(56, 81, 40, 61.95)</notas>
+                        <correo>savila0047@estudiantec.cr</correo>
+                        <notas>(89, 74, 17, 63.0)</notas>
                 </Estudiante>
-                <Estudiante carne='2023050743'>
-                        <nombre>KarenAriasBohl</nombre>
-                        <genero>False</genero>
-                        <correo>karias0743@estudiantec.cr</correo>
-                        <notas>(29, 43, 3, 26.250000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2023063244'>
-                        <nombre>MarielZockleinCroteau</nombre>
-                        <genero>False</genero>
-                        <correo>mzocklein3244@estudiantec.cr</correo>
-                        <notas>(46, 57, 12, 40.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2023043143'>
-                        <nombre>ChristopherScovelDavidson</nombre>
+                <Estudiante carne='2023014545'>
+                        <nombre>DavidMadeiraJohnson</nombre>
                         <genero>True</genero>
-                        <correo>cscovel3143@estudiantec.cr</correo>
-                        <notas>(17, 42, 20, 27.65)</notas>
+                        <correo>dmadeira4545@estudiantec.cr</correo>
+                        <notas>(96, 76, 14, 65.10000000000001)</notas>
                 </Estudiante>
-                <Estudiante carne='2023040069'>
-                        <nombre>TammyJonesLong</nombre>
+                <Estudiante carne='2023030033'>
+                        <nombre>AndrésSánchezMorales</nombre>
                         <genero>False</genero>
-                        <correo>tjones0069@estudiantec.cr</correo>
-                        <notas>(90, 84, 50, 78.4)</notas>
+                        <correo>asánchez0033@estudiantec.cr</correo>
+                        <notas>(24, 34, 14, 25.200000000000003)</notas>
                 </Estudiante>
-                <Estudiante carne='2023058367'>
-                        <nombre>VirginiaOshiroPitts</nombre>
+                <Estudiante carne='2023045183'>
+                        <nombre>LuisNavarroChaves</nombre>
                         <genero>False</genero>
-                        <correo>voshiro8367@estudiantec.cr</correo>
-                        <notas>(12, 92, 17, 42.35000000000001)</notas>
+                        <correo>lnavarro5183@estudiantec.cr</correo>
+                        <notas>(55, 90, 53, 69.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2023050852'>
-                        <nombre>MaryWalzFinklea</nombre>
-                        <genero>False</genero>
-                        <correo>mwalz0852@estudiantec.cr</correo>
-                        <notas>(27, 51, 70, 51.8)</notas>
-                </Estudiante>
-                <Estudiante carne='2023022827'>
-                        <nombre>JamesBaileyMcpherson</nombre>
+                <Estudiante carne='2023044406'>
+                        <nombre>MaríaSolanoGómez</nombre>
                         <genero>True</genero>
-                        <correo>jbailey2827@estudiantec.cr</correo>
-                        <notas>(54, 70, 60, 64.4)</notas>
+                        <correo>msolano4406@estudiantec.cr</correo>
+                        <notas>(27, 88, 92, 72.45)</notas>
                 </Estudiante>
-                <Estudiante carne='2023032837'>
-                        <nombre>ElenaGonzÃ¡lezRivera</nombre>
+                <Estudiante carne='2023045261'>
+                        <nombre>AndrésMoralesFlores</nombre>
                         <genero>False</genero>
-                        <correo>egonzã¡lez2837@estudiantec.cr</correo>
-                        <notas>(53, 17, 91, 56.35)</notas>
+                        <correo>amorales5261@estudiantec.cr</correo>
+                        <notas>(33, 61, 65, 55.650000000000006)</notas>
                 </Estudiante>
-                <Estudiante carne='2023036116'>
-                        <nombre>MiguelChavesMorales</nombre>
-                        <genero>False</genero>
-                        <correo>mchaves6116@estudiantec.cr</correo>
-                        <notas>(60, 66, 16, 49.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2023059397'>
-                        <nombre>FernandoSolanoPÃ©rez</nombre>
+                <Estudiante carne='2023011874'>
+                        <nombre>LauraFloresGonzález</nombre>
                         <genero>True</genero>
-                        <correo>fsolano9397@estudiantec.cr</correo>
-                        <notas>(10, 40, 41, 31.85)</notas>
+                        <correo>lflores1874@estudiantec.cr</correo>
+                        <notas>(57, 14, 54, 43.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2023056981'>
-                        <nombre>ValeriaRiveraRojas</nombre>
+                <Estudiante carne='2023028592'>
+                        <nombre>PedroNavarroTorres</nombre>
+                        <genero>False</genero>
+                        <correo>pnavarro8592@estudiantec.cr</correo>
+                        <notas>(22, 46, 76, 50.400000000000006)</notas>
+                </Estudiante>
+                <Estudiante carne='2023015246'>
+                        <nombre>LauraRamírezFlores</nombre>
                         <genero>True</genero>
-                        <correo>vrivera6981@estudiantec.cr</correo>
-                        <notas>(14, 41, 24, 27.65)</notas>
+                        <correo>lramírez5246@estudiantec.cr</correo>
+                        <notas>(89, 9, 100, 69.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2023047535'>
-                        <nombre>ManuelVargasMartÃ­nez</nombre>
+                <Estudiante carne='2023026183'>
+                        <nombre>GabrielaRodríguezRamírez</nombre>
                         <genero>True</genero>
-                        <correo>mvargas7535@estudiantec.cr</correo>
-                        <notas>(96, 68, 68, 81.2)</notas>
+                        <correo>grodríguez6183@estudiantec.cr</correo>
+                        <notas>(26, 74, 65, 57.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2023064841'>
-                        <nombre>MiguelGonzÃ¡lezChaves</nombre>
-                        <genero>False</genero>
-                        <correo>mgonzã¡lez4841@estudiantec.cr</correo>
-                        <notas>(23, 97, 61, 63.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2023035045'>
-                        <nombre>ValeriaChavesRodrÃ­guez</nombre>
+                <Estudiante carne='2023026901'>
+                        <nombre>LuisPérezCastro</nombre>
                         <genero>True</genero>
-                        <correo>vchaves5045@estudiantec.cr</correo>
-                        <notas>(93, 12, 11, 40.6)</notas>
+                        <correo>lpérez6901@estudiantec.cr</correo>
+                        <notas>(60, 58, 31, 52.15)</notas>
                 </Estudiante>
-                <Estudiante carne='2023059687'>
-                        <nombre>ManuelPÃ©rezPÃ©rez</nombre>
+                <Estudiante carne='2023063947'>
+                        <nombre>DanielPérezCastro</nombre>
                         <genero>False</genero>
-                        <correo>mpã©rez9687@estudiantec.cr</correo>
-                        <notas>(75, 90, 57, 77.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2023032879'>
-                        <nombre>ManuelNavarroRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>mnavarro2879@estudiantec.cr</correo>
-                        <notas>(46, 27, 98, 59.849999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2023027593'>
-                        <nombre>LauraMartÃ­nezCastro</nombre>
-                        <genero>False</genero>
-                        <correo>lmartã­nez7593@estudiantec.cr</correo>
-                        <notas>(25, 59, 11, 33.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2023053067'>
-                        <nombre>CamilaRamÃ­rezRivera</nombre>
-                        <genero>True</genero>
-                        <correo>cramã­rez3067@estudiantec.cr</correo>
-                        <notas>(85, 31, 97, 74.55000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2023044894'>
-                        <nombre>CamilaAcostaPÃ©rez</nombre>
-                        <genero>True</genero>
-                        <correo>cacosta4894@estudiantec.cr</correo>
-                        <notas>(86, 10, 92, 65.80000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2023067620'>
-                        <nombre>PedroSolanoRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>psolano7620@estudiantec.cr</correo>
-                        <notas>(71, 87, 60, 76.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2023040105'>
-                        <nombre>JosÃ©SÃ¡nchezSolano</nombre>
-                        <genero>False</genero>
-                        <correo>jsã¡nchez0105@estudiantec.cr</correo>
-                        <notas>(52, 85, 54, 66.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2023050449'>
-                        <nombre>GabrielaCastroCastro</nombre>
-                        <genero>False</genero>
-                        <correo>gcastro0449@estudiantec.cr</correo>
-                        <notas>(66, 23, 62, 52.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2023040286'>
-                        <nombre>FernandoGonzÃ¡lezNavarro</nombre>
-                        <genero>False</genero>
-                        <correo>fgonzã¡lez0286@estudiantec.cr</correo>
-                        <notas>(60, 61, 77, 69.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2023017619'>
-                        <nombre>MiguelTorresRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>mtorres7619@estudiantec.cr</correo>
-                        <notas>(37, 71, 43, 52.849999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2023035308'>
-                        <nombre>ElenaMoralesFlores</nombre>
-                        <genero>True</genero>
-                        <correo>emorales5308@estudiantec.cr</correo>
-                        <notas>(86, 78, 80, 85.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2023056130'>
-                        <nombre>ValeriaCastroRojas</nombre>
-                        <genero>False</genero>
-                        <correo>vcastro6130@estudiantec.cr</correo>
-                        <notas>(67, 80, 86, 81.55000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2023067759'>
-                        <nombre>ValeriaGÃ³mezRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>vgã³mez7759@estudiantec.cr</correo>
-                        <notas>(92, 14, 59, 57.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2023027278'>
-                        <nombre>JorgeCastroAcosta</nombre>
-                        <genero>False</genero>
-                        <correo>jcastro7278@estudiantec.cr</correo>
-                        <notas>(1, 71, 30, 35.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2023034648'>
-                        <nombre>ManuelRiveraNavarro</nombre>
-                        <genero>False</genero>
-                        <correo>mrivera4648@estudiantec.cr</correo>
-                        <notas>(67, 45, 44, 54.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2023065534'>
-                        <nombre>LauraTorresRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>ltorres5534@estudiantec.cr</correo>
-                        <notas>(9, 15, 12, 12.600000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2023038409'>
-                        <nombre>LauraVargasMorales</nombre>
-                        <genero>False</genero>
-                        <correo>lvargas8409@estudiantec.cr</correo>
-                        <notas>(7, 57, 9, 25.549999999999997)</notas>
-                </Estudiante>
-                <Estudiante carne='2023058256'>
-                        <nombre>ManuelNavarroMorales</nombre>
-                        <genero>True</genero>
-                        <correo>mnavarro8256@estudiantec.cr</correo>
-                        <notas>(96, 95, 73, 92.39999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2023018661'>
-                        <nombre>ElenaRojasTorres</nombre>
-                        <genero>False</genero>
-                        <correo>erojas8661@estudiantec.cr</correo>
-                        <notas>(48, 73, 12, 46.550000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2023051742'>
-                        <nombre>JosÃ©MartÃ­nezSolano</nombre>
-                        <genero>False</genero>
-                        <correo>jmartã­nez1742@estudiantec.cr</correo>
-                        <notas>(76, 77, 66, 76.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2023035889'>
-                        <nombre>SofÃ­aRodrÃ­guezRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>srodrã­guez5889@estudiantec.cr</correo>
-                        <notas>(70, 52, 6, 44.800000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2023065715'>
-                        <nombre>ValeriaSÃ¡nchezMorales</nombre>
-                        <genero>False</genero>
-                        <correo>vsã¡nchez5715@estudiantec.cr</correo>
-                        <notas>(77, 85, 12, 60.900000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2023060872'>
-                        <nombre>LauraMartÃ­nezDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>lmartã­nez0872@estudiantec.cr</correo>
-                        <notas>(60, 57, 93, 73.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2023043572'>
-                        <nombre>PaulaFloresMora</nombre>
-                        <genero>True</genero>
-                        <correo>pflores3572@estudiantec.cr</correo>
-                        <notas>(40, 82, 23, 50.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2023016882'>
-                        <nombre>SofÃ­aMoraVargas</nombre>
-                        <genero>False</genero>
-                        <correo>smora6882@estudiantec.cr</correo>
-                        <notas>(84, 59, 37, 63.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2023020843'>
-                        <nombre>FernandoPÃ©rezDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>fpã©rez0843@estudiantec.cr</correo>
-                        <notas>(10, 22, 93, 43.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2023057866'>
-                        <nombre>SofÃ­aMoralesRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>smorales7866@estudiantec.cr</correo>
-                        <notas>(52, 85, 2, 48.650000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2023053225'>
-                        <nombre>LuisNavarroDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>lnavarro3225@estudiantec.cr</correo>
-                        <notas>(62, 81, 74, 75.94999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2023030929'>
-                        <nombre>LauraMoraNavarro</nombre>
-                        <genero>False</genero>
-                        <correo>lmora0929@estudiantec.cr</correo>
-                        <notas>(44, 96, 25, 57.75)</notas>
+                        <correo>dpérez3947@estudiantec.cr</correo>
+                        <notas>(80, 19, 31, 45.5)</notas>
                 </Estudiante>
         </Generacion>
         <Generacion anno='2024'>
-                <Estudiante carne='2024013396'>
-                        <nombre>JakeTorresEllis</nombre>
+                <Estudiante carne='2024063007'>
+                        <nombre>JerryJacksonDiberardino</nombre>
                         <genero>True</genero>
-                        <correo>jtorres3396@estudiantec.cr</correo>
-                        <notas>(29, 37, 14, 28.0)</notas>
+                        <correo>jjackson3007@estudiantec.cr</correo>
+                        <notas>(19, 41, 31, 31.85)</notas>
                 </Estudiante>
-                <Estudiante carne='2024019021'>
-                        <nombre>MarvinAyerBaker</nombre>
-                        <genero>True</genero>
-                        <correo>mayer9021@estudiantec.cr</correo>
-                        <notas>(14, 82, 87, 64.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2024061030'>
-                        <nombre>AndrewToddBonifacio</nombre>
-                        <genero>True</genero>
-                        <correo>atodd1030@estudiantec.cr</correo>
-                        <notas>(6, 88, 47, 49.349999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2024022120'>
-                        <nombre>JohnRojaOlson</nombre>
-                        <genero>True</genero>
-                        <correo>jroja2120@estudiantec.cr</correo>
-                        <notas>(53, 90, 43, 65.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2024038202'>
-                        <nombre>MaudHavensBaker</nombre>
+                <Estudiante carne='2024022851'>
+                        <nombre>JoséTorresMartínez</nombre>
                         <genero>False</genero>
-                        <correo>mhavens8202@estudiantec.cr</correo>
-                        <notas>(20, 20, 24, 22.4)</notas>
+                        <correo>jtorres2851@estudiantec.cr</correo>
+                        <notas>(36, 4, 36, 26.6)</notas>
                 </Estudiante>
-                <Estudiante carne='2024038754'>
-                        <nombre>CherylShallenbergerMeyer</nombre>
+                <Estudiante carne='2024027538'>
+                        <nombre>AnaSánchezMartínez</nombre>
+                        <genero>True</genero>
+                        <correo>asánchez7538@estudiantec.cr</correo>
+                        <notas>(56, 16, 23, 33.25)</notas>
+                </Estudiante>
+                <Estudiante carne='2024056832'>
+                        <nombre>ManuelRodríguezMorales</nombre>
+                        <genero>True</genero>
+                        <correo>mrodríguez6832@estudiantec.cr</correo>
+                        <notas>(93, 94, 19, 72.1)</notas>
+                </Estudiante>
+                <Estudiante carne='2024036499'>
+                        <nombre>AndrésMoraDíaz</nombre>
                         <genero>False</genero>
-                        <correo>cshallenberger8754@estudiantec.cr</correo>
-                        <notas>(18, 68, 70, 54.6)</notas>
+                        <correo>amora6499@estudiantec.cr</correo>
+                        <notas>(60, 94, 66, 77.0)</notas>
                 </Estudiante>
-                <Estudiante carne='2024035092'>
-                        <nombre>KennethDegnanReyes</nombre>
+                <Estudiante carne='2024020441'>
+                        <nombre>AndrésNavarroRamírez</nombre>
                         <genero>True</genero>
-                        <correo>kdegnan5092@estudiantec.cr</correo>
-                        <notas>(34, 45, 4, 29.049999999999997)</notas>
+                        <correo>anavarro0441@estudiantec.cr</correo>
+                        <notas>(30, 76, 70, 61.6)</notas>
                 </Estudiante>
-                <Estudiante carne='2024017783'>
-                        <nombre>EltonMooreSpeece</nombre>
-                        <genero>True</genero>
-                        <correo>emoore7783@estudiantec.cr</correo>
-                        <notas>(16, 75, 7, 34.300000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2024062260'>
-                        <nombre>DanielRiveraRamÃ­rez</nombre>
+                <Estudiante carne='2024026401'>
+                        <nombre>PaulaCastroChaves</nombre>
                         <genero>False</genero>
-                        <correo>drivera2260@estudiantec.cr</correo>
-                        <notas>(38, 98, 23, 55.64999999999999)</notas>
+                        <correo>pcastro6401@estudiantec.cr</correo>
+                        <notas>(79, 15, 6, 35.0)</notas>
                 </Estudiante>
-                <Estudiante carne='2024010248'>
-                        <nombre>AndrÃ©sMoraRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>amora0248@estudiantec.cr</correo>
-                        <notas>(97, 33, 81, 73.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2024023128'>
-                        <nombre>SofÃ­aMoralesSÃ¡nchez</nombre>
-                        <genero>True</genero>
-                        <correo>smorales3128@estudiantec.cr</correo>
-                        <notas>(47, 5, 48, 35.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2024055155'>
-                        <nombre>LucÃ­aRiveraCastro</nombre>
+                <Estudiante carne='2024013649'>
+                        <nombre>JoséTorresMartínez</nombre>
                         <genero>False</genero>
-                        <correo>lrivera5155@estudiantec.cr</correo>
-                        <notas>(20, 16, 75, 38.85)</notas>
+                        <correo>jtorres3649@estudiantec.cr</correo>
+                        <notas>(23, 88, 48, 55.650000000000006)</notas>
                 </Estudiante>
-                <Estudiante carne='2024021517'>
-                        <nombre>PedroMoralesRojas</nombre>
+                <Estudiante carne='2024052447'>
+                        <nombre>ManuelChavesSolano</nombre>
                         <genero>True</genero>
-                        <correo>pmorales1517@estudiantec.cr</correo>
-                        <notas>(83, 81, 98, 91.7)</notas>
+                        <correo>mchaves2447@estudiantec.cr</correo>
+                        <notas>(18, 84, 22, 43.4)</notas>
                 </Estudiante>
-                <Estudiante carne='2024042785'>
-                        <nombre>PedroGÃ³mezVargas</nombre>
-                        <genero>False</genero>
-                        <correo>pgã³mez2785@estudiantec.cr</correo>
-                        <notas>(90, 9, 43, 49.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2024042270'>
-                        <nombre>GabrielaSolanoGÃ³mez</nombre>
+                <Estudiante carne='2024036336'>
+                        <nombre>LucíaMartínezRivera</nombre>
                         <genero>True</genero>
-                        <correo>gsolano2270@estudiantec.cr</correo>
-                        <notas>(24, 45, 90, 55.65)</notas>
+                        <correo>lmartínez6336@estudiantec.cr</correo>
+                        <notas>(68, 10, 60, 48.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2024030583'>
-                        <nombre>LucÃ­aVargasRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>lvargas0583@estudiantec.cr</correo>
-                        <notas>(65, 32, 12, 38.150000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2024057556'>
-                        <nombre>CarlosDÃ­azPÃ©rez</nombre>
+                <Estudiante carne='2024062275'>
+                        <nombre>FernandoGonzálezRamírez</nombre>
                         <genero>True</genero>
-                        <correo>cdã­az7556@estudiantec.cr</correo>
-                        <notas>(7, 13, 77, 33.95)</notas>
+                        <correo>fgonzález2275@estudiantec.cr</correo>
+                        <notas>(35, 99, 41, 61.25)</notas>
                 </Estudiante>
-                <Estudiante carne='2024060360'>
-                        <nombre>MiguelPÃ©rezCastro</nombre>
+                <Estudiante carne='2024015233'>
+                        <nombre>LauraRamírezTorres</nombre>
                         <genero>True</genero>
-                        <correo>mpã©rez0360@estudiantec.cr</correo>
-                        <notas>(65, 36, 83, 64.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2024049418'>
-                        <nombre>CarlosTorresRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>ctorres9418@estudiantec.cr</correo>
-                        <notas>(40, 90, 55, 64.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2024011284'>
-                        <nombre>PaulaPÃ©rezTorres</nombre>
-                        <genero>False</genero>
-                        <correo>ppã©rez1284@estudiantec.cr</correo>
-                        <notas>(78, 88, 75, 84.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2024053002'>
-                        <nombre>FernandoFloresVargas</nombre>
-                        <genero>True</genero>
-                        <correo>fflores3002@estudiantec.cr</correo>
-                        <notas>(14, 78, 39, 45.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2024027667'>
-                        <nombre>ManuelRiveraRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>mrivera7667@estudiantec.cr</correo>
-                        <notas>(45, 24, 96, 57.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2024026871'>
-                        <nombre>PedroDÃ­azMora</nombre>
-                        <genero>False</genero>
-                        <correo>pdã­az6871@estudiantec.cr</correo>
-                        <notas>(16, 9, 70, 33.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2024068492'>
-                        <nombre>JosÃ©AcostaMartÃ­nez</nombre>
-                        <genero>False</genero>
-                        <correo>jacosta8492@estudiantec.cr</correo>
-                        <notas>(76, 72, 96, 85.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2024044725'>
-                        <nombre>MiguelMoraMora</nombre>
-                        <genero>True</genero>
-                        <correo>mmora4725@estudiantec.cr</correo>
-                        <notas>(37, 85, 52, 60.900000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2024052167'>
-                        <nombre>FernandoRojasSolano</nombre>
-                        <genero>False</genero>
-                        <correo>frojas2167@estudiantec.cr</correo>
-                        <notas>(27, 51, 14, 32.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2024044319'>
-                        <nombre>MarÃ­aCastroMartÃ­nez</nombre>
-                        <genero>False</genero>
-                        <correo>mcastro4319@estudiantec.cr</correo>
-                        <notas>(40, 98, 91, 80.15)</notas>
-                </Estudiante>
-                <Estudiante carne='2024026339'>
-                        <nombre>ManuelAcostaFlores</nombre>
-                        <genero>False</genero>
-                        <correo>macosta6339@estudiantec.cr</correo>
-                        <notas>(67, 92, 94, 88.55000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2024063396'>
-                        <nombre>ManuelAcostaSÃ¡nchez</nombre>
-                        <genero>False</genero>
-                        <correo>macosta3396@estudiantec.cr</correo>
-                        <notas>(5, 47, 2, 18.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2024025859'>
-                        <nombre>ManuelRodrÃ­guezFlores</nombre>
-                        <genero>True</genero>
-                        <correo>mrodrã­guez5859@estudiantec.cr</correo>
-                        <notas>(9, 16, 37, 21.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2024068189'>
-                        <nombre>SofÃ­aRiveraRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>srivera8189@estudiantec.cr</correo>
-                        <notas>(83, 35, 85, 71.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2024064673'>
-                        <nombre>AnaSÃ¡nchezMorales</nombre>
-                        <genero>False</genero>
-                        <correo>asã¡nchez4673@estudiantec.cr</correo>
-                        <notas>(22, 80, 86, 65.80000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2024028057'>
-                        <nombre>JorgeRiveraGÃ³mez</nombre>
-                        <genero>True</genero>
-                        <correo>jrivera8057@estudiantec.cr</correo>
-                        <notas>(11, 44, 94, 52.15)</notas>
-                </Estudiante>
-                <Estudiante carne='2024029415'>
-                        <nombre>AnaGÃ³mezGonzÃ¡lez</nombre>
-                        <genero>True</genero>
-                        <correo>agã³mez9415@estudiantec.cr</correo>
-                        <notas>(5, 58, 22, 29.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2024013689'>
-                        <nombre>SofÃ­aSÃ¡nchezRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>ssã¡nchez3689@estudiantec.cr</correo>
-                        <notas>(53, 86, 14, 53.550000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2024025015'>
-                        <nombre>PedroRiveraRivera</nombre>
-                        <genero>True</genero>
-                        <correo>privera5015@estudiantec.cr</correo>
-                        <notas>(94, 61, 99, 88.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2024054039'>
-                        <nombre>FernandoGonzÃ¡lezRamÃ­rez</nombre>
-                        <genero>True</genero>
-                        <correo>fgonzã¡lez4039@estudiantec.cr</correo>
-                        <notas>(33, 58, 19, 38.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2024060912'>
-                        <nombre>DanielRodrÃ­guezRojas</nombre>
-                        <genero>True</genero>
-                        <correo>drodrã­guez0912@estudiantec.cr</correo>
-                        <notas>(96, 76, 88, 91.0)</notas>
-                </Estudiante>
-                <Estudiante carne='2024012247'>
-                        <nombre>CarlosSolanoRodrÃ­guez</nombre>
-                        <genero>True</genero>
-                        <correo>csolano2247@estudiantec.cr</correo>
-                        <notas>(81, 86, 49, 75.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2024032594'>
-                        <nombre>MiguelChavesGÃ³mez</nombre>
-                        <genero>True</genero>
-                        <correo>mchaves2594@estudiantec.cr</correo>
-                        <notas>(27, 40, 67, 46.9)</notas>
+                        <correo>lramírez5233@estudiantec.cr</correo>
+                        <notas>(3, 87, 65, 54.25)</notas>
                 </Estudiante>
         </Generacion>
         <Generacion anno='2025'>
-                <Estudiante carne='2025013355'>
-                        <nombre>GeorgeWalstonSinclair</nombre>
+                <Estudiante carne='2025025821'>
+                        <nombre>LawrenceWilliamsMoore</nombre>
                         <genero>True</genero>
-                        <correo>gwalston3355@estudiantec.cr</correo>
-                        <notas>(76, 49, 7, 46.2)</notas>
+                        <correo>lwilliams5821@estudiantec.cr</correo>
+                        <notas>(30, 100, 92, 77.7)</notas>
                 </Estudiante>
-                <Estudiante carne='2025032768'>
-                        <nombre>DorothyCarltonMerrigan</nombre>
+                <Estudiante carne='2025064865'>
+                        <nombre>DavidNorrisGonzalez</nombre>
+                        <genero>True</genero>
+                        <correo>dnorris4865@estudiantec.cr</correo>
+                        <notas>(58, 23, 79, 56.0)</notas>
+                </Estudiante>
+                <Estudiante carne='2025069853'>
+                        <nombre>JanieCaughlinHood</nombre>
                         <genero>False</genero>
-                        <correo>dcarlton2768@estudiantec.cr</correo>
-                        <notas>(24, 2, 83, 38.15)</notas>
+                        <correo>jcaughlin9853@estudiantec.cr</correo>
+                        <notas>(5, 89, 46, 49.0)</notas>
                 </Estudiante>
-                <Estudiante carne='2025027428'>
-                        <nombre>RayHiggsAdams</nombre>
+                <Estudiante carne='2025024819'>
+                        <nombre>KennethDavisJones</nombre>
                         <genero>True</genero>
-                        <correo>rhiggs7428@estudiantec.cr</correo>
-                        <notas>(42, 93, 86, 77.35)</notas>
+                        <correo>kdavis4819@estudiantec.cr</correo>
+                        <notas>(27, 93, 65, 64.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2025067730'>
-                        <nombre>LeonContrerasMatthew</nombre>
-                        <genero>True</genero>
-                        <correo>lcontreras7730@estudiantec.cr</correo>
-                        <notas>(44, 61, 59, 57.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2025048723'>
-                        <nombre>BulahJacksonHambric</nombre>
+                <Estudiante carne='2025038094'>
+                        <nombre>DonnaOnealTruitt</nombre>
                         <genero>False</genero>
-                        <correo>bjackson8723@estudiantec.cr</correo>
-                        <notas>(31, 51, 92, 60.900000000000006)</notas>
+                        <correo>doneal8094@estudiantec.cr</correo>
+                        <notas>(83, 1, 38, 42.7)</notas>
                 </Estudiante>
-                <Estudiante carne='2025053011'>
-                        <nombre>WillieLarsonSwanson</nombre>
-                        <genero>True</genero>
-                        <correo>wlarson3011@estudiantec.cr</correo>
-                        <notas>(90, 70, 42, 70.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2025017028'>
-                        <nombre>AnthonyBradleyGregson</nombre>
-                        <genero>True</genero>
-                        <correo>abradley7028@estudiantec.cr</correo>
-                        <notas>(57, 23, 94, 60.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2025014016'>
-                        <nombre>MaryHarrellIzquierdo</nombre>
-                        <genero>False</genero>
-                        <correo>mharrell4016@estudiantec.cr</correo>
-                        <notas>(6, 92, 72, 59.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2025047040'>
-                        <nombre>GabrielaPÃ©rezRojas</nombre>
-                        <genero>True</genero>
-                        <correo>gpã©rez7040@estudiantec.cr</correo>
-                        <notas>(30, 91, 20, 49.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2025042406'>
-                        <nombre>PaulaSolanoGonzÃ¡lez</nombre>
-                        <genero>True</genero>
-                        <correo>psolano2406@estudiantec.cr</correo>
-                        <notas>(71, 83, 56, 73.5)</notas>
-                </Estudiante>
-                <Estudiante carne='2025025670'>
-                        <nombre>LuisRodrÃ­guezChaves</nombre>
-                        <genero>True</genero>
-                        <correo>lrodrã­guez5670@estudiantec.cr</correo>
-                        <notas>(29, 79, 26, 46.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2025015636'>
-                        <nombre>FernandoSÃ¡nchezCastro</nombre>
-                        <genero>False</genero>
-                        <correo>fsã¡nchez5636@estudiantec.cr</correo>
-                        <notas>(94, 1, 54, 52.15)</notas>
-                </Estudiante>
-                <Estudiante carne='2025059910'>
-                        <nombre>AnaRiveraRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>arivera9910@estudiantec.cr</correo>
-                        <notas>(2, 75, 25, 35.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2025019293'>
-                        <nombre>ManuelRojasRivera</nombre>
-                        <genero>False</genero>
-                        <correo>mrojas9293@estudiantec.cr</correo>
-                        <notas>(33, 88, 21, 49.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2025063826'>
-                        <nombre>LuisSolanoMorales</nombre>
-                        <genero>False</genero>
-                        <correo>lsolano3826@estudiantec.cr</correo>
-                        <notas>(58, 31, 63, 53.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2025045021'>
-                        <nombre>FernandoChavesGonzÃ¡lez</nombre>
-                        <genero>False</genero>
-                        <correo>fchaves5021@estudiantec.cr</correo>
-                        <notas>(29, 85, 49, 57.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2025069890'>
-                        <nombre>GabrielaCastroGÃ³mez</nombre>
-                        <genero>True</genero>
-                        <correo>gcastro9890@estudiantec.cr</correo>
-                        <notas>(22, 59, 52, 46.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2025053300'>
-                        <nombre>SofÃ­aGÃ³mezGÃ³mez</nombre>
-                        <genero>False</genero>
-                        <correo>sgã³mez3300@estudiantec.cr</correo>
-                        <notas>(85, 53, 88, 79.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2025066497'>
-                        <nombre>PedroNavarroAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>pnavarro6497@estudiantec.cr</correo>
-                        <notas>(69, 25, 24, 41.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2025028506'>
-                        <nombre>MarÃ­aRodrÃ­guezChaves</nombre>
-                        <genero>False</genero>
-                        <correo>mrodrã­guez8506@estudiantec.cr</correo>
-                        <notas>(20, 77, 4, 35.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2025066847'>
-                        <nombre>PedroAcostaNavarro</nombre>
-                        <genero>True</genero>
-                        <correo>pacosta6847@estudiantec.cr</correo>
-                        <notas>(92, 34, 95, 77.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2025048549'>
-                        <nombre>JosÃ©SolanoRivera</nombre>
-                        <genero>False</genero>
-                        <correo>jsolano8549@estudiantec.cr</correo>
-                        <notas>(94, 43, 85, 77.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2025011000'>
-                        <nombre>MiguelGÃ³mezRamÃ­rez</nombre>
-                        <genero>False</genero>
-                        <correo>mgã³mez1000@estudiantec.cr</correo>
-                        <notas>(68, 52, 38, 55.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2025045934'>
-                        <nombre>ValeriaRojasAcosta</nombre>
-                        <genero>True</genero>
-                        <correo>vrojas5934@estudiantec.cr</correo>
-                        <notas>(89, 43, 89, 77.35)</notas>
-                </Estudiante>
-                <Estudiante carne='2025031569'>
-                        <nombre>LucÃ­aMartÃ­nezMorales</nombre>
-                        <genero>True</genero>
-                        <correo>lmartã­nez1569@estudiantec.cr</correo>
-                        <notas>(16, 26, 22, 22.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2025055241'>
-                        <nombre>CarlosDÃ­azChaves</nombre>
-                        <genero>False</genero>
-                        <correo>cdã­az5241@estudiantec.cr</correo>
-                        <notas>(93, 43, 69, 71.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2025045809'>
-                        <nombre>MiguelSÃ¡nchezGonzÃ¡lez</nombre>
-                        <genero>True</genero>
-                        <correo>msã¡nchez5809@estudiantec.cr</correo>
-                        <notas>(28, 91, 66, 64.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2025043673'>
-                        <nombre>CarlosVargasNavarro</nombre>
-                        <genero>False</genero>
-                        <correo>cvargas3673@estudiantec.cr</correo>
-                        <notas>(31, 6, 79, 40.599999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2025046415'>
-                        <nombre>ElenaRamÃ­rezMartÃ­nez</nombre>
-                        <genero>False</genero>
-                        <correo>eramã­rez6415@estudiantec.cr</correo>
-                        <notas>(57, 97, 47, 70.35000000000001)</notas>
-                </Estudiante>
-                <Estudiante carne='2025031278'>
-                        <nombre>ElenaVargasMorales</nombre>
-                        <genero>True</genero>
-                        <correo>evargas1278@estudiantec.cr</correo>
-                        <notas>(28, 80, 13, 42.349999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2025039020'>
-                        <nombre>ElenaMoralesDÃ­az</nombre>
-                        <genero>True</genero>
-                        <correo>emorales9020@estudiantec.cr</correo>
-                        <notas>(43, 88, 56, 65.45)</notas>
-                </Estudiante>
-                <Estudiante carne='2025051434'>
-                        <nombre>ValeriaGonzÃ¡lezTorres</nombre>
-                        <genero>False</genero>
-                        <correo>vgonzã¡lez1434@estudiantec.cr</correo>
-                        <notas>(31, 78, 57, 58.099999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2025013098'>
-                        <nombre>LuisRodrÃ­guezGonzÃ¡lez</nombre>
-                        <genero>False</genero>
-                        <correo>lrodrã­guez3098@estudiantec.cr</correo>
-                        <notas>(31, 74, 46, 52.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2025013408'>
-                        <nombre>SofÃ­aDÃ­azFlores</nombre>
-                        <genero>True</genero>
-                        <correo>sdã­az3408@estudiantec.cr</correo>
-                        <notas>(53, 30, 24, 37.45)</notas>
-                </Estudiante>
-                <Estudiante carne='2025038421'>
-                        <nombre>JorgeSÃ¡nchezMorales</nombre>
-                        <genero>True</genero>
-                        <correo>jsã¡nchez8421@estudiantec.cr</correo>
-                        <notas>(44, 42, 47, 46.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2025046284'>
-                        <nombre>AnaGonzÃ¡lezDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>agonzã¡lez6284@estudiantec.cr</correo>
-                        <notas>(10, 67, 16, 32.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2025049764'>
-                        <nombre>CarlosRojasRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>crojas9764@estudiantec.cr</correo>
-                        <notas>(67, 88, 60, 75.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2025030648'>
-                        <nombre>CamilaRiveraRojas</nombre>
-                        <genero>False</genero>
-                        <correo>crivera0648@estudiantec.cr</correo>
-                        <notas>(14, 66, 94, 60.9)</notas>
-                </Estudiante>
-                <Estudiante carne='2025028687'>
-                        <nombre>PedroSolanoCastro</nombre>
-                        <genero>False</genero>
-                        <correo>psolano8687@estudiantec.cr</correo>
-                        <notas>(62, 16, 45, 43.05)</notas>
-                </Estudiante>
-                <Estudiante carne='2025044840'>
-                        <nombre>AnaTorresCastro</nombre>
-                        <genero>True</genero>
-                        <correo>atorres4840@estudiantec.cr</correo>
-                        <notas>(30, 61, 55, 51.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2025011881'>
-                        <nombre>FernandoNavarroVargas</nombre>
-                        <genero>True</genero>
-                        <correo>fnavarro1881@estudiantec.cr</correo>
-                        <notas>(8, 42, 61, 38.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2025029711'>
-                        <nombre>ValeriaPÃ©rezMorales</nombre>
-                        <genero>True</genero>
-                        <correo>vpã©rez9711@estudiantec.cr</correo>
-                        <notas>(8, 48, 21, 26.950000000000003)</notas>
-                </Estudiante>
-                <Estudiante carne='2025045072'>
-                        <nombre>LucÃ­aRojasDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>lrojas5072@estudiantec.cr</correo>
-                        <notas>(75, 88, 69, 81.19999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2025064690'>
-                        <nombre>ManuelSolanoGÃ³mez</nombre>
-                        <genero>True</genero>
-                        <correo>msolano4690@estudiantec.cr</correo>
-                        <notas>(16, 73, 89, 62.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2025057922'>
-                        <nombre>JosÃ©MartÃ­nezVargas</nombre>
-                        <genero>True</genero>
-                        <correo>jmartã­nez7922@estudiantec.cr</correo>
-                        <notas>(68, 49, 28, 50.75)</notas>
-                </Estudiante>
-        </Generacion>
-        <Generacion anno='2026'>
-                <Estudiante carne='2026054878'>
-                        <nombre>MaryMcfaddenJackson</nombre>
-                        <genero>False</genero>
-                        <correo>mmcfadden4878@estudiantec.cr</correo>
-                        <notas>(65, 48, 98, 73.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2026051185'>
-                        <nombre>PatrickMedinaTownsend</nombre>
-                        <genero>True</genero>
-                        <correo>pmedina1185@estudiantec.cr</correo>
-                        <notas>(100, 88, 8, 68.6)</notas>
-                </Estudiante>
-                <Estudiante carne='2026048625'>
-                        <nombre>RayFavoritoChua</nombre>
-                        <genero>True</genero>
-                        <correo>rfavorito8625@estudiantec.cr</correo>
-                        <notas>(93, 48, 16, 54.949999999999996)</notas>
-                </Estudiante>
-                <Estudiante carne='2026055036'>
-                        <nombre>LuisRojasDÃ­az</nombre>
-                        <genero>True</genero>
-                        <correo>lrojas5036@estudiantec.cr</correo>
-                        <notas>(82, 46, 11, 48.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2026063428'>
-                        <nombre>SofÃ­aTorresSolano</nombre>
-                        <genero>False</genero>
-                        <correo>storres3428@estudiantec.cr</correo>
-                        <notas>(94, 56, 2, 53.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2026019968'>
+                <Estudiante carne='2025017815'>
                         <nombre>CarlosRojasRojas</nombre>
                         <genero>True</genero>
-                        <correo>crojas9968@estudiantec.cr</correo>
-                        <notas>(12, 11, 96, 41.650000000000006)</notas>
+                        <correo>crojas7815@estudiantec.cr</correo>
+                        <notas>(93, 64, 26, 64.05)</notas>
                 </Estudiante>
-                <Estudiante carne='2026042613'>
-                        <nombre>GabrielaGonzÃ¡lezRojas</nombre>
-                        <genero>False</genero>
-                        <correo>ggonzã¡lez2613@estudiantec.cr</correo>
-                        <notas>(75, 18, 14, 37.449999999999996)</notas>
-                </Estudiante>
-                <Estudiante carne='2026039128'>
-                        <nombre>LauraMoralesMorales</nombre>
-                        <genero>False</genero>
-                        <correo>lmorales9128@estudiantec.cr</correo>
-                        <notas>(36, 1, 18, 19.25)</notas>
-                </Estudiante>
-                <Estudiante carne='2026034754'>
-                        <nombre>JosÃ©TorresRivera</nombre>
+                <Estudiante carne='2025028673'>
+                        <nombre>JorgeSánchezCastro</nombre>
                         <genero>True</genero>
-                        <correo>jtorres4754@estudiantec.cr</correo>
-                        <notas>(1, 55, 96, 53.2)</notas>
+                        <correo>jsánchez8673@estudiantec.cr</correo>
+                        <notas>(29, 61, 70, 56.0)</notas>
                 </Estudiante>
-                <Estudiante carne='2026046774'>
-                        <nombre>CarlosCastroAcosta</nombre>
+                <Estudiante carne='2025036651'>
+                        <nombre>JoséFloresSolano</nombre>
                         <genero>False</genero>
-                        <correo>ccastro6774@estudiantec.cr</correo>
-                        <notas>(2, 3, 62, 23.45)</notas>
+                        <correo>jflores6651@estudiantec.cr</correo>
+                        <notas>(39, 5, 34, 27.3)</notas>
                 </Estudiante>
-                <Estudiante carne='2026029085'>
-                        <nombre>LuisMoralesRamÃ­rez</nombre>
+                <Estudiante carne='2025069457'>
+                        <nombre>CarlosMartínezGonzález</nombre>
+                        <genero>False</genero>
+                        <correo>cmartínez9457@estudiantec.cr</correo>
+                        <notas>(39, 74, 92, 71.75)</notas>
+                </Estudiante>
+                <Estudiante carne='2025034238'>
+                        <nombre>GabrielaMoraTorres</nombre>
                         <genero>True</genero>
-                        <correo>lmorales9085@estudiantec.cr</correo>
-                        <notas>(32, 14, 77, 43.05)</notas>
+                        <correo>gmora4238@estudiantec.cr</correo>
+                        <notas>(62, 49, 26, 47.949999999999996)</notas>
                 </Estudiante>
-                <Estudiante carne='2026064121'>
-                        <nombre>CamilaAcostaCastro</nombre>
-                        <genero>False</genero>
-                        <correo>cacosta4121@estudiantec.cr</correo>
-                        <notas>(32, 64, 9, 36.74999999999999)</notas>
-                </Estudiante>
-                <Estudiante carne='2026016884'>
-                        <nombre>SofÃ­aRamÃ­rezChaves</nombre>
-                        <genero>False</genero>
-                        <correo>sramã­rez6884@estudiantec.cr</correo>
-                        <notas>(95, 54, 32, 63.349999999999994)</notas>
-                </Estudiante>
-                <Estudiante carne='2026041633'>
-                        <nombre>LucÃ­aChavesCastro</nombre>
-                        <genero>False</genero>
-                        <correo>lchaves1633@estudiantec.cr</correo>
-                        <notas>(71, 33, 93, 68.95)</notas>
-                </Estudiante>
-                <Estudiante carne='2026017084'>
-                        <nombre>PaulaNavarroMora</nombre>
+                <Estudiante carne='2025029618'>
+                        <nombre>LucíaMoralesRamírez</nombre>
                         <genero>True</genero>
-                        <correo>pnavarro7084@estudiantec.cr</correo>
-                        <notas>(53, 52, 27, 46.2)</notas>
+                        <correo>lmorales9618@estudiantec.cr</correo>
+                        <notas>(90, 37, 17, 50.400000000000006)</notas>
                 </Estudiante>
-                <Estudiante carne='2026030233'>
-                        <nombre>JosÃ©MartÃ­nezDÃ­az</nombre>
+                <Estudiante carne='2025023449'>
+                        <nombre>ManuelMoralesCastro</nombre>
+                        <genero>True</genero>
+                        <correo>mmorales3449@estudiantec.cr</correo>
+                        <notas>(44, 2, 48, 32.900000000000006)</notas>
+                </Estudiante>
+                <Estudiante carne='2025052624'>
+                        <nombre>DanielVargasFlores</nombre>
                         <genero>False</genero>
-                        <correo>jmartã­nez0233@estudiantec.cr</correo>
-                        <notas>(50, 3, 1, 18.900000000000002)</notas>
+                        <correo>dvargas2624@estudiantec.cr</correo>
+                        <notas>(51, 51, 23, 43.75)</notas>
                 </Estudiante>
-                <Estudiante carne='2026060594'>
-                        <nombre>MarÃ­aSÃ¡nchezRojas</nombre>
+                <Estudiante carne='2025068815'>
+                        <nombre>AndrésVargasSánchez</nombre>
                         <genero>True</genero>
-                        <correo>msã¡nchez0594@estudiantec.cr</correo>
-                        <notas>(73, 24, 52, 52.150000000000006)</notas>
+                        <correo>avargas8815@estudiantec.cr</correo>
+                        <notas>(86, 56, 10, 53.2)</notas>
                 </Estudiante>
-                <Estudiante carne='2026032297'>
-                        <nombre>MiguelRiveraFlores</nombre>
-                        <genero>False</genero>
-                        <correo>mrivera2297@estudiantec.cr</correo>
-                        <notas>(20, 47, 35, 35.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2026015587'>
-                        <nombre>DanielAcostaVargas</nombre>
+                <Estudiante carne='2025028937'>
+                        <nombre>ManuelChavesSolano</nombre>
                         <genero>True</genero>
-                        <correo>dacosta5587@estudiantec.cr</correo>
-                        <notas>(66, 22, 60, 51.8)</notas>
+                        <correo>mchaves8937@estudiantec.cr</correo>
+                        <notas>(90, 84, 55, 80.15)</notas>
                 </Estudiante>
-                <Estudiante carne='2026046963'>
-                        <nombre>AnaAcostaRodrÃ­guez</nombre>
-                        <genero>False</genero>
-                        <correo>aacosta6963@estudiantec.cr</correo>
-                        <notas>(37, 80, 7, 43.400000000000006)</notas>
-                </Estudiante>
-                <Estudiante carne='2026025995'>
-                        <nombre>CarlosMoralesDÃ­az</nombre>
-                        <genero>False</genero>
-                        <correo>cmorales5995@estudiantec.cr</correo>
-                        <notas>(92, 43, 16, 52.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2026031148'>
-                        <nombre>LuisPÃ©rezNavarro</nombre>
+                <Estudiante carne='2025017600'>
+                        <nombre>ManuelVargasMartínez</nombre>
                         <genero>True</genero>
-                        <correo>lpã©rez1148@estudiantec.cr</correo>
-                        <notas>(51, 52, 51, 53.9)</notas>
+                        <correo>mvargas7600@estudiantec.cr</correo>
+                        <notas>(48, 35, 76, 55.650000000000006)</notas>
                 </Estudiante>
-                <Estudiante carne='2026014836'>
-                        <nombre>JosÃ©NavarroFlores</nombre>
-                        <genero>False</genero>
-                        <correo>jnavarro4836@estudiantec.cr</correo>
-                        <notas>(95, 9, 82, 65.1)</notas>
-                </Estudiante>
-                <Estudiante carne='2026061560'>
-                        <nombre>MiguelMoralesGonzÃ¡lez</nombre>
-                        <genero>False</genero>
-                        <correo>mmorales1560@estudiantec.cr</correo>
-                        <notas>(35, 98, 60, 67.55)</notas>
-                </Estudiante>
-                <Estudiante carne='2026039769'>
-                        <nombre>JosÃ©FloresAcosta</nombre>
-                        <genero>False</genero>
-                        <correo>jflores9769@estudiantec.cr</correo>
-                        <notas>(51, 88, 63, 70.7)</notas>
-                </Estudiante>
-                <Estudiante carne='2026058675'>
-                        <nombre>JosÃ©MoraTorres</nombre>
-                        <genero>False</genero>
-                        <correo>jmora8675@estudiantec.cr</correo>
-                        <notas>(72, 35, 51, 55.300000000000004)</notas>
-                </Estudiante>
-                <Estudiante carne='2026031746'>
-                        <nombre>ManuelChavesMora</nombre>
-                        <genero>False</genero>
-                        <correo>mchaves1746@estudiantec.cr</correo>
-                        <notas>(57, 80, 10, 51.45)</notas>
-                </Estudiante>
-                <Estudiante carne='2026062284'>
-                        <nombre>LucÃ­aRojasRamÃ­rez</nombre>
+                <Estudiante carne='2025058372'>
+                        <nombre>SofíaSánchezMorales</nombre>
                         <genero>True</genero>
-                        <correo>lrojas2284@estudiantec.cr</correo>
-                        <notas>(72, 94, 4, 59.49999999999999)</notas>
+                        <correo>ssánchez8372@estudiantec.cr</correo>
+                        <notas>(51, 1, 89, 49.35)</notas>
                 </Estudiante>
-                <Estudiante carne='2026025935'>
-                        <nombre>SofÃ­aTorresVargas</nombre>
-                        <genero>False</genero>
-                        <correo>storres5935@estudiantec.cr</correo>
-                        <notas>(44, 87, 27, 55.3)</notas>
-                </Estudiante>
-                <Estudiante carne='2026057460'>
-                        <nombre>MiguelPÃ©rezRamÃ­rez</nombre>
+                <Estudiante carne='2025069204'>
+                        <nombre>LauraAcostaSolano</nombre>
                         <genero>True</genero>
-                        <correo>mpã©rez7460@estudiantec.cr</correo>
-                        <notas>(68, 28, 38, 46.900000000000006)</notas>
+                        <correo>lacosta9204@estudiantec.cr</correo>
+                        <notas>(99, 29, 81, 73.15)</notas>
                 </Estudiante>
-                <Estudiante carne='2026013892'>
-                        <nombre>ElenaRodrÃ­guezRivera</nombre>
+                <Estudiante carne='2025042734'>
+                        <nombre>LauraAcostaSolano</nombre>
                         <genero>True</genero>
-                        <correo>erodrã­guez3892@estudiantec.cr</correo>
-                        <notas>(86, 3, 63, 53.2)</notas>
-                </Estudiante>
-                <Estudiante carne='2026058219'>
-                        <nombre>SofÃ­aChavesCastro</nombre>
-                        <genero>True</genero>
-                        <correo>schaves8219@estudiantec.cr</correo>
-                        <notas>(12, 38, 41, 31.85)</notas>
-                </Estudiante>
-                <Estudiante carne='2026031584'>
-                        <nombre>PaulaAcostaCastro</nombre>
-                        <genero>True</genero>
-                        <correo>pacosta1584@estudiantec.cr</correo>
-                        <notas>(38, 26, 40, 36.4)</notas>
-                </Estudiante>
-                <Estudiante carne='2026030775'>
-                        <nombre>JorgeRiveraSolano</nombre>
-                        <genero>True</genero>
-                        <correo>jrivera0775@estudiantec.cr</correo>
-                        <notas>(48, 55, 62, 57.75)</notas>
-                </Estudiante>
-                <Estudiante carne='2026066548'>
-                        <nombre>LauraRamÃ­rezFlores</nombre>
-                        <genero>True</genero>
-                        <correo>lramã­rez6548@estudiantec.cr</correo>
-                        <notas>(70, 90, 19, 62.65)</notas>
-                </Estudiante>
-                <Estudiante carne='2026030081'>
-                        <nombre>CarlosMoralesMartÃ­nez</nombre>
-                        <genero>True</genero>
-                        <correo>cmorales0081@estudiantec.cr</correo>
-                        <notas>(100, 1, 19, 42.0)</notas>
+                        <correo>lacosta2734@estudiantec.cr</correo>
+                        <notas>(52, 11, 82, 50.75)</notas>
                 </Estudiante>
         </Generacion>
 </Estudiantes>

@@ -37,6 +37,8 @@ def elegirOpcion(archivo,lista):
             html(archivo,lista)
         elif x==4:
             respaldoXML(archivo,lista)
+        elif x ==6:
+            curvasHtml(archivo,lista)
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"

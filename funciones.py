@@ -12,6 +12,8 @@ import pickle
 from reporteHTML import *
 from respaldarEnXML import *
 
+from generarCurva import *
+
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
@@ -232,3 +234,6 @@ def reporteGeneracion(archivo):
     total = apTotales+rpTotales+reTotales
     print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")
     return""
+
+def curvasHtml(archivo, lista):
+    return curvaAprovado(archivo, lista)
