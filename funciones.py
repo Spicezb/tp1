@@ -201,9 +201,6 @@ def reporteGenero(archivo,x1,x2,x3):
     mujeres.close()
     return ""
 
-archivo = "baseDeDatos"
-reporteGenero(archivo,33,33,34)
-
 def reporteGeneracion(archivo):
     apTotales=0
     rpTotales=0
