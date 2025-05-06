@@ -20,7 +20,7 @@ def crearNotas(x1,x2,x3):
     x=random.randint(1, 100)
     d=random.randint(1, 100)
     l=random.randint(1, 100)
-    w=(round(x*x1/100,2)+round(d*x1/100,2)+round(l*x1/100,2))
+    w=round((x*x1/100)+(d*x1/100)+(l*x1/100),2)
     tupla=(x,d,l,w,w)
     return tupla
 # Crea el correo
@@ -109,7 +109,7 @@ def crearBD(archivo,lista):
 
     #Extrae los nombres de los archivos
     nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
-    nombresArchivo=escogerDeArchiEstu(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
+    nombresArchivo=escogerDeArchiEstu(porcentaje,lstnombsconv)
     for i in range(len(nombresArchivo)):
         lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], x1,x2,x3))
     pickle.dump(lista,lol)
@@ -130,7 +130,6 @@ def escogerDeArchiEstu(porcentaje,list):
     lineas=estudi.readlines()
     for i in range(int(conta)):
         x=random.sample(lineas,1)
-        print(x)
         linea=(x[0])
         tupla=tuple(linea.strip().split(","))
         list.append(tupla)
@@ -170,6 +169,7 @@ def agregarEstudiante(archivo,lista,x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
+
 def html(archivo,lista):
     estilosCss()
     reporteHTML(archivo,lista)
@@ -179,4 +179,5 @@ def respaldar(archivo,lista):
 
 
 def curvasHtml(archivo, lista):
-    return curvaAprovado(archivo, lista)
+    porcentaje=int(input("Ingrese el porcentaje de curva a aplicar: "))
+    return curvaAprovado(archivo, lista, porcentaje)
