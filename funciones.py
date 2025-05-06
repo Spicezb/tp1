@@ -11,6 +11,8 @@ import random
 import pickle
 from reporteHTML import *
 from respaldarEnXML import *
+from generarCurva import *
+
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
@@ -174,3 +176,7 @@ def html(archivo,lista):
 
 def respaldar(archivo,lista):
     return respaldoXML(archivo,lista)
+
+
+def curvasHtml(archivo, lista):
+    return curvaAprovado(archivo, lista)
