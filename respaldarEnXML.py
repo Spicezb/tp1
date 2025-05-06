@@ -17,21 +17,21 @@ def respaldoXML(archivo,lista):
     para poder acceder a él.
     """
     # Creación de variables.
-    anoInicial=0                                    # Contiene el rango inicial de los años.
-    anoFinal=0                                      # Contiene el rango final de los años.
+    annoinicial=0                                    # Contiene el rango inicial de los años.
+    annofinal=0                                      # Contiene el rango final de los años.
     archivoXML="respaldoXML.xml"                    # Nombre del archivo xml
     abrirBD=open(archivo,"rb")                      # Se utiliza para abrir la información de la Base de Datos.
     lista = pickle.load(abrirBD)
     # Define los rangos de años de las generaciones.
     for i in lista:
-            if int(i[2][:4])>=anoFinal:
-                anoFinal=int(i[2][:4])
-            elif anoInicial==0:
-                anoInicial=int(i[2][:4])
-            elif int(i[2][:4])<anoInicial:
-                anoInicial=int(i[2][:4])
+            if int(i[2][:4])>=annofinal:
+                annofinal=int(i[2][:4])
+            elif annoinicial==0:
+                annoinicial=int(i[2][:4])
+            elif int(i[2][:4])<annoinicial:
+                annoinicial=int(i[2][:4])
     codigo='<?xml version="1.0" encoding="UTF-8"?>\n<Estudiantes>\n' # Se va escribiendo todo el codifo, dentro de esta variable código.
-    for i in range(anoInicial, anoFinal+1):
+    for i in range(annoinicial, annofinal+1):
         codigo+="        <Generacion anno='"+str(i)+"'>\n"
         for t in lista:
             if int(t[2][:4]) == i:

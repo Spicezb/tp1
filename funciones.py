@@ -5,16 +5,17 @@
 # SE DEBE DE INSTALAR LA LIBRÍA NAMES!!!!
 
 # Importación de librerias
-import names
+import names 
 import re
 import random
 import pickle
 from reporteHTML import *
 from respaldarEnXML import *
+
 # funciones
 def crearNotas(x1,x2,x3):
     if x1+x2+x3 !=100:
-        print("Los tres rubros a evaluar deben sumar 100.")
+        print("Los tres rubros a evaluar deben sumar 100.")  #hacer la validacion en el input
     x=random.randint(1, 100)
     d=random.randint(1, 100)
     l=random.randint(1, 100)
@@ -32,6 +33,7 @@ def crearCarne(ini, fin):
         rand="0"+rand
     carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+rand
     return str(carnet)
+
 def crearCarneAux(ini,fin):
     return crearCarne(ini,fin)
 
@@ -86,25 +88,19 @@ def crearBD(archivo,lista):
     cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
     porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
     print("Dijite el rango de años para generar los carnets")
-
     rangos=generaciones()
-
     x1=int(input("Indique el porcentaje de la primer evaluacion:"))
     x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
     x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
-
-    
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantidadCrear):
         txtNombresGenerados.write(crearNombres())
     txtNombresGenerados.close()
-
     if ((porcentaje/100)*cantidadCrear)%1 >= 0.5:
         redondeado=((porcentaje/100)*cantidadCrear)+(((porcentaje/100)*cantidadCrear)%1)-1
     else:
         redondeado=((porcentaje/100)*cantidadCrear)-((porcentaje/100)*cantidadCrear)%1
-
     #Extrae los nombres de los archivos
     nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
     nombresArchivo=escogerDeArchiEstu(porcentaje,lstnombsconv)           # Aquí no es redondeado también?? R\ Esq ahi se tiene que redondear con el total de estudiantes de la lista de laura escroto
@@ -146,7 +142,7 @@ def escogerDeArchiNom(porcentaje,lis):
     estu.close()
     return lis
 
-def agregarEstudiante(archivo,lista,x1,x2,x3):
+def agregarEstudiante(archivo,x1,x2,x3):
     """
     Funcionamiento:
     - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
@@ -168,9 +164,71 @@ def agregarEstudiante(archivo,lista,x1,x2,x3):
     pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
     base.close()
     return "El estudiante ha sido agregado."
+
 def html(archivo,lista):
     estilosCss()
     reporteHTML(archivo,lista)
 
 def respaldar(archivo,lista):
     return respaldoXML(archivo,lista)
+
+def obtenerNota(i):
+    return i[4][4] 
+
+def reporteGenero(archivo,x1,x2,x3):
+    contadorHombres=0
+    contadorMujeres=0
+    mujeres=open("mujeres.docx", "w")
+    mujeres.write("Reporte de Notas Mujeres\n\n")
+    hombres=open("hombres.docx", "w")
+    hombres.write("Reporte de Notas Hombres\n\n")
+    base=open(archivo,"rb")
+    personas = pickle.load(base)
+    personas.sort(key=obtenerNota,reverse=True)
+    for i in personas:
+        if i[1]==False:
+            contadorMujeres+=1
+            mujeres.write(f"{i[4][4]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
+        else:
+            contadorHombres+=1
+            hombres.write(f"{i[4][4]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
+    mujeres.write(f"\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}.")
+    hombres.write(f"\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de hombres es {contadorHombres}.")
+    base.close()
+    hombres.close()
+    mujeres.close()
+    return ""
+
+archivo = "baseDeDatos"
+reporteGenero(archivo,33,33,34)
+
+def reporteGeneracion(archivo):
+    apTotales=0
+    rpTotales=0
+    reTotales=0
+    gens=[]
+    gensFinal=[]
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
+    for i in lista:
+        if i[2][:4] not in gens:
+            gens.append(int(i[2][:4]))
+    gens.sort()
+    for i in gens:
+        gensFinal.append([0,0,0])
+    for i in lista:
+        if i[4][4]>=70:
+            gensFinal[gens.index(int(i[2][:4]))][0]+=1
+        elif 60<=i[4][4]<70:
+            gensFinal[gens.index(int(i[2][:4]))][1]+=1
+        else:
+            gensFinal[gens.index(int(i[2][:4]))][2]+=1
+    print("Generación\tAprobados\tReposición\tRebrobados\tTotales")
+    for i in range(len(gens)):
+        print(f"   {gens[i]}\t\t    {gensFinal[i][0]}\t\t    {gensFinal[i][1]}\t\t    {gensFinal[i][2]}\t\t   {gensFinal[i][0]+gensFinal[i][1]+gensFinal[i][2]}")
+        apTotales+=gensFinal[i][0]
+        rpTotales+=gensFinal[i][1]
+        reTotales+=gensFinal[i][2]
+    total = apTotales+rpTotales+reTotales
+    print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")
+    return""
