@@ -11,7 +11,6 @@ import random
 import pickle
 from reporteHTML import *
 from respaldarEnXML import *
-
 from generarCurva import *
 
 # funciones
@@ -150,9 +149,20 @@ def agregarEstudiante(archivo,x1,x2,x3):
     Entradas:
     - x1,x2,x3(int): Son los porcentajes que vale cada rubro para asignar las notas. 
     """
-    nombre = tuple(input("Ingrese el nombre del estudiante:\n").split(" "))
-    genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino")
-    gen = int(input("Indique la generación del estudiante:\n"))
+    while True:
+        try:
+            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos:\n").split(" "))
+            if len(nombre)!=3:
+                raise ValueError("Tiene que ingresar un nombre con dos apellidos.\n")
+            genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino")
+            if genero not in ("1","2"):
+                raise ValueError("Debe escoger una de las dos opciones.\n")
+            gen = int(input("Indique la generación del estudiante:\n"))
+            if len(str(gen))!=4:
+                raise ValueError("La generación debe ser un año de 4 dígitos.\n")
+            break
+        except ValueError as e:
+            print(e)
     carne = crearCarne(gen,gen)
     correo = crearCorreo(nombre,carne)
     notas = crearNotas(x1,x2,x3)
@@ -161,11 +171,14 @@ def agregarEstudiante(archivo,x1,x2,x3):
     else:
         genero = True
     estudiante = [nombre,genero,carne,correo,notas]
-    base = open(archivo,"ab")
-    pickle.dumb(estudiante,base)   #Necesito meterlo a la lista de la BD 
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
+    lista.append(estudiante)
     base.close()
+    nuevaBase=open(archivo,"wb")
+    pickle.dump(lista,nuevaBase)
+    nuevaBase.close()
     return "El estudiante ha sido agregado."
-
 
 def html(archivo,lista):
     estilosCss()

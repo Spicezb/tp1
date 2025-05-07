@@ -32,7 +32,7 @@ def elegirOpcion(archivo,lista):
         if x==1:
             crearBD(archivo,lista)
         elif x==2:
-            agregarEstudiante(archivo,lista,x1,x2,x3)
+            agregarEstudiante(archivo,33,33,34)
         elif x==3:
             html(archivo,lista)
         elif x==4:
