@@ -12,7 +12,6 @@ import pickle
 from reporteHTML import *
 from respaldarEnXML import *
 from aplazados import *
-
 from generarCurva import *
 
 # funciones
