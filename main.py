@@ -40,7 +40,7 @@ def elegirOpcion(archivo,lista):
         elif x ==6:
             curvasHtml(archivo,lista)
         elif x ==8:
-            #examenPdf(archivo,lista)
+            examenPdf(archivo,lista)
             print("pene chiquitillo")
     return "Hasta Luego. . ."
 
