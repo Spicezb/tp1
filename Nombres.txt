@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Carol,Merrill,Gribble,False
 Anna,Kline,Young,False
 Elizabeth,Larsen,Gering,False
@@ -8,3 +9,15 @@ John,Mcdonald,Riccio,True
 Renee,Jefferson,Trice,False
 David,Macklin,Davis,True
 Albert,Curtis,Neufeld,True
+=======
+Laura,Wehn,Amador,False
+Mary,Lynch,Bylsma,False
+Jim,Rosado,Johnson,True
+Ken,Mcnutt,Porter,True
+Edith,Dean,Cato,False
+Melissa,Moeller,Reyes,False
+Erika,Quinn,Clark,False
+Kyle,Vega,Dotson,True
+John,Lewis,Zito,True
+Frances,Stodden,Blanchard,False
+>>>>>>> fcc9b394e8d212335bc68a3336b5bc0b575e87bc

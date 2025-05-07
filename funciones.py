@@ -11,6 +11,8 @@ import random
 import pickle
 from reporteHTML import *
 from respaldarEnXML import *
+from aplazados import *
+
 from generarCurva import *
 
 # funciones
@@ -248,3 +250,7 @@ def reporteGeneracion(archivo):
 def curvasHtml(archivo, lista):
     porcentaje=int(input("Ingrese el porcentaje de curva a aplicar: "))
     return curvaAprovado(archivo, lista, porcentaje)
+
+def examenPdf(archivo, lista):
+    crearPDF(archivo, lista)
+    return 
