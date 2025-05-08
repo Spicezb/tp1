@@ -424,3 +424,33 @@ def examenPdf(archivo, lista):
     print("******************** Aplazados en al menos 2 rubros ********************")
     crearPDF(archivo, lista)
     return True
+
+def reporteBuenRendimiento(archivo):
+    hayEstudiantes = False
+    codigos=[]
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
+    sedes=open("sedes.txt","r")
+    for i,linea in enumerate(sedes):
+        print(f"Sede {i+1}, {linea}")    #verificar si empieza en 1 
+        if len(str(i))==1 and i!=9:
+            codigos.append(f"0{i+1}")
+        else: 
+            codigos.append(i+1)
+    while True:
+        try:
+            sede=input("\nIngrese el número de la sede de la que desea generar el reporte:\n")
+            if sede not in codigos:
+                raise ValueError
+            break
+        except ValueError:
+            print("Tiene que digitar el código de una de las sedes antes mostradas.\n")
+    for i in lista:
+        if i[2][4:6] == sede:
+            if i[4][0]>=70 and i[4][1]>=70 and i[4][2]>=70:
+                hayEstudiantes=True
+                print(i[0])
+    if hayEstudiantes==False:
+        print("No existen estudiantes con buen rendimiento en dicha sede.\n")
+    base.close()
+    return ""
