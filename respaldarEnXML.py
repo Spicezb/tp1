@@ -36,7 +36,7 @@ def respaldoXML(archivo,lista):
         for t in lista:
             if int(t[2][:4]) == i:
                 codigo+="                <Estudiante carne='"+t[2]+"'>\n"
-                codigo+="                        <nombre>"+t[0][0]+t[0][1]+t[0][2]+"</nombre>\n"
+                codigo+="                        <nombre>"+t[0][0]+" "+t[0][1]+" "+t[0][2]+"</nombre>\n"
                 codigo+="                        <genero>"+str(t[1])+"</genero>\n"
                 codigo+="                        <correo>"+t[3]+"</correo>\n"
                 codigo+="                        <notas>"+str(t[4][:-1])+"</notas>\n"
@@ -47,5 +47,5 @@ def respaldoXML(archivo,lista):
     ol=open(archivoXML,"w", encoding="UTF-8")
     ol.write(codigo)
     ol.close()
-    return print("El respaldo de la información fue creado exitosamente...\n" \
+    return print("******************** Respaldar informcación ********************\nEl respaldo de la información fue creado exitosamente...\n" \
                 "Puede ingresar a el mediante el archivo respaldoXML, ubicado en esta misma carpeta.")

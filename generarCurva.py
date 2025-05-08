@@ -28,7 +28,7 @@ def agregarInfo(lista,cambio, pocern):
                 codigo+="        <tr>\n"
                 cambio=0
             codigo+="            <td>"+str(lista[0][0])+"</td>\n"
-            codigo+="            <td>"+str(lista[0][1])+str(lista[0][2])+"</td>\n"
+            codigo+="            <td>"+str(lista[0][1])+" "+str(lista[0][2])+"</td>\n"
             codigo+="            <td>"+str(lista[1])+"</td>\n"
             codigo+="            <td>"+str(lista[2])+"</td>\n"
             codigo+="            <td>"+str(lista[3])+"</td>\n"
@@ -93,5 +93,5 @@ def curvaAprovado(archivo,lista, porcen):
                 break
     # Se guarda el codigo html dentro del documento.
     guardar(codCurvRepro,codCurvRepo,codCurvApro)
-    return print("Los reporte de las curvas de notas fueron creados exitosamente.\n" \
-                "Puede acceder a él mediante el archivo ""reporteHTML"", ubicado en esta misma carpeta.")
+    return print("******************** Gestionar Curva ********************\nLos reporte de las curvas de notas fueron creados exitosamente.\n" \
+                "Puede acceder a él mediante el archivo ""curvaAprobadosHTML"",""curvaReposicionHTML"",""curvaReprobadosHTML"", ubicado en esta misma carpeta.")
