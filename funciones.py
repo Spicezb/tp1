@@ -9,11 +9,15 @@ import names
 import re
 import random
 import pickle
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from reporteHTML import *
 from respaldarEnXML import *
 from aplazados import *
 from generarCurva import *
 from docx import Document
+from datetime import datetime
 
 def notas():
     while True:
@@ -424,6 +428,54 @@ def examenPdf(archivo, lista):
     print("******************** Aplazados en al menos 2 rubros ********************")
     crearPDF(archivo, lista)
     return True
+
+def enviarCorreos(archivo,fecha,hora):
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
+    correoRemitente = "xaviccr@gmail.com"
+    contrasenna = "tqge uhju oxon ibgu" #Es la contraseña que se utiliza para ingresar al correo.
+    for i in lista:
+        if 60<=i[4][4]<70:
+            correoEstufechante = i[3]
+            asunto = "Examen de reposición"
+            mensaje = f"Se le comunica que usted deberá realizar un examen de reposición el día {fecha} a las {hora}"
+            msg = MIMEMultipart()
+            msg["From"] = correoRemitente
+            msg["To"] = correoEstufechante
+            msg["Subject"] = asunto
+            msg.attach(MIMEText(mensaje, 'plain'))
+            servidor = smtplib.SMTP('smtp.gmail.com', 587)
+            servidor.starttls()
+            servidor.login(correoRemitente,contrasenna)
+            servidor.send_message(msg)
+            servidor.quit()
+    base.close()
+    return "Los correos para reposición han sido enviados"
+
+def enviarCorreosAux(archivo):
+    while True:
+        try:
+            fecha=input("Ingrese el día en que se va a realizar el examen de reposición con el formato dd/mm/aaaa:\n")
+            if not re.match(r"^((0[1-9]|1\d|2\d)/(0[1-9]|1[0-2])|(30)/(0[1,3-9]|1[0-2])|31/(0[13578]|1[02]))/(\d{4})$",fecha):
+                raise ValueError("La fecha no cumple con el formato requerido de dd/mm/aaaa, recuerde que el mes no puede ser mayor a 12 y que solo ciertos meses tienen 31 días.\n")
+            elif int(fecha[0:2]) == 29 and int(fecha[3:5]) == 2:
+                if not ((int(fecha[6:]) % 4 == 0 and int(fecha[6:]) % 100 != 0) or (int(fecha[6:]) % 400 == 0)):
+                    raise ValueError("\nLa fecha no es válida, pues el año ingresado no es bisiesto\n")
+            dia, mes, anno = int(fecha[:2]), int(fecha[3:5]), int(fecha[6:])
+            if datetime(anno, mes, dia)<=datetime.now():
+                raise ValueError("Debe ingresar una fecha posterior a la de hoy.\n")
+            break
+        except ValueError as e:
+            print(e)
+    while True:
+        try:
+            hora=input("Ingrese la hora en un formato de 24 horas, o sea, hh:mm:\n")
+            if not re.match(r"^([01]\d|2[0-3]):[0-5]\d$",hora):
+                raise ValueError
+            break
+        except ValueError:
+            print("La hora no concuerda con el formato de 24 horas\n")
+    return enviarCorreos(archivo,fecha,hora)
 
 def reporteBuenRendimiento(archivo):
     hayEstudiantes = False
