@@ -13,6 +13,7 @@ from reporteHTML import *
 from respaldarEnXML import *
 from aplazados import *
 from generarCurva import *
+from docx import Document
 
 def notas():
     while True:
@@ -40,14 +41,14 @@ def notas():
             "Indique el porcentaje de la primer evaluación: 35")
             input("Presione enter para continuar.")
             os.system("cls")
-    
+
 # funciones
 def crearNotas(porce1,porce2,porce3):
     evalu1=random.randint(1, 100)
     evalu2=random.randint(1, 100)
     evalu3=random.randint(1, 100)
     notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
-    tupla=(evalu1,evalu2,evalu3,NotaFinal,NotaFinal)
+    tupla=(evalu1,evalu2,evalu3,notaFinal,notaFinal)
     return tupla
 # Crea el correo
 def crearCorreo(nombre,carne):
@@ -57,10 +58,10 @@ def crearCorreo(nombre,carne):
 # Crea el Carnet
 def crearCarne(ini, fin):
     lista=[]
-    txtSedes=open("sedes.txt","r")
+    txtSedes=open("sedes.txt","r")   #debería de cerrar el archivo
     x=txtSedes.readlines()
     for i in range(len(x)):
-        lista.append("0"+str(i))
+        lista.append("0"+str(i+1))           #le metí +! porque se estabn creando carnets con sede 00 y qué pasqa si hay más de nueve sedes en el archivo que use la profe para revisar?
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
@@ -339,26 +340,29 @@ def obtenerNota(i):
 def reporteGenero(archivo,x1,x2,x3):
     contadorHombres=0
     contadorMujeres=0
-    mujeres=open("mujeres.docx", "w")
-    mujeres.write("Reporte de Notas Mujeres\n\n")
-    hombres=open("hombres.docx", "w")
-    hombres.write("Reporte de Notas Hombres\n\n")
+    mujeres = Document()
+    mujeres.add_heading("Reporte de Notas Mujeres", level=1)
+    mujeres.add_paragraph("")
+    hombres = Document()
+    hombres.add_heading("Reporte de Notas Hombres", level=1)
+    hombres.add_paragraph("")
     base=open(archivo,"rb")
     personas = pickle.load(base)
     personas.sort(key=obtenerNota,reverse=True)
     for i in personas:
+        linea=f"{str(i[4][4])}, {str(i[4][0])} {str(i[4][1])} {str(i[4][2])}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}"
         if i[1]==False:
             contadorMujeres+=1
-            mujeres.write(f"{i[4][4]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
+            mujeres.add_paragraph(linea)
         else:
             contadorHombres+=1
-            hombres.write(f"{i[4][4]}, {i[4][0]} {i[4][1]} {i[4][2]}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}\n")
-    mujeres.write(f"\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de mujeres es {contadorMujeres}.")
-    hombres.write(f"\nLos porcentajes de cada evaluación fueron {x1}, {x2} y {x3} respectivamente, y la cantidad de hombres es {contadorHombres}.")
+            hombres.add_paragraph(linea)
+    mujeres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de mujeres es {contadorMujeres}.")
+    hombres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de hombres es {contadorHombres}.")
     base.close()
-    hombres.close()
-    mujeres.close()
-    return ""
+    mujeres.save("mujeres.docx")
+    hombres.save("hombres.docx")
+    return "Los archivos fueron agregados a la carpeta"
 
 def reporteGeneracion(archivo):
     apTotales=0

@@ -7,6 +7,7 @@ from funciones import *
 from respaldarEnXML import *
 import os 
 import re
+
 def pMenu():
     """
     Funcion: es un print con el menu
@@ -26,7 +27,7 @@ def pMenu():
                 "10. Reporte por sede con buen rendimiento. \n11. Salir")
             opcion = input("Opción: ")
             
-            if not re.match(r"^(11|10|2|3|4|5|6|7|8|9|1)$",opcion):
+            if not re.match(r"^(11|10|2|3|4|5|6|7|8|9|1)$",opcion):     #Creo que se puede quitar el ^
                 raise ValueError
             os.system("cls")
             return opcion
@@ -38,10 +39,10 @@ def pMenu():
 
 def elegirOpcion(archivo,lista):
     x=0
+    p1,p2,p3=notas()
     while x != 11:
         x= pMenu()
         if x=="1":
-            p1,p2,p3=notas()
             crearBD(archivo,lista,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="2":
@@ -53,6 +54,8 @@ def elegirOpcion(archivo,lista):
         elif x=="4":
             respaldoXML(archivo,lista)
             input("Presione enter para continuar.")
+        elif x=="5":
+            reporteGenero(archivo,p1,p2,p3)
         elif x =="6":
             curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
