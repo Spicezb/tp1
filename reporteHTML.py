@@ -118,5 +118,5 @@ def reporteHTML(archivo,lista):
     guardarHtml=open(archivoHtml,"w",encoding="UTF-8")
     guardarHtml.write(codigo)
     guardarHtml.close()
-    return print("El reporte de las notas fue creado exitosamente.\n" \
+    return print("******************** Reporte de notas ********************\nEl reporte de las notas fue creado exitosamente.\n" \
                 "Puede acceder a él mediante el archivo ""reporteHTML"", ubicado en esta misma carpeta.")

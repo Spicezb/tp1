@@ -14,30 +14,58 @@ from respaldarEnXML import *
 from aplazados import *
 from generarCurva import *
 
+def notas():
+    while True:
+        try:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            porce1=int(input("Indique el porcentaje de la primer evaluación: "))
+            porce2=int(input("Indique el porcentaje de la segundo evaluación: "))
+            porce3=int(input("Indique el porcentaje de la tercer evaluación: "))
+            if porce1+porce2+porce3 != 100:
+                raise TypeError
+            return(porce1,porce2,porce3)
+        except TypeError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("El porcentaje Total de las 3 evaluaciones debe de ser igual a 100%.\n" \
+            f"La suma de los porcentajes ingresados es de: {str(porce1+porce2+porce3)}.\n"
+            "Por favor, Ingrese nuevamente los porcentajes.")
+            input("Presione enter para continuar.")
+            os.system("cls")
+        except ValueError:
+            print("******************** Crear Base de Datos ********************")
+            os.system("cls")
+            print("Debe ingresar valores válidos. Por ejemplo:\n" \
+            "Indique el porcentaje de la primer evaluación: 35")
+            input("Presione enter para continuar.")
+            os.system("cls")
+    
 # funciones
-def crearNotas(x1,x2,x3):
-    if x1+x2+x3 !=100:
-        print("Los tres rubros a evaluar deben sumar 100.")  #hacer la validacion en el input
-    x=random.randint(1, 100)
-    d=random.randint(1, 100)
-    l=random.randint(1, 100)
-    w=round((x*x1/100)+(d*x1/100)+(l*x1/100),2)
-    tupla=(x,d,l,w,w)
+def crearNotas(porce1,porce2,porce3):
+    evalu1=random.randint(1, 100)
+    evalu2=random.randint(1, 100)
+    evalu3=random.randint(1, 100)
+    NotaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
+    tupla=(evalu1,evalu2,evalu3,NotaFinal,NotaFinal)
     return tupla
 # Crea el correo
 def crearCorreo(nombre,carne):
-    correo =nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
-    return correo.lower()
+    correo=nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
+    correo=correo.lower()
+    return correo.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u")
 # Crea el Carnet
 def crearCarne(ini, fin):
+    lista=[]
+    txtSedes=open("sedes.txt","r")
+    x=txtSedes.readlines()
+    for i in range(len(x)):
+        lista.append("0"+str(i))
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
-    carnet=str(random.randint(ini,fin))+random.choice(["01","02","03","04","05","06"])+rand
+    carnet=str(random.randint(ini,fin))+random.choice(lista)+rand
     return str(carnet)
-
-def crearCarneAux(ini,fin):
-    return crearCarne(ini,fin)
 
 def crearNombres():
     """
@@ -61,7 +89,7 @@ def crearNombres():
     nombrePersona = f"{persona},{pA},{sA},{genero}\n"
     return nombrePersona
 # Crea las personas y las envia para meterlas a la base de datos
-def llenarBD(nomb,r,r2,x1,x2,x3):
+def llenarBD(nomb,r,r2,notas):
     infoPerso=[]
     nombre=(nomb[0],nomb[1],nomb[2])
     genero=nomb[3]
@@ -69,9 +97,8 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
         genero=True
     else:
         genero=False
-    carne= crearCarneAux(r,r2)
+    carne= crearCarne(r,r2)
     correo = crearCorreo(nombre,str(carne))         
-    notas= crearNotas(x1,x2,x3)
     infoPerso.append(nombre)
     infoPerso.append(genero)
     infoPerso.append(carne)
@@ -79,38 +106,119 @@ def llenarBD(nomb,r,r2,x1,x2,x3):
     infoPerso.append(notas)
     return(infoPerso)
 
+def cantidadEstu():
+    conta=1
+    while True:
+        try:
+            print("******************** Crear Base de Datos ********************")
+            cantidadCrear=int(input("Digite la cantidad de estudiantes a crear: "))
+            break
+        except ValueError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("Debe de ingresar una cantidad válida.\nPor ejemplo:\n" \
+            "Digite la cantidad de estudiantes a crear: 120\n" \
+            "Digite el porcentaje a agregar de las fuentes: 5\n")
+            input("Presione enter para continuar.")
+            os.system("cls")
+    while True:
+        try:
+            if conta != 1:
+                print("******************** Crear Base de Datos ********************")
+                print("Digite la cantidad de estudiantes a crear: "+str(cantidadCrear))
+                porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
+            else:
+                conta+=1
+                porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
+            break
+        except ValueError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("Debe de ingresar una cantidad válida.\nPor ejemplo:\n" \
+            "Digite la cantidad de estudiantes a crear: 120\n" \
+            "Digite el porcentaje a agregar de las fuentes: 5\n")
+            input("Presione enter para continuar.")
+            os.system("cls")
+    os.system("cls")
+    return (cantidadCrear,porcentaje)
+
 def generaciones():
-    rango=int(input("Año inicial: "))
-    rango2=int(input("Año final: "))
+    conta=1
+    while True:
+        try:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("Ingrese el rango de años para generar los carnets")
+            rango=int(input("Año inicial: "))
+            if not 999<rango<10000:
+                raise ValueError
+            break
+        except ValueError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("El año no es válido, debe ingresar un año de 4 dígitos.\nPor ejemplo: 2022")
+            input("Presione enter para continuar.")
+            os.system("cls")
+    while True:
+        try:
+            if conta != 1:
+                os.system("cls")
+                print("******************** Crear Base de Datos ********************")
+                print("Ingrese el rango de años para generar los carnets")
+                print("Año inicial: "+str(rango))
+                rango2=int(input("Año final: "))
+            else:
+                conta+=1
+                rango2=int(input("Año final: "))
+            
+            if rango>rango2:
+                raise TypeError
+            elif rango2>9999:
+                raise ValueError
+            break
+        except ValueError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("El año no es válido, debe ingresar un año de 4 dígitos.\nPor ejemplo: 2024")
+            input("Presione enter para continuar.")
+            os.system("cls")
+        except TypeError:
+            os.system("cls")
+            print("******************** Crear Base de Datos ********************")
+            print("El año final no puede ser menor que el inicial.\nIngrese por ejemplo:\n" \
+            "Año inicial: 2022\nAño final: 2024")
+            input("Presione enter para continuar.")
+            os.system("cls")
     return (rango,rango2)
+
 # Crea la base de datos
 def crearBD(archivo,lista):
+    lista=[]
     lstnombsconv=[]
     lol=open(archivo,"wb")
-    cantidadCrear=int(input("Digite la cantidad de de estudiantes a crear: "))
-    porcentaje=int(input("Digite el porcentaje a agregar de las fuentes: "))
-    print("Dijite el rango de años para generar los carnets")
+    cantiDeEstu=cantidadEstu()
     rangos=generaciones()
-    x1=int(input("Indique el porcentaje de la primer evaluacion:"))
-    x2=int(input("Indique el porcentaje de la segundo evaluacion:"))
-    x3=int(input("Indique el porcentaje de la tercer evaluacion: "))
+    nota=notas()
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
-    for i in range(cantidadCrear):
+    for i in range(cantiDeEstu[0]):
         txtNombresGenerados.write(crearNombres())
     txtNombresGenerados.close()
-    if ((porcentaje/100)*cantidadCrear)%1 >= 0.5:
-        redondeado=((porcentaje/100)*cantidadCrear)+(((porcentaje/100)*cantidadCrear)%1)-1
+    if ((cantiDeEstu[1]/100)*cantiDeEstu[0])%1 >= 0.5:
+        redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])+(((cantiDeEstu[1]/100)*cantiDeEstu[0])%1)-1
     else:
-        redondeado=((porcentaje/100)*cantidadCrear)-((porcentaje/100)*cantidadCrear)%1
+        redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])-((cantiDeEstu[1]/100)*cantiDeEstu[0])%1
     #Extrae los nombres de los archivos
     nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
-    nombresArchivo=escogerDeArchiEstu(porcentaje,lstnombsconv)
+    nombresArchivo=escogerDeArchiEstu(cantiDeEstu[1],lstnombsconv)
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], x1,x2,x3))
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(nota[0],nota[1],nota[2])))
     pickle.dump(lista,lol)
     lol.close()
-    return "Base de datos creada y llenada . . ."
+    os.system("cls")
+    print("******************** Crear Base de Datos ********************")
+    print("Base de datos creada y llenada exitosamente.")
+    return True
 
 def escogerDeArchiEstu(porcentaje,list):
     conta=0
@@ -129,7 +237,6 @@ def escogerDeArchiEstu(porcentaje,list):
         linea=(x[0])
         tupla=tuple(linea.strip().split(","))
         list.append(tupla)
-        print(tupla)
     estudi.close()
     return list
 
@@ -138,7 +245,6 @@ def escogerDeArchiNom(porcentaje,lis):
     for i in range(int(porcentaje)):
         linea=(estu.readline())
         tupla=tuple(linea.strip().split(","))
-        print(tupla)
         lis.append(tupla)
     estu.close()
     return lis
@@ -179,7 +285,7 @@ def agregarEstudiante(archivo,x1,x2,x3):
     nuevaBase=open(archivo,"wb")
     pickle.dump(lista,nuevaBase)
     nuevaBase.close()
-    return "El estudiante ha sido agregado."
+    return print("El estudiante ha sido agregado.")
 
 def html(archivo,lista):
     estilosCss()
@@ -244,12 +350,34 @@ def reporteGeneracion(archivo):
         reTotales+=gensFinal[i][2]
     total = apTotales+rpTotales+reTotales
     print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")
+    base.close()
     return""
 
 def curvasHtml(archivo, lista):
-    porcentaje=int(input("Ingrese el porcentaje de curva a aplicar: "))
-    return curvaAprovado(archivo, lista, porcentaje)
+    while True:
+        try:
+            os.system("cls")
+            print("******************** Gestionar Curva ********************")
+            porcentaje=int(input("Ingrese el porcentaje de curva a aplicar: "))
+            os.system("cls")
+            if not 0<porcentaje<100:
+                raise TypeError
+            return curvaAprovado(archivo, lista, porcentaje)
+        except TypeError:
+            print("******************** Gestionar Curva ********************")
+            print("El porcentaje debe ser mayor a 0 y menor que 100.")
+            input("Presione enter para continuar.")
+            os.system("cls")
+        except ValueError:
+            os.system("cls")
+            print("******************** Gestionar Curva ********************")
+            print("Debe ingresar valores válidos. Por ejemplo:\n" \
+            "Indique el porcentaje de curva a aplicar: 5")
+            input("Presione enter para continuar.")
+            os.system("cls")
 
 def examenPdf(archivo, lista):
+    os.system("cls")
+    print("******************** Aplazados en al menos 2 rubros ********************")
     crearPDF(archivo, lista)
-    return 
+    return True
