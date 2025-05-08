@@ -41,10 +41,11 @@ def elegirOpcion(archivo,lista):
     while x != 11:
         x= pMenu()
         if x=="1":
-            crearBD(archivo,lista)
+            p1,p2,p3=notas()
+            crearBD(archivo,lista,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="2":
-            agregarEstudiante(archivo,33,33,34)
+            agregarEstudiante(archivo,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="3":
             html(archivo,lista)

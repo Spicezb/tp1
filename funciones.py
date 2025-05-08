@@ -24,7 +24,7 @@ def notas():
             porce3=int(input("Indique el porcentaje de la tercer evaluación: "))
             if porce1+porce2+porce3 != 100:
                 raise TypeError
-            return(porce1,porce2,porce3)
+            return porce1,porce2,porce3
         except TypeError:
             os.system("cls")
             print("******************** Crear Base de Datos ********************")
@@ -46,7 +46,7 @@ def crearNotas(porce1,porce2,porce3):
     evalu1=random.randint(1, 100)
     evalu2=random.randint(1, 100)
     evalu3=random.randint(1, 100)
-    NotaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
+    notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
     tupla=(evalu1,evalu2,evalu3,NotaFinal,NotaFinal)
     return tupla
 # Crea el correo
@@ -192,13 +192,12 @@ def generaciones():
     return (rango,rango2)
 
 # Crea la base de datos
-def crearBD(archivo,lista):
+def crearBD(archivo,lista,p1,p2,p3):      #Creo que se puede quitar lista de parámetro
     lista=[]
     lstnombsconv=[]
     lol=open(archivo,"wb")
     cantiDeEstu=cantidadEstu()
     rangos=generaciones()
-    nota=notas()
     #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantiDeEstu[0]):
@@ -212,7 +211,7 @@ def crearBD(archivo,lista):
     nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
     nombresArchivo=escogerDeArchiEstu(cantiDeEstu[1],lstnombsconv)
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(nota[0],nota[1],nota[2])))
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(p1,p2,p3)))
     pickle.dump(lista,lol)
     lol.close()
     os.system("cls")
@@ -249,43 +248,83 @@ def escogerDeArchiNom(porcentaje,lis):
     estu.close()
     return lis
 
-def agregarEstudiante(archivo,x1,x2,x3):
-    """
-    Funcionamiento:
-    - Recibe la información del estudiante mediante inputs y lo agrega a la base de datos.
-    Entradas:
-    - x1,x2,x3(int): Son los porcentajes que vale cada rubro para asignar las notas. 
-    """
+def agregarEstudiante(archivo,p1,p2,p3):
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
     while True:
         try:
-            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos:\n").split(" "))
-            if len(nombre)!=3:
-                raise ValueError("Tiene que ingresar un nombre con dos apellidos.\n")
-            genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino\n")
-            if genero not in ("1","2"):
+            carne=input("Ingrese el carné del estudiante o digite 0 para cancelar:\n")
+            if carne=="0":
+                return ""
+            elif not re.match(r"\d{10}$",carne):
+                raise ValueError
+            for i in lista:
+                for j in i:
+                    if j==carne:
+                        return f"El estudiante con el carné {carne} ya se encuentra registrado\n"
+            break
+        except ValueError:
+            print("El carné debe de tener 10 dígitos.")
+    while True:
+        try:
+            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar:\n").split(" "))
+            if nombre=="0":
+                return ""
+            elif len(nombre)!=3:
+                raise ValueError
+            break
+        except ValueError:
+            print("Tiene que ingresar un nombre con dos apellidos.\n")
+    while True:
+        try:
+            genero = input("Indique el género del estudiante:\n0.Cancelar\n1. Femenino\n2. Masculino\n")
+            if genero not in ("1","2","0"):
                 raise ValueError("Debe escoger una de las dos opciones.\n")
-            gen = int(input("Indique la generación del estudiante:\n"))
-            if len(str(gen))!=4:
-                raise ValueError("La generación debe ser un año de 4 dígitos.\n")
+            elif genero=="0":
+                return ""
+            elif genero==1:
+                genero=False
+            else:
+                genero=True
+            break
+        except:
+            print("Debe escoger una de las dos opciones.\n")
+    while True:
+        try:
+            correo=input("Ingrese el correo del estudiante o digite 0 para cancelar")
+            if correo=="0":
+                return ""
+            if not re.match(r"\w+@estudiantec.cr$",correo):
+                raise ValueError("El correo debe terminar en @estudiantec.cr")
+            for i in lista:
+                for j in i:
+                    if j==correo:
+                        raise ValueError("El correo ingresado ya se encuentra ocupado por otra persona, inténtelo de nuevo.\n")
             break
         except ValueError as e:
             print(e)
-    carne = crearCarne(gen,gen)
-    correo = crearCorreo(nombre,carne)
-    notas = crearNotas(x1,x2,x3)
-    if genero == "1":
-        genero = False
-    else:
-        genero = True
-    estudiante = [nombre,genero,carne,correo,notas]
-    base=open(archivo,"rb")
-    lista=pickle.load(base)
+    while True:
+        try:
+            x1=int(input("Ingrese la nota obtenida por el estudiante en el primer rubro o digite 101 para cancelar: "))
+            x2=int(input("Ingrese la nota obtenida por el estudiante en el segundo rubro o digite 101 para cancelar: "))
+            x3=int(input("Ingrese la nota obtenida por el estudiante en el tercer rubro o digite 101 para cancelar: "))
+            for i in (x1,x2,x3):
+                if i==101:
+                    return ""
+                elif i>100 or i<0:
+                    raise ValueError
+            prom=round((x1*p1/100)+(x2*p2/100)+(x3*p3/100),2)
+            nota=(x1,x2,x3,prom,prom)
+            break
+        except ValueError:
+            print("Las notas deben estar entre 0 y 100.\n")
+    estudiante = [nombre,genero,carne,correo,nota]
     lista.append(estudiante)
     base.close()
     nuevaBase=open(archivo,"wb")
     pickle.dump(lista,nuevaBase)
     nuevaBase.close()
-    return print("El estudiante ha sido agregado.")
+    return "El estudiante ha sido agregado."
 
 def html(archivo,lista):
     estilosCss()
