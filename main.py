@@ -24,9 +24,6 @@ def pMenu():
 
 def elegirOpcion(archivo,lista):
     x=0
-    x1=1
-    x2=1
-    x3=1
     while x != 11:
         x= pMenu()
         if x==1:

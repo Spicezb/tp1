@@ -155,7 +155,7 @@ def agregarEstudiante(archivo,x1,x2,x3):
             nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos:\n").split(" "))
             if len(nombre)!=3:
                 raise ValueError("Tiene que ingresar un nombre con dos apellidos.\n")
-            genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino")
+            genero = input("Indique el género del estudiante:\n1. Femenino\n2. Masculino\n")
             if genero not in ("1","2"):
                 raise ValueError("Debe escoger una de las dos opciones.\n")
             gen = int(input("Indique la generación del estudiante:\n"))
