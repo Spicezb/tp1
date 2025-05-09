@@ -5,6 +5,7 @@
 # Importación de librerias
 from funciones import *
 from respaldarEnXML import *
+from reporteHTML import *
 import os 
 import re
 
@@ -40,10 +41,10 @@ def pMenu():
 def elegirOpcion(archivo,lista):
     x=0
     p1,p2,p3=notas()
-    while x != 11:
+    while x != "11":
         x= pMenu()
         if x=="1":
-            crearBD(archivo,lista,p1,p2,p3)
+            crearBD(archivo,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="2":
             agregarEstudiante(archivo,p1,p2,p3)
@@ -60,7 +61,8 @@ def elegirOpcion(archivo,lista):
             curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
         elif x =="8":
-            examenPdf(archivo,lista)
+            estilosCss()
+            reporteHTML(archivo,lista)
             input("Presione enter para continuar.")
     return "Hasta Luego. . ."
 
