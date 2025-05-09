@@ -102,7 +102,11 @@ def reporteHTML(archivo,lista):
             cambio=0
         codigo+="            <td>"+str(i[0][0])+"</td>\n"
         codigo+="            <td>"+str(i[0][1])+" "+str(i[0][2])+"</td>\n"
-        for x in range(1,len(i)):
+        if i[1]==True:
+            codigo+="            <td>Masculino</td>\n"
+        else:
+            codigo+="            <td>Femenino</td>\n"
+        for x in range(2,len(i)):
             if i[x]==i[4]:
                 codigo+='            <td>'+str(i[x][:-1])+'</td>\n'
                 if float(i[x][-1])<60:

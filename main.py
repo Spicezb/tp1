@@ -63,8 +63,7 @@ def elegirOpcion(archivo,lista):
             curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
         elif x =="8":
-            estilosCss()
-            reporteHTML(archivo,lista)
+            crearPDF(archivo, lista)
             input("Presione enter para continuar.")
     return "Hasta Luego. . ."
 

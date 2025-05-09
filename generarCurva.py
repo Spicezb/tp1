@@ -29,7 +29,10 @@ def agregarInfo(lista,cambio, pocern):
                 cambio=0
             codigo+="            <td>"+str(lista[0][0])+"</td>\n"
             codigo+="            <td>"+str(lista[0][1])+" "+str(lista[0][2])+"</td>\n"
-            codigo+="            <td>"+str(lista[1])+"</td>\n"
+            if lista[1]==True:
+                codigo+="            <td>Masculino</td>\n"
+            else:
+                codigo+="            <td>Femenino</td>\n"
             codigo+="            <td>"+str(lista[2])+"</td>\n"
             codigo+="            <td>"+str(lista[3])+"</td>\n"
             codigo+="            <td>"+str(lista[4][:-1])+"</td>\n"

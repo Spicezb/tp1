@@ -4,6 +4,8 @@ import pickle
 import os
 def crearPDF(archivo,lista):
     try:
+        os.system("cls")
+        print("******************** Aplazados en al menos 2 rubros ********************")
         conta=0
         conta2=0
         conta3=0

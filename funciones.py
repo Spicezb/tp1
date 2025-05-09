@@ -60,16 +60,20 @@ def crearCorreo(nombre,carne):
 
 def crearCarne(ini, fin):
     lista=[]
-    txtSedes=open("sedes.txt","r")   #debería de cerrar el archivo
+    txtSedes=open("sedes.txt","r")         #debería cerrar el archivo     sea necio hp
     x=txtSedes.readlines()
     for i in range(len(x)):
-        lista.append("0"+str(i+1))           #le metí +! porque se estabn creando carnets con sede 00 y qué pasqa si hay más de nueve sedes en el archivo que use la profe para revisar?
+        if i+1<10:
+            lista.append("0"+str(i+1))
+        else:
+            lista.append(str(i+1))          #le metí +! porque se estabn creando carnets con sede 00 y qué pasqa si hay más de nueve sedes en el archivo que use la profe para revisar?
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
     carnet=str(random.randint(ini,fin))+random.choice(lista)+rand
+    txtSedes.close()
     return str(carnet)
-
+# Crea el nombre de los estudiantes
 def crearNombres():
     """
     Funcionamiento:
@@ -80,30 +84,42 @@ def crearNombres():
     Salidas:
     Se retorna una lista con una tupla que contiene el nombre y los apellidos, y el genero por aparte, este de manera Booleana
     """
-    nombrePersona=""
-    genero=random.choice(("male","female"))
-    persona=names.get_first_name(gender=genero)
-    pA=names.get_last_name()
-    sA=names.get_last_name()
+    nombrePersona=""                                    # Se crea la variable que contendra el nombre creado.
+    genero=random.choice(("male","female"))             # Se pide que escoja un genero para que cree los nombres basados a este género.
+    persona=names.get_first_name(gender=genero)         # Se crea el nombre.
+    primerApe=names.get_last_name()                     
+    segundoApe=names.get_last_name()                    # Se crean los 2 apellifos
     if genero=="male":
         genero = True
     else:
-        genero= False
-    nombrePersona = f"{persona},{pA},{sA},{genero}\n"
+        genero= False                                   # Al tener los generos en ingles, se pasan booleano para trabajar mejor.
+    nombrePersona = f"{persona},{primerApe},{segundoApe},{genero}\n"    # Crea la información completa del nombre.
     return nombrePersona
 
-def llenarBD(nomb,r,r2,notas):
-    infoPerso=[]
-    nombre=(nomb[0],nomb[1],nomb[2])
-    genero=nomb[3]
+# Se va llenando la base de datos con la informacion de cada persona.
+def llenarBD(nomb,rango,rango2,notas):
+    """
+    Funcionamiento:
+    - Se encarga de llenar la información de cada persona y retornala para ser agregada en la base de datos. 
+    Entradas:
+    - nomb(tuple): contiene el nombre, apellidos y genero de cada persona.
+    - rango(int): contiene el año incial de los carnés.
+    - rango2(int): contiene el año final de los carnés.
+    - notas(tuple): contiene las notas aleatorias creadas por el sistema.
+    Salidas:
+    - Retorna la lista con la información de cada persona.
+    """
+    infoPerso=[]                                        # Lista con la información
+    nombre=(nomb[0],nomb[1],nomb[2])                    # Se desgloza la tupla, para obtener el nombre y el apellido de la persona
+    genero=nomb[3]                                      # Se obtiene el genero
     if genero == "Masculino" or genero == "True":
-        genero=True
+        genero=True                                     # Como la libreía names crea los generos en ingles, se igualan todos los generos a un valor Booleano.
     else:
         genero=False
-    carne= crearCarne(r,r2)
+    carne= crearCarne(rango,rango2)
     correo = crearCorreo(nombre,str(carne))         
     infoPerso.append(nombre)
-    infoPerso.append(genero)
+    infoPerso.append(genero)                            # Se agregan todos los valores a la lista que llena la Base de datos.
     infoPerso.append(carne)
     infoPerso.append(correo)
     infoPerso.append(notas)
@@ -195,58 +211,83 @@ def generaciones():
     return (rango,rango2)
 
 # Crea la base de datos
-def crearBD(archivo,p1,p2,p3):      #Creo que se puede quitar lista de parámetro
-    lista=[]
-    lstnombsconv=[]
-    lol=open(archivo,"wb")
-    cantiDeEstu=cantidadEstu()
-    rangos=generaciones()
-    txtNombresGenerados=open("Nombres.txt","w")
+def crearBD(archivo,porce1,porce2,porce3):
+    """
+    Funcionamiento:
+    - Crea la base de Datos donde se va a estar almacenando la información del programa.
+    Entradas:
+    - archivo(str): contiene la información toda la información de la Base de Datos.
+    - porce1: contiene el primer porcentaje de las evaluaciones.
+    - porce2: contiene el primer porcentaje de las evaluaciones.
+    - porce3: contiene el primer porcentaje de las evaluaciones.
+    Salidas:
+    - Retorna un True al realizar el proceso correctamente, pero este no se usa ni se ve en ninguna parte. Antes de el True, 
+    si se le muestra al usuario que la Base de datos se creo correctamente.
+    """
+    # Definición de variables
+    lista=[]                                        # Lista que va a almacenar la información.
+    lstnombsconv=[]                                 # Lista que contiene los nombres de las 2 fuentes distintas.
+    abrirAr=open(archivo,"wb")                      # Crea el archivo binario.
+    cantiDeEstu=cantidadEstu()                      # Contiene la cantidad de estudiantes, dada por la funcion cantidadEstu.
+    rangos=generaciones()                           # Contiene los rangos de las generaciones a crear.
+    txtNombresGenerados=open("nombres.txt","w")     # Crea el archivo de nombres generados por el programa.
+    # Se le crean los nombres aleatorios.
     for i in range(cantiDeEstu[0]):
         txtNombresGenerados.write(crearNombres())
     txtNombresGenerados.close()
-    if ((cantiDeEstu[1]/100)*cantiDeEstu[0])%1 >= 0.5:
-        redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])+(((cantiDeEstu[1]/100)*cantiDeEstu[0])%1)-1
-    else:
-        redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])-((cantiDeEstu[1]/100)*cantiDeEstu[0])%1
-    nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
-    nombresArchivo=escogerDeArchiEstu(cantiDeEstu[1],lstnombsconv)
+    # Se da la cantidad de estudiantes a agregar de la fuente que nosotros creamos.
+    nombresArchivo=escogerDeArchi("nombres.txt",cantiDeEstu[1],lstnombsconv)                                  # Se agregan los nombres creados por nosotros.
+    nombresArchivo.extend(escogerDeArchi("estudiantes.txt",cantiDeEstu[1],lstnombsconv))                      # Se agregan los nombres de la fuente de estudiantes, dada por la profe.
+    # Se agregan todos los elementos a la lista de la base de datos.
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(p1,p2,p3)))
-    pickle.dump(lista,lol)
-    lol.close()
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(porce1,porce2,porce3)))
+    pickle.dump(lista,abrirAr)
+    abrirAr.close()
     os.system("cls")
     print("******************** Crear Base de Datos ********************")
     print("Base de datos creada y llenada exitosamente.")
     return True
-
-def escogerDeArchiEstu(porcentaje,list):
-    conta=0
-    estudi=open("estudiantes.txt","r",encoding="utf-8")
-    for i in estudi:
-        conta+=1
+# Da el porcentaje redondeado
+def porcentajeDeEstudiantes(nombreArchivo,porcentaje):
+    """
+    Funcionamiento:
+    - Indica el porcentaje de nombres que se debe de escoger de cada archivo.
+    Entradas:
+    - porcentaje (int): contiene la cantidad de porcentaje de estudiantes que se va a utilizar en las 2 fuentes.
+    - nombreArchivo (str): contiene el nombre del archivo a usar. 
+    Salidas:
+    - Retorna el porcentaje real y redondeado de la cantidad de estudiantes a agregar dependiendo la fuente.
+    """
+    conta=0                                                                         # Lleva el conteo de las lineas del archivo.
+    archivo=open(nombreArchivo, "r", encoding="utf-8")                              # Se abre el archivo correspondiente.
+    for i in archivo:
+        conta+=1                                                                    # Se obtiene la cantidad de lineas del archivo.
     if ((porcentaje/100)*conta)%1 >= 0.5:
-        conta=((porcentaje/100)*conta)+(((porcentaje/100)*conta)%1)-1
+        conta=((porcentaje/100)*conta)+(((porcentaje/100)*conta)%1)-1               # Operaciones para sacar el porcentaje.
     else:
         conta=((porcentaje/100)*conta)-((porcentaje/100)*conta)%1
-    estudi.close()
-    estudi=open("estudiantes.txt","r",encoding="utf-8")
+    archivo.close()
+    return conta
+# Se escogen los nombres de los archivos.
+def escogerDeArchi(nombreArchivo,porcentaje,lis):
+    """
+    Funcionamiento:
+    - Escoge la cantidad de nombres según el porcentaje dado, desde el archivo correspondiente.
+    Entradas:
+    - nombreArchivo (str): contiene el nombre del archivo.
+    - porcentaje (int): contiene el porcentaje de estudiantes que se va a utilizar en las 2 fuentes.
+    - lis (list): lista que contiene información y la agrega a la base de datos. 
+    Salidas:
+    - Retorna la lista de los nombres que se escogieron aleatoriamente.
+    """
+    conta=porcentajeDeEstudiantes(nombreArchivo, porcentaje)                # Contiene la cantidad de estudiantes que hay que escoger.
+    estudi=open(nombreArchivo,"r",encoding="utf-8")                         # Abre el contenido del archivo donde hay que sacar los nombres.
     lineas=estudi.readlines()
-    for i in range(int(conta)):
-        x=random.sample(lineas,1)
-        linea=(x[0])
-        tupla=tuple(linea.strip().split(","))
-        list.append(tupla)
+    estudiante=random.sample(lineas,int(conta))                             # Se saca un estudiante random, sin posibilidad de repetirse.(Esto por el random.sample, que escoge un valor
+    for i in range(int(conta)):                                             # random único entre todas las lineas, n cantidad de veces, en este caso escoge conta cantidad de nombres unicos)
+        tupla=tuple(estudiante[i].strip().split(","))                       # Se agrega uno por uno los estudiantes escogidos de forma aleatoria, el strip es para limpiar caracteres y   
+        lis.append(tupla)                                                   # el split para separar las palabras cuando exite una coma.
     estudi.close()
-    return list
-
-def escogerDeArchiNom(porcentaje,lis):
-    estu=open("Nombres.txt","r")
-    for i in range(int(porcentaje)):
-        linea=(estu.readline())
-        tupla=tuple(linea.strip().split(","))
-        lis.append(tupla)
-    estu.close()
     return lis
 
 def agregarEstudiante(archivo,estudiante):
@@ -336,9 +377,6 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
     nuevaBase.close()
     return "El estudiante ha sido agregado."
 
-def respaldar(archivo,lista):
-    return respaldoXML(archivo,lista)
-
 def obtenerNota(i):
     return i[4][4] 
 
@@ -423,12 +461,6 @@ def curvasHtml(archivo, lista):
             "Indique el porcentaje de curva a aplicar: 5")
             input("Presione enter para continuar.")
             os.system("cls")
-
-def examenPdf(archivo, lista):
-    os.system("cls")
-    print("******************** Aplazados en al menos 2 rubros ********************")
-    crearPDF(archivo, lista)
-    return True
 
 def enviarCorreos(archivo,fecha,hora):
     base=open(archivo,"rb")
