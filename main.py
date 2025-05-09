@@ -2,6 +2,7 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
+
 # Importación de librerias
 from funciones import *
 from respaldarEnXML import *
@@ -47,7 +48,7 @@ def elegirOpcion(archivo,lista):
             crearBD(archivo,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="2":
-            agregarEstudiante(archivo,p1,p2,p3)
+            print(agregarEstudiante(archivo,p1,p2,p3))
             input("Presione enter para continuar.")
         elif x=="3":
             estilosCss()
@@ -57,17 +58,27 @@ def elegirOpcion(archivo,lista):
             respaldoXML(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="5":
-            reporteGenero(archivo,p1,p2,p3)
+            print(reporteGenero(archivo,p1,p2,p3))
             input("Presione enter para continuar.")
         elif x =="6":
             curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
+        elif x == "7":
+            print(enviarCorreosAux(archivo))
+            input("Presione enter para continuar.")
         elif x =="8":
             crearPDF(archivo, lista)
+            input("Presione enter para continuar.")
+        elif x =="9":
+            reporteGeneracion(archivo)
+            input("Presione enter para continuar.")
+        elif x =="10":
+            reporteBuenRendimiento(archivo,sedes)
             input("Presione enter para continuar.")
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
-lstBD=[]
-print(elegirOpcion(nomArchivo,lstBD))
+lstBD=[]                #Verificar esta puta lista, qué hace?
+sedes="sedes.txt"
+print(elegirOpcion(nomArchivo,lstBD,sedes))
 
