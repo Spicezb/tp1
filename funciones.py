@@ -472,12 +472,13 @@ def enviarCorreosAux(archivo):
             print("La hora no concuerda con el formato de 24 horas\n")
     return enviarCorreos(archivo,fecha,hora)
 
-def reporteBuenRendimiento(archivo):
-    hayEstudiantes = False
+def reporteBuenRendimiento(archivo,sedes):
     codigos=[]
+    estudiantes=[]
     base=open(archivo,"rb")
     lista=pickle.load(base)
-    sedes=open("sedes.txt","r")
+    sedes=open(sedes,"r",encoding="utf-8")
+    contador=0
     for i,linea in enumerate(sedes):
         print(f"Sede {i+1}, {linea}")    #verificar si empieza en 1 
         if len(str(i))==1 and i!=9:
@@ -487,6 +488,8 @@ def reporteBuenRendimiento(archivo):
     while True:
         try:
             sede=input("\nIngrese el número de la sede de la que desea generar el reporte:\n")
+            if len(sede)==1:
+                sede="0"+sede
             if sede not in codigos:
                 raise ValueError
             break
@@ -495,9 +498,16 @@ def reporteBuenRendimiento(archivo):
     for i in lista:
         if i[2][4:6] == sede:
             if i[4][0]>=70 and i[4][1]>=70 and i[4][2]>=70:
-                hayEstudiantes=True
-                print(i[0])
-    if hayEstudiantes==False:
-        print("No existen estudiantes con buen rendimiento en dicha sede.\n")
+                contador+=1
+                estudiante=f"{contador}. {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}"
+                estudiantes.append(estudiante)
+    if len(estudiantes)==0:
+        print("\nNo existen estudiantes con buen rendimiento en dicha sede.\n")
+    else:
+        print("\nLos estudiantes que demostraron un buen rendimiento en la sede solicitada fueron:\n")
+        for i in estudiantes:
+            print(i)
     base.close()
     return ""
+
+reporteBuenRendimiento("baseDeDatos","sedes.txt")
