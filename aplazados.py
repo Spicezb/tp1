@@ -1,4 +1,9 @@
-#importaciones
+# Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
+# Fecha de inicio: 23/04/2025 a las 12:00
+# 
+# Versión de python: 3.13.2
+
+#importación de librerías
 from fpdf import FPDF
 import pickle
 import os
