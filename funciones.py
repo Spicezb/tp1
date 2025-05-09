@@ -361,7 +361,7 @@ def reporteGenero(archivo,x1,x2,x3):
     base.close()
     mujeres.save("mujeres.docx")
     hombres.save("hombres.docx")
-    return "Los archivos fueron agregados a la carpeta"
+    return print("Los archivos fueron agregados a la carpeta")
 
 def reporteGeneracion(archivo):
     apTotales=0
@@ -509,5 +509,3 @@ def reporteBuenRendimiento(archivo,sedes):
             print(i)
     base.close()
     return ""
-
-reporteBuenRendimiento("baseDeDatos","sedes.txt")

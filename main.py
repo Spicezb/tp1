@@ -50,13 +50,15 @@ def elegirOpcion(archivo,lista):
             agregarEstudiante(archivo,p1,p2,p3)
             input("Presione enter para continuar.")
         elif x=="3":
-            html(archivo,lista)
+            estilosCss()
+            reporteHTML(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="4":
             respaldoXML(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="5":
             reporteGenero(archivo,p1,p2,p3)
+            input("Presione enter para continuar.")
         elif x =="6":
             curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
