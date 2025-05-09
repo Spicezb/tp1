@@ -2,7 +2,7 @@
 # Fecha de inicio: 29/04/2025 a las 12:00
 #
 # Versión de python: 3.13.2
-# SE DEBE DE INSTALAR LA LIBRÍA NAMES!!!!
+# Se debe instalar las librerías names, fpdf y python-docx
 
 # Importación de librerias
 import names 
@@ -46,7 +46,6 @@ def notas():
             input("Presione enter para continuar.")
             os.system("cls")
 
-# funciones
 def crearNotas(porce1,porce2,porce3):
     evalu1=random.randint(1, 100)
     evalu2=random.randint(1, 100)
@@ -54,12 +53,12 @@ def crearNotas(porce1,porce2,porce3):
     notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
     tupla=(evalu1,evalu2,evalu3,notaFinal,notaFinal)
     return tupla
-# Crea el correo
+
 def crearCorreo(nombre,carne):
     correo=nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
     correo=correo.lower()
     return correo.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u")
-# Crea el Carnet
+
 def crearCarne(ini, fin):
     lista=[]
     txtSedes=open("sedes.txt","r")   #debería de cerrar el archivo
@@ -93,7 +92,7 @@ def crearNombres():
         genero= False
     nombrePersona = f"{persona},{pA},{sA},{genero}\n"
     return nombrePersona
-# Crea las personas y las envia para meterlas a la base de datos
+
 def llenarBD(nomb,r,r2,notas):
     infoPerso=[]
     nombre=(nomb[0],nomb[1],nomb[2])
@@ -196,14 +195,12 @@ def generaciones():
             os.system("cls")
     return (rango,rango2)
 
-# Crea la base de datos
 def crearBD(archivo,lista,p1,p2,p3):      #Creo que se puede quitar lista de parámetro
     lista=[]
     lstnombsconv=[]
     lol=open(archivo,"wb")
     cantiDeEstu=cantidadEstu()
     rangos=generaciones()
-    #Creo el archivo de nombres
     txtNombresGenerados=open("Nombres.txt","w")
     for i in range(cantiDeEstu[0]):
         txtNombresGenerados.write(crearNombres())
@@ -212,7 +209,6 @@ def crearBD(archivo,lista,p1,p2,p3):      #Creo que se puede quitar lista de par
         redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])+(((cantiDeEstu[1]/100)*cantiDeEstu[0])%1)-1
     else:
         redondeado=((cantiDeEstu[1]/100)*cantiDeEstu[0])-((cantiDeEstu[1]/100)*cantiDeEstu[0])%1
-    #Extrae los nombres de los archivos
     nombresArchivo=escogerDeArchiNom(int(redondeado),lstnombsconv)
     nombresArchivo=escogerDeArchiEstu(cantiDeEstu[1],lstnombsconv)
     for i in range(len(nombresArchivo)):
@@ -253,7 +249,17 @@ def escogerDeArchiNom(porcentaje,lis):
     estu.close()
     return lis
 
-def agregarEstudiante(archivo,p1,p2,p3):
+def agregarEstudiante(archivo,estudiante):
+    base=open(archivo,"rb")
+    lista=pickle.load(base)
+    lista.append(estudiante)
+    base.close()
+    nuevaBase=open(archivo,"wb")
+    pickle.dump(lista,nuevaBase)
+    nuevaBase.close()
+    return "El estudiante ha sido agregado."
+
+def agregarEstudianteAux(archivo,p1,p2,p3):
     base=open(archivo,"rb")
     lista=pickle.load(base)
     while True:
@@ -273,7 +279,7 @@ def agregarEstudiante(archivo,p1,p2,p3):
     while True:
         try:
             nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar:\n").split(" "))
-            if nombre=="0":
+            if nombre==("0"):
                 return ""
             elif len(nombre)!=3:
                 raise ValueError
@@ -324,12 +330,8 @@ def agregarEstudiante(archivo,p1,p2,p3):
         except ValueError:
             print("Las notas deben estar entre 0 y 100.\n")
     estudiante = [nombre,genero,carne,correo,nota]
-    lista.append(estudiante)
     base.close()
-    nuevaBase=open(archivo,"wb")
-    pickle.dump(lista,nuevaBase)
-    nuevaBase.close()
-    return "El estudiante ha sido agregado."
+    return agregarEstudiante(archivo,p1,p2,p3,estudiante)
 
 def html(archivo,lista):
     estilosCss()
@@ -366,7 +368,7 @@ def reporteGenero(archivo,x1,x2,x3):
     base.close()
     mujeres.save("mujeres.docx")
     hombres.save("hombres.docx")
-    return "Los archivos fueron agregados a la carpeta"
+    return "Los archivos fueron agregados a la carpeta."
 
 def reporteGeneracion(archivo):
     apTotales=0
@@ -453,6 +455,10 @@ def enviarCorreos(archivo,fecha,hora):
     return "Los correos para reposición han sido enviados"
 
 def enviarCorreosAux(archivo):
+    """
+    Funcionamiento:
+    - Pide al usuario la fecha y la hora en la que se va a realizar el examen de reposición.
+    """
     while True:
         try:
             fecha=input("Ingrese el día en que se va a realizar el examen de reposición con el formato dd/mm/aaaa:\n")
@@ -478,6 +484,15 @@ def enviarCorreosAux(archivo):
     return enviarCorreos(archivo,fecha,hora)
 
 def reporteBuenRendimiento(archivo,sedes):
+    """
+    Funcionamiento:
+    - Pide al usuario ingresar un número de sede e imprime los estudiantes de esa sede que obtuvieron notas mayores a 70.
+    Entradas:
+    - archivo: Es el archivo de la base de datos.
+    - sedes: Es el archivo que contiene las sedes.
+    Salidas: 
+    - Imprime el nombre y el carné de los estudiantes.
+    """
     codigos=[]
     estudiantes=[]
     base=open(archivo,"rb")
@@ -485,7 +500,7 @@ def reporteBuenRendimiento(archivo,sedes):
     sedes=open(sedes,"r",encoding="utf-8")
     contador=0
     for i,linea in enumerate(sedes):
-        print(f"Sede {i+1}, {linea}")    #verificar si empieza en 1 
+        print(f"Sede {i+1}, {linea}")    
         if len(str(i))==1 and i!=9:
             codigos.append(f"0{i+1}")
         else: 
@@ -514,5 +529,3 @@ def reporteBuenRendimiento(archivo,sedes):
             print(i)
     base.close()
     return ""
-
-reporteBuenRendimiento("baseDeDatos","sedes.txt")
