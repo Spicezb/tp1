@@ -12,7 +12,6 @@ import pickle
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from reporteHTML import *
 from respaldarEnXML import *
 from aplazados import *
 from generarCurva import *
@@ -195,7 +194,8 @@ def generaciones():
             os.system("cls")
     return (rango,rango2)
 
-def crearBD(archivo,lista,p1,p2,p3):      #Creo que se puede quitar lista de parámetro
+# Crea la base de datos
+def crearBD(archivo,p1,p2,p3):      #Creo que se puede quitar lista de parámetro
     lista=[]
     lstnombsconv=[]
     lol=open(archivo,"wb")
@@ -331,11 +331,10 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print("Las notas deben estar entre 0 y 100.\n")
     estudiante = [nombre,genero,carne,correo,nota]
     base.close()
-    return agregarEstudiante(archivo,p1,p2,p3,estudiante)
-
-def html(archivo,lista):
-    estilosCss()
-    reporteHTML(archivo,lista)
+    nuevaBase=open(archivo,"wb")
+    pickle.dump(lista,nuevaBase)
+    nuevaBase.close()
+    return "El estudiante ha sido agregado."
 
 def respaldar(archivo,lista):
     return respaldoXML(archivo,lista)
