@@ -17,8 +17,16 @@ from aplazados import *
 from generarCurva import *
 from docx import Document
 from datetime import datetime
-
+# Solicita los porcentajes de las evaluaciones.
 def notas():
+    """
+    Funcionamiento:
+    - Es la auxiliar que solicita los porcentajes de cada evaluación.
+    Entradas:
+    N/A
+    Salidas:
+    Se retornan los 3 porcentajes correspondientes.
+    """
     while True:
         try:
             os.system("cls")
@@ -46,10 +54,20 @@ def notas():
             os.system("cls")
 
 def crearNotas(porce1,porce2,porce3):
+    """
+    Funcionamiento:
+    - Crea las notas de manera aleatoria mayores a 0 y menores a 101.
+    Entradas:
+    - porce1 (int): contiene el porcentaje de la primer evaluación.
+    - porce2 (int): contiene el porcentaje de la segunda evaluación.
+    - porce3 (int): contiene el porcentaje de la tercer evaluación.
+    Salidas:
+    Se retorna una tupla con las 3 notas aleatorias, la nota final del curso y la nota de curva.
+    """
     evalu1=random.randint(1, 100)
-    evalu2=random.randint(1, 100)
+    evalu2=random.randint(1, 100)                                                   # Genere numeros aleatorios del 1 al 100.
     evalu3=random.randint(1, 100)
-    notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)
+    notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)  # Operación para generar la nota final.
     tupla=(evalu1,evalu2,evalu3,notaFinal,notaFinal)
     return tupla
 
@@ -95,7 +113,6 @@ def crearNombres():
         genero= False                                   # Al tener los generos en ingles, se pasan booleano para trabajar mejor.
     nombrePersona = f"{persona},{primerApe},{segundoApe},{genero}\n"    # Crea la información completa del nombre.
     return nombrePersona
-
 # Se va llenando la base de datos con la informacion de cada persona.
 def llenarBD(nomb,rango,rango2,notas):
     """
@@ -124,8 +141,16 @@ def llenarBD(nomb,rango,rango2,notas):
     infoPerso.append(correo)
     infoPerso.append(notas)
     return(infoPerso)
-
+# Solicita la cantidad de estudiantes a crear y el porcentaje a usar de cada fuente.
 def cantidadEstu():
+    """
+    Funcionamiento:
+    - Es la auxiliar que solicita la cantidad de estudiantes a crear y el porcentaje a utilizar.
+    Entradas:
+    N/A
+    Salidas:
+    Se retorna una lista con una tupla los 2 valores correspondientes.
+    """
     conta=1
     while True:
         try:
@@ -160,8 +185,16 @@ def cantidadEstu():
             os.system("cls")
     os.system("cls")
     return (cantidadCrear,porcentaje)
-
+# Solicita los rangos de años.
 def generaciones():
+    """
+    Funcionamiento:
+    - Es la auxiliar que solicita el rango de años para generar los carnés.
+    Entradas:
+    N/A
+    Salidas:
+    Se retorna una lista con una tupla los 2 años correspondientes.
+    """
     conta=1
     while True:
         try:
@@ -209,8 +242,7 @@ def generaciones():
             input("Presione enter para continuar.")
             os.system("cls")
     return (rango,rango2)
-
-# Crea la base de datos
+# Crea la base de datos.
 def crearBD(archivo,porce1,porce2,porce3):
     """
     Funcionamiento:
@@ -247,7 +279,7 @@ def crearBD(archivo,porce1,porce2,porce3):
     print("******************** Crear Base de Datos ********************")
     print("Base de datos creada y llenada exitosamente.")
     return True
-# Da el porcentaje redondeado
+# Da el porcentaje redondeado.
 def porcentajeDeEstudiantes(nombreArchivo,porcentaje):
     """
     Funcionamiento:
@@ -438,8 +470,17 @@ def reporteGeneracion(archivo):
     print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")
     base.close()
     return""
-
+# Solicita el porcentaje de curva.
 def curvasHtml(archivo, lista):
+    """
+    Funcionamiento:
+    - Es la auxiliar que solicita el porcentaje de curva que se le va a aplicar a la nota final.
+    Entradas:
+    archivo: contiene la información de la base de datos
+    lista: es la lista en la que se trabaja la base de datos
+    Salidas:
+    Se retorna el valor de salida de la función curvaAprovado.
+    """
     while True:
         try:
             os.system("cls")

@@ -28,7 +28,7 @@ def pMenu():
                 "10. Reporte por sede con buen rendimiento. \n11. Salir")
             opcion = input("Opción: ")
             
-            if not re.match(r"^(11|10|2|3|4|5|6|7|8|9|1)$",opcion):     #Creo que se puede quitar el ^
+            if not re.match(r"^(11|10|2|3|4|5|6|7|8|9|1)$",opcion):
                 raise ValueError
             os.system("cls")
             return opcion

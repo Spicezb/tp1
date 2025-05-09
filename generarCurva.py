@@ -7,6 +7,16 @@ from reporteHTML import estilosCss
 import pickle
 
 def guardar(curvRepro, curvRepa, curvApro):
+    """
+    Funcionamiento:
+    - Se guardan los diferentes reportes.
+    Entradas:
+    curvaRepro: contiene el html de la información con de los estudiantes repobados.
+    curvaRepa: contiene el html de la información con de los estudiantes en reposición.
+    curvaApro: contiene el html de la información con de los estudiantes aprobados.
+    Salidas:
+    Se retorna un True al finalizar, este no se utiliza en ningún lado.
+    """
     curvarchivoReprovados="curvaReprovadosHTML.html"                   
     curvarchivoReposicion="curvaReposicionHTML.html"                      
     curvarchivoAprovados="curvaAprovadosHTML.html"
@@ -16,8 +26,19 @@ def guardar(curvRepro, curvRepa, curvApro):
         guardarHtml=open(archivos[i],"w",encoding="UTF-8")
         guardarHtml.write(str(codigos[i]))
         guardarHtml.close()
+    return True
 
 def agregarInfo(lista,cambio, pocern):
+    """
+    Funcionamiento:
+    - Va agregandole información al codigo, dependiendo del reporte.
+    Entradas:
+    lista: es la lista con la información de la base de datos.
+    porcen: es el porcentaje que se ingresó para la curva.
+    cambio: es el indicador de cambio de color en las filas.
+    Salidas:
+    Se retorna un fragmento de codigo html.
+    """
     for i in lista:
         for x in i:
             codigo=""
@@ -40,10 +61,20 @@ def agregarInfo(lista,cambio, pocern):
             return codigo
 
 def curvaAprovado(archivo,lista, porcen):
+    """
+    Funcionamiento:
+    - Va creando el codigo html de cada reporte.
+    Entradas:
+    archivo: contiene la información de la base de datos.
+    lista: es la lista en la que se maneja la base de datos.
+    porcen: es el porcentaje que se ingresó para la curva.
+    Salidas:
+    Se retorna un mensaje avisando que los html fueron creados y donde se pueden encontrar.
+    """
 # creación de variables.
     cambio1=0
     cambio2=0
-    cambio3=0                                            # Se utiliza para el cambio de color de la tabla.
+    cambio3=0                                           # Se utiliza para el cambio de color de la tabla.
     abrirBD=open(archivo,"rb")                          # Se utiliza para abrir la información de la Base de Datos.
     lista = pickle.load(abrirBD)                        
     codCurvRepro="""
@@ -70,7 +101,7 @@ def curvaAprovado(archivo,lista, porcen):
     codCurvApro=codCurvRepro
     codCurvApro+="<caption><h2>Estudiantes Aprobados</h2></caption>"
     codCurvRepro+="<caption><h2>Estudiantes Reprobados</h2></caption>"
-    # Se le ingresa la información al reporte de los aprobadps.
+    # Se le ingresa la información al reporte de los estudiantes dependiendo su estado.
     for i in lista:
         for x in i:
             if float(i[4][-1])+float(i[4][-1])*(porcen/100) < 60:
