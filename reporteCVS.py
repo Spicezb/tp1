@@ -1,3 +1,7 @@
+# Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
+# Fecha de inicio: 23/04/2025 a las 12:00
+# Ultima modificación: 09/05/2025 a las 22:20
+# Versión de python: 3.13.
 import csv
 import os
 import pickle
