@@ -2,7 +2,16 @@ import csv
 import os
 import pickle
 def crearReporteCVS(archivo,lista):
-    try:    
+    """
+    Funcionamiento:
+    - Crea el reporte CVS con la iformacion de los estudiantes.
+    Entradas:
+    - archivo: Es el archivo de la base de datos.
+    - lista: Es lista con la que se va a manejar la informaci;on de la base de datos.
+    Salidas: 
+    - Retorna un mensaje de que el archivo se creo correctamente.
+    """
+    try:
         abrir=open(archivo,"rb")
         lista=pickle.load(abrir)
         archivoCVS="reporteCVS.csv"
