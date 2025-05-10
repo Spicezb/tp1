@@ -18,6 +18,13 @@ from generarCurva import *
 from docx import Document
 from datetime import datetime
 
+def comprobarBD(archivo):
+    try:
+        abrir=open(archivo,"br")
+        return True
+    except FileNotFoundError:
+        return print("La base de datos no se ha creado.\nSeleccione la opción 1.")
+
 def notas():
     """
     Funcionamiento:
@@ -76,25 +83,63 @@ def crearNotas(porce1,porce2,porce3):
     tupla=(evalu1,evalu2,evalu3,notaFinal,notaFinal)
     return tupla
 
-def crearCorreo(nombre,carne):
+def crearCorreo(nombre,carne,lista):
+    """
+    Funcionamiento:
+    - Crea los correos de cada estudiante, con la información de cada estudiante.
+    Entradas:
+    nombre(list):Contiene la informacion del nombre del estudiante.
+    canre(str): Contiene el carné del estudiante.
+    lista(lista): Lista de información.
+    Salidas:
+    Se retornan el correo del estudiante.
+    """
     correo=nombre[0][:1]+nombre[1]+carne[6:]+"@estudiantec.cr"
     correo=correo.lower()
+    if lista==[]:
+        return correo.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u")
+    else:
+        for i in lista:
+            if correo ==i[3]:
+                while correo==i[3]:
+                    x=str(random.randint(1000,9999))
+                    correo=nombre[0][:1]+nombre[1]+x+"@estudiantec.cr"
     return correo.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u")
 
-def crearCarne(ini, fin):
-    lista=[]
+def crearCarne(ini, fin,lista):
+    """
+    Funcionamiento:
+    - Crea los carnés de cada estudiante.
+    Entradas:
+    ini(int): Tiene el año inicial.
+    fin(int): Tiene el año final.
+    lista(lista): Lista de información.
+    Salidas:
+    Se retornan el correo del estudiante.
+    """
+    lis=[]
     txtSedes=open("sedes.txt","r")
     x=txtSedes.readlines()
     for i in range(len(x)):
         if i+1<10:
-            lista.append("0"+str(i+1))
+            lis.append("0"+str(i+1))
         else:
-            lista.append(str(i+1))          
+            lis.append(str(i+1))          
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
-    carnet=str(random.randint(ini,fin))+random.choice(lista)+rand
+    carnet=str(random.randint(ini,fin))+random.choice(lis)+rand
     txtSedes.close()
+    if lista==[]:
+        return str(carnet)
+    else:
+        for i in lista:
+            if carnet ==i[2]:
+                while carnet==i[2]:
+                    rand=str(random.randint(0000,9999))
+                    while not re.match(r"\d{4}",rand):
+                        rand="0"+rand
+                    carnet=str(random.randint(ini,fin))+random.choice(lis)+rand
     return str(carnet)
 
 def crearNombres():
@@ -119,7 +164,7 @@ def crearNombres():
     nombrePersona = f"{persona},{primerApe},{segundoApe},{genero}\n"    # Crea la información completa del nombre.
     return nombrePersona
 
-def llenarBD(nomb,rango,rango2,notas):
+def llenarBD(nomb,rango,rango2,notas,lista):
     """
     Funcionamiento:
     - Se encarga de llenar la información de cada persona y retornala para ser agregada en la base de datos. 
@@ -138,8 +183,8 @@ def llenarBD(nomb,rango,rango2,notas):
         genero=True                                     # Como la libreía names crea los generos en ingles, se igualan todos los generos a un valor Booleano.
     else:
         genero=False
-    carne= crearCarne(rango,rango2)
-    correo = crearCorreo(nombre,str(carne))         
+    carne= crearCarne(rango,rango2,lista)
+    correo = crearCorreo(nombre,str(carne),lista)         
     infoPerso.append(nombre)
     infoPerso.append(genero)                            # Se agregan todos los valores a la lista que llena la Base de datos.
     infoPerso.append(carne)
@@ -247,7 +292,7 @@ def generaciones():
             input("Presione enter para continuar.")
             os.system("cls")
     return (rango,rango2)
-# Crea la base de datos.
+
 def crearBD(archivo):
     """
     Funcionamiento:
@@ -278,7 +323,7 @@ def crearBD(archivo):
     nombresArchivo.extend(escogerDeArchi("estudiantes.txt",cantiDeEstu[1],lstnombsconv))                      # Se agregan los nombres de la fuente de estudiantes, dada por la profe.
     # Se agregan todos los elementos a la lista de la base de datos.
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(porcen[0],porcen[1],porcen[2])))
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(porcen[0],porcen[1],porcen[2]),lista))
     pickle.dump(lista,abrirAr)
     abrirAr.close()
     os.system("cls")
@@ -347,7 +392,7 @@ def agregarEstudiante(archivo,estudiante):
     nuevaBase.close()
     return "El estudiante ha sido agregado."
 
-def agregarEstudianteAux(archivo,p1,p2,p3):
+def agregarEstudianteAux(archivo):
     """
     Funcionamiento: 
     - Solicita todos los datos del estudiante para llamar a la función principal de agregar estudiante.
@@ -357,11 +402,13 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
     Salidas: 
     - Llama a la función principal.
     """
+    porcentajeBDN=open("baseDeDatosNotas","rb")
     base=open(archivo,"rb")
+    porcen=pickle.load(porcentajeBDN)
     lista=pickle.load(base)
     while True:
         try:
-            carne=input("Ingrese el carné del estudiante o digite 0 para cancelar:\n")        #Pide el número de carné del estudiante.
+            carne=input("Ingrese el carné del estudiante o digite 0 para cancelar: ")        #Pide el número de carné del estudiante.
             if carne=="0":
                 return ""
             elif not re.match(r"\d{10}$",carne):
@@ -375,7 +422,7 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print(e)
     while True:
         try:
-            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar:\n").split(" "))   #Pide el nombre del estudiante
+            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar: ").split(" "))   #Pide el nombre del estudiante
             if nombre==("0"):
                 return ""
             elif len(nombre)!=3:
@@ -385,7 +432,7 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print("Tiene que ingresar un nombre con dos apellidos.\n")
     while True:
         try:
-            genero = input("Indique el género del estudiante:\n0.Cancelar\n1. Femenino\n2. Masculino\n")     #Pide el género del estudiante
+            genero = input("Indique el género del estudiante:\n0.Cancelar\n1. Femenino\n2. Masculino\nOpción: ")     #Pide el género del estudiante
             if genero not in ("1","2","0"):
                 raise ValueError("Debe escoger una de las dos opciones.\n")
             elif genero=="0":
@@ -399,7 +446,7 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print("Debe escoger una de las dos opciones.\n")
     while True:
         try:
-            correo=input("Ingrese el correo del estudiante o digite 0 para cancelar")     #Pide el correo del estudiante
+            correo=input("Ingrese el correo del estudiante o digite 0 para cancelar: ")     #Pide el correo del estudiante
             if correo=="0":
                 return ""
             if not re.match(r"\w+@estudiantec.cr$",correo):
@@ -421,7 +468,7 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
                     return ""
                 elif i>100 or i<0:
                     raise ValueError
-            prom=round((x1*p1/100)+(x2*p2/100)+(x3*p3/100),2)       #Calcula el promedio de notas
+            prom=round((x1*porcen[0]/100)+(x2*porcen[1]/100)+(x3*porcen[2]/100),2)       #Calcula el promedio de notas
             nota=(x1,x2,x3,prom,prom)
             break
         except ValueError:
@@ -441,7 +488,10 @@ def obtenerNota(i):
     """
     return i[4][4] 
 
-def reporteGenero(archivo,x1,x2,x3):
+def reporteGenero(archivo):
+    porcentajeBDN=open("baseDeDatosNotas","rb")
+    base=open(archivo,"rb")
+    porcen=pickle.load(porcentajeBDN)
     """
     Funcionamiento: 
     - Se utiliza para generar los archivos de reporte por género.
@@ -470,8 +520,8 @@ def reporteGenero(archivo,x1,x2,x3):
         else:                            #De lo contrario se agrega a hombres
             contadorHombres+=1
             hombres.add_paragraph(linea)
-    mujeres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de mujeres es {contadorMujeres}.")   #Agrega una línea que dice los porcentajes originales y la totalidad de personas en el documento.
-    hombres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de hombres es {contadorHombres}.")
+    mujeres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {porcen[0]}%, {porcen[1]}% y {porcen[2]}% respectivamente, y la cantidad de mujeres es {contadorMujeres}.")   #Agrega una línea que dice los porcentajes originales y la totalidad de personas en el documento.
+    hombres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {porcen[0]}%, {porcen[1]}% y {porcen[2]}% respectivamente, y la cantidad de hombres es {contadorHombres}.")
     base.close()
     mujeres.save("mujeres.docx")   #Se guarda el archivo con el nombre de mujeres.docx
     hombres.save("hombres.docx")
@@ -639,14 +689,16 @@ def reporteBuenRendimiento(archivo,sedes):
             codigos.append(i+1)
     while True:
         try:
-            sede=input("\nIngrese el número de la sede de la que desea generar el reporte:\n")
+            sede=input("Ingrese el número de la sede de la que desea generar el reporte: ")
             if len(sede)==1:
                 sede="0"+sede
             if sede not in codigos:   #Verifica si la sede ingresada por el usuario se encuentra en la lista de sedes.
                 raise ValueError
             break
         except ValueError:
-            print("Tiene que digitar el código de una de las sedes antes mostradas.\n")
+            os.system("cls")
+            print("Tiene que digitar el código de una de las sedes antes mostradas.")
+            input("Presione enter para continuar.")
     for i in lista:
         if i[2][4:6] == sede:
             if i[4][0]>=70 and i[4][1]>=70 and i[4][2]>=70:
@@ -654,9 +706,11 @@ def reporteBuenRendimiento(archivo,sedes):
                 estudiante=f"{contador}. {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}"     #agrega el nombre y el carné del estudiante a estudiantes.
                 estudiantes.append(estudiante)
     if len(estudiantes)==0:     #Detecta si no hubo estudiantes con buen rendimiento.
-        print("\nNo existen estudiantes con buen rendimiento en dicha sede.\n")
+        os.system("cls")
+        print("No existen estudiantes con buen rendimiento en dicha sede.")
     else:
-        print("\nLos estudiantes que demostraron un buen rendimiento en la sede solicitada fueron:\n")
+        os.system("cls")
+        print("Los estudiantes que demostraron un buen rendimiento en la sede solicitada fueron:\n")
         for i in estudiantes:     #Imprime los datos de cada estudiante.
             print(i)
     base.close()

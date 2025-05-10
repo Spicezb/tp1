@@ -28,8 +28,6 @@ def crearPDF(archivo,lista):
         notaMan=0
         abrirBD=open(archivo,"rb")                          # Se utiliza para abrir la información de la Base de Datos.
         lista = pickle.load(abrirBD)
-        if os.path.exists("reporteAplazados.pdf"):          # Se pregunta que si el pdf existe, si sí, se borra para escribir uno nuevo.
-            os.remove("reporteAplazados.pdf")
         pdfAplazados= FPDF()                                # Se crea el objeto PDF.
         pdfAplazados.add_page()                             # Se pone una página.
         pdfAplazados.set_font('Arial', 'B', 16)             # Se le da formato a las letras.

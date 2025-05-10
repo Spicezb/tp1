@@ -40,46 +40,55 @@ def pMenu():
             input("Presione enter para continuar.")
             os.system("cls")
 
-def elegirOpcion(archivo,lista):
+def elegirOpcion(archivo,lista,sedes):
     x=0
     while x != "11":
         x= pMenu()
         if x=="1":
-            crearBD(archivo,p1,p2,p3)
+            crearBD(archivo)
             input("Presione enter para continuar.")
         elif x=="2":
-            print(agregarEstudiante(archivo,p1,p2,p3))
+            if comprobarBD(archivo) == True:
+                print(agregarEstudianteAux(archivo))
             input("Presione enter para continuar.")
         elif x=="3":
-            estilosCss()
-            reporteHTML(archivo,lista)
-            crearReporteCVS(archivo,lista)
+            if comprobarBD(archivo) == True:
+                estilosCss()
+                reporteHTML(archivo,lista)
+                crearReporteCVS(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="4":
-            respaldoXML(archivo,lista)
+            if comprobarBD(archivo) == True:
+                respaldoXML(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="5":
-            print(reporteGenero(archivo,p1,p2,p3))
+            if comprobarBD(archivo) == True:
+                reporteGenero(archivo)
             input("Presione enter para continuar.")
         elif x =="6":
-            curvasHtml(archivo,lista)
+            if comprobarBD(archivo) == True:
+                curvasHtml(archivo,lista)
             input("Presione enter para continuar.")
         elif x == "7":
-            print(enviarCorreosAux(archivo))
+            if comprobarBD(archivo) == True:
+                print(enviarCorreosAux(archivo))
             input("Presione enter para continuar.")
         elif x =="8":
-            crearPDF(archivo, lista)
+            if comprobarBD(archivo) == True:
+                crearPDF(archivo, lista)
             input("Presione enter para continuar.")
         elif x =="9":
-            reporteGeneracion(archivo)
+            if comprobarBD(archivo) == True:
+                reporteGeneracion(archivo)
             input("Presione enter para continuar.")
         elif x =="10":
-            reporteBuenRendimiento(archivo,sedes)
+            if comprobarBD(archivo) == True:
+                reporteBuenRendimiento(archivo,sedes)
             input("Presione enter para continuar.")
     return "Hasta Luego. . ."
 
 nomArchivo="baseDeDatos"
-lstBD=[]                #Verificar esta puta lista, qué hace?
+lstBD=[]
 sedes="sedes.txt"
 print(elegirOpcion(nomArchivo,lstBD,sedes))
 
