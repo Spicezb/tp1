@@ -6,6 +6,7 @@
 from funciones import *
 from respaldarEnXML import *
 from reporteHTML import *
+from reporteCVS import *
 import os 
 import re
 
@@ -40,7 +41,6 @@ def pMenu():
 
 def elegirOpcion(archivo,lista):
     x=0
-    p1,p2,p3=notas()
     while x != "11":
         x= pMenu()
         if x=="1":
@@ -52,6 +52,7 @@ def elegirOpcion(archivo,lista):
         elif x=="3":
             estilosCss()
             reporteHTML(archivo,lista)
+            crearReporteCVS(archivo,lista)
             input("Presione enter para continuar.")
         elif x=="4":
             respaldoXML(archivo,lista)

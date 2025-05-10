@@ -36,7 +36,12 @@ def notas():
             porce3=int(input("Indique el porcentaje de la tercer evaluación: "))
             if porce1+porce2+porce3 != 100:
                 raise TypeError
-            return porce1,porce2,porce3
+            lst=[porce1,porce2,porce3]
+            archivo="baseDeDatosNotas"
+            abrirBDN=open(archivo,"wb")
+            pickle.dump(lst,abrirBDN)
+            abrirBDN.close()
+            return (porce1,porce2,porce3)
         except TypeError:
             os.system("cls")
             print("******************** Crear Base de Datos ********************")
@@ -78,13 +83,13 @@ def crearCorreo(nombre,carne):
 
 def crearCarne(ini, fin):
     lista=[]
-    txtSedes=open("sedes.txt","r")         #debería cerrar el archivo     sea necio hp
+    txtSedes=open("sedes.txt","r")
     x=txtSedes.readlines()
     for i in range(len(x)):
         if i+1<10:
             lista.append("0"+str(i+1))
         else:
-            lista.append(str(i+1))          #le metí +! porque se estabn creando carnets con sede 00 y qué pasqa si hay más de nueve sedes en el archivo que use la profe para revisar?
+            lista.append(str(i+1))          
     rand=str(random.randint(0000,9999))
     while not re.match(r"\d{4}",rand):
         rand="0"+rand
@@ -243,7 +248,7 @@ def generaciones():
             os.system("cls")
     return (rango,rango2)
 # Crea la base de datos.
-def crearBD(archivo,porce1,porce2,porce3):
+def crearBD(archivo):
     """
     Funcionamiento:
     - Crea la base de Datos donde se va a estar almacenando la información del programa.
@@ -262,6 +267,7 @@ def crearBD(archivo,porce1,porce2,porce3):
     abrirAr=open(archivo,"wb")                      # Crea el archivo binario.
     cantiDeEstu=cantidadEstu()                      # Contiene la cantidad de estudiantes, dada por la funcion cantidadEstu.
     rangos=generaciones()                           # Contiene los rangos de las generaciones a crear.
+    porcen=notas()
     txtNombresGenerados=open("nombres.txt","w")     # Crea el archivo de nombres generados por el programa.
     # Se le crean los nombres aleatorios.
     for i in range(cantiDeEstu[0]):
@@ -272,7 +278,7 @@ def crearBD(archivo,porce1,porce2,porce3):
     nombresArchivo.extend(escogerDeArchi("estudiantes.txt",cantiDeEstu[1],lstnombsconv))                      # Se agregan los nombres de la fuente de estudiantes, dada por la profe.
     # Se agregan todos los elementos a la lista de la base de datos.
     for i in range(len(nombresArchivo)):
-        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(porce1,porce2,porce3)))
+        lista.append(llenarBD(nombresArchivo[i],rangos[0],rangos[1], crearNotas(porcen[0],porcen[1],porcen[2])))
     pickle.dump(lista,abrirAr)
     abrirAr.close()
     os.system("cls")

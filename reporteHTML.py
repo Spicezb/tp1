@@ -71,7 +71,7 @@ def reporteHTML(archivo,lista):
     # creación de variables.
     cambio=0                                            # Se utiliza para el cambio de color de la tabla.
     abrirBD=open(archivo,"rb")                          # Se utiliza para abrir la información de la Base de Datos.
-    lista = pickle.load(abrirBD)                        
+    lista = pickle.load(abrirBD)                    
     archivoHtml="reporteHTML.html"                      # Nombre del archivo .html.
     codigo="""
     <html lang="es">
@@ -123,4 +123,4 @@ def reporteHTML(archivo,lista):
     guardarHtml.write(codigo)
     guardarHtml.close()
     return print("******************** Reporte de notas ********************\nEl reporte de las notas fue creado exitosamente.\n" \
-                "Puede acceder a él mediante el archivo ""reporteHTML"", ubicado en esta misma carpeta.")
+                "Puede acceder a él mediante el archivo ""reporteHTML"" o ""reporteCSV.csv"", ubicados en esta misma carpeta.")
