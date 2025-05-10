@@ -1,5 +1,5 @@
 # Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
-# Fecha de inicio: 29/04/2025 a las 12:00
+# Fecha de inicio: 23/04/2025 a las 12:00        
 #
 # Versión de python: 3.13.2
 # Se debe instalar las librerías names, fpdf y python-docx
@@ -17,7 +17,7 @@ from aplazados import *
 from generarCurva import *
 from docx import Document
 from datetime import datetime
-# Solicita los porcentajes de las evaluaciones.
+
 def notas():
     """
     Funcionamiento:
@@ -70,7 +70,7 @@ def crearNotas(porce1,porce2,porce3):
     Se retorna una tupla con las 3 notas aleatorias, la nota final del curso y la nota de curva.
     """
     evalu1=random.randint(1, 100)
-    evalu2=random.randint(1, 100)                                                   # Genere numeros aleatorios del 1 al 100.
+    evalu2=random.randint(1, 100)                                                   # Genera numeros aleatorios del 1 al 100.
     evalu3=random.randint(1, 100)
     notaFinal=round((evalu1*porce1/100)+(evalu2*porce2/100)+(evalu3*porce3/100),2)  # Operación para generar la nota final.
     tupla=(evalu1,evalu2,evalu3,notaFinal,notaFinal)
@@ -96,7 +96,7 @@ def crearCarne(ini, fin):
     carnet=str(random.randint(ini,fin))+random.choice(lista)+rand
     txtSedes.close()
     return str(carnet)
-# Crea el nombre de los estudiantes
+
 def crearNombres():
     """
     Funcionamiento:
@@ -118,7 +118,7 @@ def crearNombres():
         genero= False                                   # Al tener los generos en ingles, se pasan booleano para trabajar mejor.
     nombrePersona = f"{persona},{primerApe},{segundoApe},{genero}\n"    # Crea la información completa del nombre.
     return nombrePersona
-# Se va llenando la base de datos con la informacion de cada persona.
+
 def llenarBD(nomb,rango,rango2,notas):
     """
     Funcionamiento:
@@ -146,7 +146,7 @@ def llenarBD(nomb,rango,rango2,notas):
     infoPerso.append(correo)
     infoPerso.append(notas)
     return(infoPerso)
-# Solicita la cantidad de estudiantes a crear y el porcentaje a usar de cada fuente.
+
 def cantidadEstu():
     """
     Funcionamiento:
@@ -190,8 +190,8 @@ def cantidadEstu():
             os.system("cls")
     os.system("cls")
     return (cantidadCrear,porcentaje)
-# Solicita los rangos de años.
-def generaciones():
+
+def generaciones():   
     """
     Funcionamiento:
     - Es la auxiliar que solicita el rango de años para generar los carnés.
@@ -285,7 +285,7 @@ def crearBD(archivo):
     print("******************** Crear Base de Datos ********************")
     print("Base de datos creada y llenada exitosamente.")
     return True
-# Da el porcentaje redondeado.
+
 def porcentajeDeEstudiantes(nombreArchivo,porcentaje):
     """
     Funcionamiento:
@@ -306,7 +306,7 @@ def porcentajeDeEstudiantes(nombreArchivo,porcentaje):
         conta=((porcentaje/100)*conta)-((porcentaje/100)*conta)%1
     archivo.close()
     return conta
-# Se escogen los nombres de los archivos.
+
 def escogerDeArchi(nombreArchivo,porcentaje,lis):
     """
     Funcionamiento:
@@ -329,35 +329,53 @@ def escogerDeArchi(nombreArchivo,porcentaje,lis):
     return lis
 
 def agregarEstudiante(archivo,estudiante):
+    """
+    Funcionamiento: 
+    - Toma una lista con los datos del estudiante y la agrega a otra lista que contiene a todos los otros estudiantes, esta última es agregada a la base de datos que se vuelve a crear pero actualizada.
+    Entradas:
+    - archivo(str): Es el archivo de la base de datos.
+    - estudiante(list): Contiene los datos del estudiante que se va a agregar.
+    Salidas: 
+    - Retorna un texto que dice que el estudiante fue agregado y crea la nueva base de datos
+    """
     base=open(archivo,"rb")
-    lista=pickle.load(base)
+    lista=pickle.load(base)      #Descarga la lista de la base de datos actual.
     lista.append(estudiante)
     base.close()
-    nuevaBase=open(archivo,"wb")
-    pickle.dump(lista,nuevaBase)
+    nuevaBase=open(archivo,"wb")    #Vuelve a crear la base de datos.
+    pickle.dump(lista,nuevaBase)        #Añade la lista actualizada a la base de datos.
     nuevaBase.close()
     return "El estudiante ha sido agregado."
 
 def agregarEstudianteAux(archivo,p1,p2,p3):
+    """
+    Funcionamiento: 
+    - Solicita todos los datos del estudiante para llamar a la función principal de agregar estudiante.
+    Entradas:
+    - archivo(str): Es el archivo de la base de datos.
+    - p1,p2,p3(int): Son los porcentajes que vale cada evaluación.
+    Salidas: 
+    - Llama a la función principal.
+    """
     base=open(archivo,"rb")
     lista=pickle.load(base)
     while True:
         try:
-            carne=input("Ingrese el carné del estudiante o digite 0 para cancelar:\n")
+            carne=input("Ingrese el carné del estudiante o digite 0 para cancelar:\n")        #Pide el número de carné del estudiante.
             if carne=="0":
                 return ""
             elif not re.match(r"\d{10}$",carne):
-                raise ValueError
-            for i in lista:
-                for j in i:
+                raise ValueError("El carné debe de tener 10 dígitos.")
+            for i in lista:     #Verifica que el carné no se encuentre en la lista
+                for j in i:        
                     if j==carne:
-                        return f"El estudiante con el carné {carne} ya se encuentra registrado\n"
+                        raise ValueError("El carné ingresado ya se encuentra registrado")
             break
-        except ValueError:
-            print("El carné debe de tener 10 dígitos.")
+        except ValueError as e:                        #Cada ValueError tiene su propio texto, el except toma el texto de el error que ocurre y lo imprime
+            print(e)
     while True:
         try:
-            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar:\n").split(" "))
+            nombre = tuple(input("Ingrese el nombre del estudiante con sus dos apellidos o digite 0 para cancelar:\n").split(" "))   #Pide el nombre del estudiante
             if nombre==("0"):
                 return ""
             elif len(nombre)!=3:
@@ -367,7 +385,7 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print("Tiene que ingresar un nombre con dos apellidos.\n")
     while True:
         try:
-            genero = input("Indique el género del estudiante:\n0.Cancelar\n1. Femenino\n2. Masculino\n")
+            genero = input("Indique el género del estudiante:\n0.Cancelar\n1. Femenino\n2. Masculino\n")     #Pide el género del estudiante
             if genero not in ("1","2","0"):
                 raise ValueError("Debe escoger una de las dos opciones.\n")
             elif genero=="0":
@@ -381,21 +399,21 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
             print("Debe escoger una de las dos opciones.\n")
     while True:
         try:
-            correo=input("Ingrese el correo del estudiante o digite 0 para cancelar")
+            correo=input("Ingrese el correo del estudiante o digite 0 para cancelar")     #Pide el correo del estudiante
             if correo=="0":
                 return ""
             if not re.match(r"\w+@estudiantec.cr$",correo):
                 raise ValueError("El correo debe terminar en @estudiantec.cr")
-            for i in lista:
+            for i in lista:   #Verifica que el correo no esté en la lista
                 for j in i:
                     if j==correo:
                         raise ValueError("El correo ingresado ya se encuentra ocupado por otra persona, inténtelo de nuevo.\n")
             break
-        except ValueError as e:
+        except ValueError as e:     
             print(e)
     while True:
         try:
-            x1=int(input("Ingrese la nota obtenida por el estudiante en el primer rubro o digite 101 para cancelar: "))
+            x1=int(input("Ingrese la nota obtenida por el estudiante en el primer rubro o digite 101 para cancelar: "))     #Pide las 3 notas del estudiante
             x2=int(input("Ingrese la nota obtenida por el estudiante en el segundo rubro o digite 101 para cancelar: "))
             x3=int(input("Ingrese la nota obtenida por el estudiante en el tercer rubro o digite 101 para cancelar: "))
             for i in (x1,x2,x3):
@@ -403,49 +421,71 @@ def agregarEstudianteAux(archivo,p1,p2,p3):
                     return ""
                 elif i>100 or i<0:
                     raise ValueError
-            prom=round((x1*p1/100)+(x2*p2/100)+(x3*p3/100),2)
+            prom=round((x1*p1/100)+(x2*p2/100)+(x3*p3/100),2)       #Calcula el promedio de notas
             nota=(x1,x2,x3,prom,prom)
             break
         except ValueError:
             print("Las notas deben estar entre 0 y 100.\n")
-    estudiante = [nombre,genero,carne,correo,nota]
+    estudiante = [nombre,genero,carne,correo,nota]   #Son todos los datos del estudiante
     base.close()
-    nuevaBase=open(archivo,"wb")
-    pickle.dump(lista,nuevaBase)
-    nuevaBase.close()
-    return "El estudiante ha sido agregado."
+    return agregarEstudiante(archivo,estudiante)
 
 def obtenerNota(i):
+    """
+    Funcionamiento: 
+    - Se utiliza para obtener la nota del estudiante desde su lista de datos, se utiliza en la función de reporteGenero para ordenar los nombres según la nota.
+    Entradas:
+    - i(list): Es la lista que contiene los datos del estudiante.
+    Salidas: 
+    - Retorna la nota del estudiante.
+    """
     return i[4][4] 
 
 def reporteGenero(archivo,x1,x2,x3):
+    """
+    Funcionamiento: 
+    - Se utiliza para generar los archivos de reporte por género.
+    Entradas:
+    - archivo(str): Es el archivo de la base de datos.
+    - x1,x2,x3(int): Son los porcentajes que vale cada rubro.
+    Salidas: 
+    - Crea los archivos con los reportes e imprime un texto que dice que los archivos fueron agregados a la carpeta.
+    """
     contadorHombres=0
     contadorMujeres=0
-    mujeres = Document()
-    mujeres.add_heading("Reporte de Notas Mujeres", level=1)
-    mujeres.add_paragraph("")
+    mujeres = Document()    #Crea un documento y se le asigna a la variable mujeres.
+    mujeres.add_heading("Reporte de Notas Mujeres", level=1)     #Añade el título.
+    mujeres.add_paragraph("")           #Deja un espacio en blanco
     hombres = Document()
     hombres.add_heading("Reporte de Notas Hombres", level=1)
     hombres.add_paragraph("")
     base=open(archivo,"rb")
-    personas = pickle.load(base)
-    personas.sort(key=obtenerNota,reverse=True)
+    personas = pickle.load(base)             #Es la lista que contiene los datos de todas las personas.
+    personas.sort(key=obtenerNota,reverse=True)     #La lista se ordena de acuerdo a la nota dada por la función obtenerNota de manera inversa, o sea, de mayor a menor.
     for i in personas:
-        linea=f"{str(i[4][4])}, {str(i[4][0])} {str(i[4][1])} {str(i[4][2])}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}"
-        if i[1]==False:
+        linea=f"{str(i[4][4])}, {str(i[4][0])} {str(i[4][1])} {str(i[4][2])}, {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}, {i[3]}"   #Es la linea que se agrega al archivo creado con la información de la persona.
+        if i[1]==False:     #Si el género el False se agrega a mujeres
             contadorMujeres+=1
             mujeres.add_paragraph(linea)
-        else:
+        else:                            #De lo contrario se agrega a hombres
             contadorHombres+=1
             hombres.add_paragraph(linea)
-    mujeres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de mujeres es {contadorMujeres}.")
+    mujeres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de mujeres es {contadorMujeres}.")   #Agrega una línea que dice los porcentajes originales y la totalidad de personas en el documento.
     hombres.add_paragraph(f"\nLos porcentajes de cada evaluación fueron {x1}%, {x2}% y {x3}% respectivamente, y la cantidad de hombres es {contadorHombres}.")
     base.close()
-    mujeres.save("mujeres.docx")
+    mujeres.save("mujeres.docx")   #Se guarda el archivo con el nombre de mujeres.docx
     hombres.save("hombres.docx")
     return print("Los archivos fueron agregados a la carpeta")
 
 def reporteGeneracion(archivo):
+    """
+    Funcionamiento: 
+    - Genera un reporte por generación que separa a las personas según su nota.
+    Entradas:
+    - archivo(str): Es el archivo que contiene la base de datos.
+    Salidas: 
+    - Imprime el reporte.
+    """
     apTotales=0
     rpTotales=0
     reTotales=0
@@ -454,13 +494,13 @@ def reporteGeneracion(archivo):
     base=open(archivo,"rb")
     lista=pickle.load(base)
     for i in lista:
-        if i[2][:4] not in gens:
+        if i[2][:4] not in gens:    #Lee las generaciones de los carnés y las agrega a la lista gens.
             gens.append(int(i[2][:4]))
-    gens.sort()
+    gens.sort()                   
     for i in gens:
-        gensFinal.append([0,0,0])
+        gensFinal.append([0,0,0])     #Según la cantidad de generaciones, se agrega una lista con tres ceros a la lista gensFinal
     for i in lista:
-        if i[4][4]>=70:
+        if i[4][4]>=70:   #Si la persona aprobó, en gensFinal se le suma uno al primer 0 que se encuentra en el índice en que está la generación del estudiante en gens.
             gensFinal[gens.index(int(i[2][:4]))][0]+=1
         elif 60<=i[4][4]<70:
             gensFinal[gens.index(int(i[2][:4]))][1]+=1
@@ -468,15 +508,15 @@ def reporteGeneracion(archivo):
             gensFinal[gens.index(int(i[2][:4]))][2]+=1
     print("Generación\tAprobados\tReposición\tRebrobados\tTotales")
     for i in range(len(gens)):
-        print(f"   {gens[i]}\t\t    {gensFinal[i][0]}\t\t    {gensFinal[i][1]}\t\t    {gensFinal[i][2]}\t\t   {gensFinal[i][0]+gensFinal[i][1]+gensFinal[i][2]}")
+        print(f"   {gens[i]}\t\t    {gensFinal[i][0]}\t\t    {gensFinal[i][1]}\t\t    {gensFinal[i][2]}\t\t   {gensFinal[i][0]+gensFinal[i][1]+gensFinal[i][2]}")    #Se imprime el reporte de cada sede con su total de aprobados,aplazados y reprobados.
         apTotales+=gensFinal[i][0]
-        rpTotales+=gensFinal[i][1]
+        rpTotales+=gensFinal[i][1]    #Los aprobados, aplazados y reprobados se van sumando a un reporte total.
         reTotales+=gensFinal[i][2]
     total = apTotales+rpTotales+reTotales
-    print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")
+    print(f"  Totales\t    {apTotales}\t\t    {rpTotales}\t\t    {reTotales}\t\t   {total}")      #Se imprime un reporte total
     base.close()
     return""
-# Solicita el porcentaje de curva.
+
 def curvasHtml(archivo, lista):
     """
     Funcionamiento:
@@ -510,43 +550,57 @@ def curvasHtml(archivo, lista):
             os.system("cls")
 
 def enviarCorreos(archivo,fecha,hora):
+    """
+    Funcionamiento: 
+    - Se utiliza para enviar los correos con la fecha del examen de reposición.
+    Entradas:
+    - archivo(str): Es el archivo de la base de datos.
+    - fecha(str): Es la fecha en la que se va a realizar el examen.
+    - hora(str): Es la hora a la que se realizará el examen.
+    Salidas: 
+    - Envía los correos y retorna un mensaje indicándolo
+    """
     base=open(archivo,"rb")
     lista=pickle.load(base)
-    correoRemitente = "xaviccr@gmail.com"
+    correoRemitente = "xaviccr@gmail.com"   #Es el correo desde el cual se van a enviar los correos.
     contrasenna = "tqge uhju oxon ibgu" #Es la contraseña que se utiliza para ingresar al correo.
     for i in lista:
         if 60<=i[4][4]<70:
-            correoEstufechante = i[3]
+            correoEstudiante = i[3]
             asunto = "Examen de reposición"
             mensaje = f"Se le comunica que usted deberá realizar un examen de reposición el día {fecha} a las {hora}"
-            msg = MIMEMultipart()
+            msg = MIMEMultipart()     #Sirve para dar formato al mensaje con el correo remitente, el correo receptor y el asunto.
             msg["From"] = correoRemitente
-            msg["To"] = correoEstufechante
+            msg["To"] = correoEstudiante
             msg["Subject"] = asunto
-            msg.attach(MIMEText(mensaje, 'plain'))
-            servidor = smtplib.SMTP('smtp.gmail.com', 587)
-            servidor.starttls()
-            servidor.login(correoRemitente,contrasenna)
-            servidor.send_message(msg)
-            servidor.quit()
+            msg.attach(MIMEText(mensaje, 'plain'))    # a msg se le añade el mensaje en texto plano para darle forma al correo que se va a enviar.
+            servidor = smtplib.SMTP('smtp.gmail.com', 587) #Entra al servidor que permite enviar los correos, 587 es el puerto que se utiliza para esta acción.
+            servidor.starttls()    #Crea una capa de seguridad para proteger los datos.
+            servidor.login(correoRemitente,contrasenna)  #Entra al correo remitente para enviar los correos desde allí
+            servidor.send_message(msg)   #Envía el correo
+            servidor.quit()    #Sale del servidor
     base.close()
     return "Los correos para reposición han sido enviados"
 
 def enviarCorreosAux(archivo):
     """
-    Funcionamiento:
-    - Pide al usuario la fecha y la hora en la que se va a realizar el examen de reposición.
+    Funcionamiento: 
+    - Se utiliza para solicitar la fecha y la hora de los exámenes de reposición.
+    Entradas:
+    - archivo(str): Es el archivo de la base de datos.
+    Salidas: 
+    - Llama a la función principal de enviar correos.
     """
     while True:
         try:
             fecha=input("Ingrese el día en que se va a realizar el examen de reposición con el formato dd/mm/aaaa:\n")
-            if not re.match(r"^((0[1-9]|1\d|2\d)/(0[1-9]|1[0-2])|(30)/(0[1,3-9]|1[0-2])|31/(0[13578]|1[02]))/(\d{4})$",fecha):
+            if not re.match(r"^((0[1-9]|1\d|2\d)/(0[1-9]|1[0-2])|(30)/(0[1,3-9]|1[0-2])|31/(0[13578]|1[02]))/(\d{4})$",fecha):   #Valida si la fecha cumple con el formato.
                 raise ValueError("La fecha no cumple con el formato requerido de dd/mm/aaaa, recuerde que el mes no puede ser mayor a 12 y que solo ciertos meses tienen 31 días.\n")
             elif int(fecha[0:2]) == 29 and int(fecha[3:5]) == 2:
-                if not ((int(fecha[6:]) % 4 == 0 and int(fecha[6:]) % 100 != 0) or (int(fecha[6:]) % 400 == 0)):
+                if not ((int(fecha[6:]) % 4 == 0 and int(fecha[6:]) % 100 != 0) or (int(fecha[6:]) % 400 == 0)):   #Si la fecha ingresada es el 29/02/aaaa, verifica si el año es bisiesto.
                     raise ValueError("\nLa fecha no es válida, pues el año ingresado no es bisiesto\n")
             dia, mes, anno = int(fecha[:2]), int(fecha[3:5]), int(fecha[6:])
-            if datetime(anno, mes, dia)<=datetime.now():
+            if datetime(anno, mes, dia)<=datetime.now():   #Verifica si la fecha es posterior a la actual.
                 raise ValueError("Debe ingresar una fecha posterior a la de hoy.\n")
             break
         except ValueError as e:
@@ -554,7 +608,7 @@ def enviarCorreosAux(archivo):
     while True:
         try:
             hora=input("Ingrese la hora en un formato de 24 horas, o sea, hh:mm:\n")
-            if not re.match(r"^([01]\d|2[0-3]):[0-5]\d$",hora):
+            if not re.match(r"^([01]\d|2[0-3]):[0-5]\d$",hora):   #Verifica el formato de la hora.
                 raise ValueError
             break
         except ValueError:
@@ -575,11 +629,11 @@ def reporteBuenRendimiento(archivo,sedes):
     estudiantes=[]
     base=open(archivo,"rb")
     lista=pickle.load(base)
-    sedes=open(sedes,"r",encoding="utf-8")
+    sedes=open(sedes,"r",encoding="utf-8")   #Se usa encoding="utf-8" para leer correctamente las líneas del archivo, ya que estas se van a imprimir.
     contador=0
-    for i,linea in enumerate(sedes):
+    for i,linea in enumerate(sedes):   #Enumera las sedes y las imprime.
         print(f"Sede {i+1}, {linea}")    
-        if len(str(i))==1 and i!=9:
+        if len(str(i))==1 and i!=9:      #Si se encuentra en las líneas del 0-8, se le agrega un cero a la izquierda para que el código concuerde con los carnés.
             codigos.append(f"0{i+1}")
         else: 
             codigos.append(i+1)
@@ -588,7 +642,7 @@ def reporteBuenRendimiento(archivo,sedes):
             sede=input("\nIngrese el número de la sede de la que desea generar el reporte:\n")
             if len(sede)==1:
                 sede="0"+sede
-            if sede not in codigos:
+            if sede not in codigos:   #Verifica si la sede ingresada por el usuario se encuentra en la lista de sedes.
                 raise ValueError
             break
         except ValueError:
@@ -596,14 +650,14 @@ def reporteBuenRendimiento(archivo,sedes):
     for i in lista:
         if i[2][4:6] == sede:
             if i[4][0]>=70 and i[4][1]>=70 and i[4][2]>=70:
-                contador+=1
-                estudiante=f"{contador}. {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}"
+                contador+=1             #Enumera los estudiantes
+                estudiante=f"{contador}. {i[0][0]} {i[0][1]} {i[0][2]}, {i[2]}"     #agrega el nombre y el carné del estudiante a estudiantes.
                 estudiantes.append(estudiante)
-    if len(estudiantes)==0:
+    if len(estudiantes)==0:     #Detecta si no hubo estudiantes con buen rendimiento.
         print("\nNo existen estudiantes con buen rendimiento en dicha sede.\n")
     else:
         print("\nLos estudiantes que demostraron un buen rendimiento en la sede solicitada fueron:\n")
-        for i in estudiantes:
+        for i in estudiantes:     #Imprime los datos de cada estudiante.
             print(i)
     base.close()
     return ""

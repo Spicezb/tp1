@@ -1,5 +1,5 @@
 # Trabajo realizado Por Luis Guillermo Alfaro Chacón y Xavier Céspedes Alvarado.
-# Fecha de inicio: 29/04/2025 a las 12:00
+# Fecha de inicio: 23/04/2025 a las 12:00
 # 
 # Versión de python: 3.13.2
 # Importación de librerias
