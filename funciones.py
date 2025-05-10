@@ -19,8 +19,16 @@ from docx import Document
 from datetime import datetime
 
 def comprobarBD(archivo):
+    """
+    Funcionamiento:
+    - Comprueba que la base de datos exista.
+    Entradas:
+    - Archivo(str): Es el archivo de la base de datos.
+    Salidas:
+    - Retorna true si la base existe.
+    """
     try:
-        abrir=open(archivo,"br")
+        abrir=open(archivo,"rb")
         return True
     except FileNotFoundError:
         return print("La base de datos no se ha creado.\nSeleccione la opción 1.")

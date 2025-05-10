@@ -91,4 +91,3 @@ nomArchivo="baseDeDatos"
 lstBD=[]
 sedes="sedes.txt"
 print(elegirOpcion(nomArchivo,lstBD,sedes))
-
