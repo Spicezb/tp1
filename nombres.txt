@@ -1,0 +1,10 @@
+Geoffrey,Gilkerson,Hardesty,True
+Daniel,Kahola,Morrissette,True
+Howard,Case,Reamy,True
+Peggy,Olivas,Karathanasis,False
+Nicole,Schaus,Wheeler,False
+Cedric,Barrett,Bonifacio,True
+Lesa,Sanchez,Watson,False
+Roger,Wright,Harness,True
+Nancy,Cannon,Morrow,False
+Gene,Little,Willett,True

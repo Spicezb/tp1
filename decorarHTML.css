@@ -1,0 +1,35 @@
+                   
+        body{
+        background: #FFC90E;
+        }
+        table {
+            border: solid 2px black;
+            background: #FFFFFF;
+            font-family: Arial;
+            color: #FFFFFF;
+            text-align: center;
+            }
+        caption{
+            background: #0080B8;
+            border: solid 2px black;
+            }
+        .subTitulos{
+        font-weight: bold;
+        font-style: italic;  
+        text-align: center;  
+        margin: 0;           
+        color: white;
+        }
+        td {
+            border: solid 2px black;
+            padding: 7px 40px;
+            }
+        .tr1 {
+            background: #0080B8;
+            border: solid 2px black;
+            }
+        tr {
+            background: #00425E;
+            border: solid 2px black;
+            }
+            
